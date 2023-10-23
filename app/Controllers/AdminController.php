@@ -14,5 +14,13 @@ class AdminController extends BaseController
     {
         return view('admin/verifikasi');
     }
+    public function petugas()
+    {
+        return view('admin/petugas');
+    }
+    public function masyarakat()
+    {
+        return view('admin/masyarakat');
+    }
 }
 

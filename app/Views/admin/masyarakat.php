@@ -15,7 +15,7 @@
     <link href="<?= base_url(' assets-dashboard-admin/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('css/style-register.css')?>"> -->
+    <link rel="stylesheet" href="<?= base_url('css/style-register.css') ?>"> -->
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets-dashboard-admin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets-dashboard-admin/css/style.css') ?>">
@@ -65,9 +65,9 @@
                     <span>Masyarakat</span></a>
             </li>
 
-            
 
-            
+
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -100,7 +100,7 @@
                     </form>
 
                     <!-- Topbar Navbar -->
-                   
+
 
                 </nav>
                 <!-- End of Topbar -->
@@ -109,54 +109,14 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Pengaduan Masyarakat</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Verifikasi</h1>
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        
+
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>NIK</th>
-                                            <th>Nama Pelapor</th>
-                                            <th>Isi Laporan</th>
-                                            <th>Foto</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                        </tr>
-                                       
-                                    </tbody>
-                                </table>
+                                
                             </div>
                         </div>
                     </div>
@@ -215,7 +175,7 @@
     <script src="<?= base_url(' assets-dashboard-admin/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="<?=  base_url(' assets-dashboard-admin/js/sb-admin-2.min.js')?>"></script>
+    <script src="<?= base_url(' assets-dashboard-admin/js/sb-admin-2.min.js') ?>"></script>
 
 </body>
 
