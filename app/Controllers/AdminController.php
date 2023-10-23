@@ -10,4 +10,9 @@ class AdminController extends BaseController
     {
         return view('admin/index');
     }
+    public function verval()
+    {
+        return view('admin/verifikasi');
+    }
 }
+
