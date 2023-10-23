@@ -17,6 +17,7 @@
     <!-- <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('css/style-register.css') ?>"> -->
     <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="<?= base_url('assets-dashboard-admin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets-dashboard-admin/css/style.css') ?>">
 </head>
@@ -30,7 +31,7 @@
         <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-bullhorn"></i>
                 </div>
@@ -48,22 +49,23 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin')?>">
+                <a class="nav-link" href="<?= base_url('/admin') ?>">
                     <i class="fas fa-envelope"></i>
                     <span>Pengaduan</span></a>
             </li>
 
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin/petugas')?>">
+                <a class="nav-link" href="<?= base_url('/admin/petugas') ?>">
                     <i class="fas fa-user"></i>
                     <span>Petugas</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin/masyarakat')?>">
+                <a class="nav-link" href="<?= base_url('/admin/masyarakat') ?>">
                     <i class="fas fa-users"></i>
                     <span>Masyarakat</span></a>
             </li>
+            <hr class="sidebar-divider">
 
 
 
@@ -109,8 +111,8 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Verifikasi</h1>
-
+                    
+                    <h1 class="h3 mb-2 text-gray-800 col align-self-start">Verifikasi</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
 
@@ -134,8 +136,8 @@
                                             <td>Korem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum </td>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button class="btn btn-primary" type="button">Terima</button>
-                                                    <button class="btn btn-primary" type="button">Tolak</button>
+                                                    <button class="btn btn-dark" type="button">Terima</button>
+                                                    <button class="btn btn-dark" type="button">Tolak</button>
                                                 </div>
                                             </td>
                                         </tr>

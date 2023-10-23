@@ -17,6 +17,7 @@
     <!-- <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('css/style-register.css') ?>"> -->
     <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="<?= base_url('assets-dashboard-admin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets-dashboard-admin/css/style.css') ?>">
 </head>
@@ -30,7 +31,7 @@
         <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-bullhorn"></i>
                 </div>
@@ -64,6 +65,7 @@
                     <i class="fas fa-users"></i>
                     <span>Masyarakat</span></a>
             </li>
+            <hr class="sidebar-divider">
 
 
 
@@ -109,8 +111,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Verifikasi</h1>
-
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <h1 class="h3 mb-2 text-gray-800 col align-self-start">Petugas</h1>
+                        <button class="btn btn-primary me-md-2" type="button">Tambah</button>
+                    </div>
+                    <br>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
 

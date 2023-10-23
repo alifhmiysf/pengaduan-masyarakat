@@ -15,8 +15,9 @@
     <link href="<?= base_url(' assets-dashboard-admin/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('css/style-register.css')?>"> -->
+    <link rel="stylesheet" href="<?= base_url('css/style-register.css') ?>"> -->
     <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="<?= base_url('assets-dashboard-admin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets-dashboard-admin/css/style.css') ?>">
 </head>
@@ -30,7 +31,7 @@
         <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-bullhorn"></i>
                 </div>
@@ -48,26 +49,27 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin')?>">
+                <a class="nav-link" href="<?= base_url('/admin') ?>">
                     <i class="fas fa-envelope"></i>
                     <span>Pengaduan</span></a>
             </li>
 
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin/petugas')?>">
+                <a class="nav-link" href="<?= base_url('/admin/petugas') ?>">
                     <i class="fas fa-user"></i>
                     <span>Petugas</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin/masyarakat')?>">
+                <a class="nav-link" href="<?= base_url('/admin/masyarakat') ?>">
                     <i class="fas fa-users"></i>
                     <span>Masyarakat</span></a>
             </li>
+            <hr class="sidebar-divider">
 
-            
 
-            
+
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -100,7 +102,7 @@
                     </form>
 
                     <!-- Topbar Navbar -->
-                   
+
 
                 </nav>
                 <!-- End of Topbar -->
@@ -112,7 +114,7 @@
                     <h1 class="h3 mb-2 text-gray-800">Pengaduan Masyarakat</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -154,7 +156,7 @@
                                             <td>22</td>
                                             <td>2012/03/29</td>
                                         </tr>
-                                       
+
                                     </tbody>
                                 </table>
                             </div>
@@ -215,7 +217,7 @@
     <script src="<?= base_url(' assets-dashboard-admin/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="<?=  base_url(' assets-dashboard-admin/js/sb-admin-2.min.js')?>"></script>
+    <script src="<?= base_url(' assets-dashboard-admin/js/sb-admin-2.min.js') ?>"></script>
 
 </body>
 
