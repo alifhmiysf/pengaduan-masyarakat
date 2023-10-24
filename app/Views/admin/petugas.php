@@ -49,19 +49,19 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin')?>">
+                <a class="nav-link" href="<?= base_url('/admin') ?>">
                     <i class="fas fa-envelope"></i>
                     <span>Pengaduan</span></a>
             </li>
 
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin/petugas')?>">
+                <a class="nav-link" href="<?= base_url('/admin/petugas') ?>">
                     <i class="fas fa-user"></i>
                     <span>Petugas</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin/masyarakat')?>">
+                <a class="nav-link" href="<?= base_url('/admin/masyarakat') ?>">
                     <i class="fas fa-users"></i>
                     <span>Masyarakat</span></a>
             </li>
@@ -113,7 +113,7 @@
                     <!-- Page Heading -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <h1 class="h3 mb-2 text-gray-800 col align-self-start">Petugas</h1>
-                        <button class="btn btn-primary me-md-2" type="button">Tambah</button>
+                        <button type="button" class="btn btn-dark">+ Tambah</button>
                     </div>
                     <br>
                     <!-- DataTales Example -->
@@ -121,7 +121,33 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                
+                                <table class="table caption-top">
+
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">Nama petugas</th>
+                                            <th scope="col">Username</th>
+                                            <th scope="col">Password</th>
+                                            <th scope="col">Telepon</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Kinar Aurasae</td>
+                                            <td>Kinzxa</td>
+                                            <td>AKSDJHASKD</td>
+                                            <td>092833748239</td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <button class="btn btn-dark" type="button">Edit</button>
+                                                    <button class="btn btn-dark" type="button">Delet</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
