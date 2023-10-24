@@ -39,20 +39,21 @@ https://templatemo.com/tm-590-topic-listing
     <main>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                
+                <a class="navbar-brand" href="#">Pengaduan</a>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="#">Tanggapan</a>
                         </li>
                     </ul>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a class="btn btn-outline-secondary" href="<?= base_url('/auth/login')?>" role="button">Sign in</a>
+                    <a class="btn btn-outline-secondary" href="<?= base_url('/auth/register')?>" role="button">Sign up</a>
                 </div>
             </div>
         </nav>
@@ -73,10 +74,18 @@ https://templatemo.com/tm-590-topic-listing
         <section class="featured-section">
             <div class="container">
                 <div class="row justify-content-center">
-                    <h2>jasdbas</h2>
                     <div class="col-lg-9 col-12 mb-4 mb-lg-0">
                         <div class="custom-block bg-white shadow-lg">
-                            
+                            <form action="">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -116,7 +125,7 @@ https://templatemo.com/tm-590-topic-listing
             </div>
         </section>
     </main>
-<h1>tesss</h1>
+
     <footer class="site-footer section-padding">
         <div class="container">
             <div class="row">
