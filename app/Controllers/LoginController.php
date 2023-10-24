@@ -33,8 +33,15 @@ class LoginController extends BaseController
         $password = md5($data['password']).$salt;
 
         $this->MasyarakatModel->save([
-            
-        ])
+            'nik' => $data['nik'],
+            'username' => $username,
+            'password' => $password,
+            'salt' => $salt,
+            'telepon' => $telepon
+        ]);
+
+        session()->setFlashdata('login', 'Anda berhasil mendaftar, silahkan login');
+        return redirect()->to('/auth/login');
     }
 
     public function logout()
