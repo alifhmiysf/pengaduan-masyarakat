@@ -25,7 +25,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="<?= base_url('css/pengaduan.css') ?>">
+    
     <!--
 
 TemplateMo 590 topic listing
@@ -38,13 +38,10 @@ https://templatemo.com/tm-590-topic-listing
 <body id="top">
 
     <main>
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-primary bege">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
@@ -55,9 +52,6 @@ https://templatemo.com/tm-590-topic-listing
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
                 </div>
@@ -83,20 +77,9 @@ https://templatemo.com/tm-590-topic-listing
             <div class="container">
                 <div class="row justify-content-center">
 
-                    <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                    <div class="col-lg-9 col-12 mb-4 mb-lg-0">
                         <div class="custom-block bg-white shadow-lg">
-                            <form action="" method="POST" class="">
-                                <label for="name">Nama:</label>
-                                <input type="text" id="name" name="name" required>
-
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required>
-
-                                <label for="complaint">Pengaduan:</label>
-                                <textarea id="complaint" name="complaint" rows="4" required></textarea>
-
-                                <button type="submit" class="btn btn-dark">Kirim</button>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -143,7 +126,6 @@ https://templatemo.com/tm-590-topic-listing
 
                 <div class="col-lg-3 col-12 mb-4 pb-2">
                     <a class="navbar-brand mb-2" href="index.html">
-                        <i class="bi-back"></i>
                         <span>Topic</span>
                     </a>
                 </div>
