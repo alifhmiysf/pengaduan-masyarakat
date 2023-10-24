@@ -38,7 +38,7 @@ https://templatemo.com/tm-590-topic-listing
 <body id="top">
 
     <main>
-        <nav class="navbar navbar-expand-lg navbar-primary bege">
+        <nav class="navbar navbar-expand-lg  ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
                 
