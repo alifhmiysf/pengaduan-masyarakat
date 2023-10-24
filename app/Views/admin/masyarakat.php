@@ -113,7 +113,7 @@
                     <!-- Page Heading -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <h1 class="h3 mb-2 text-gray-800 col align-self-start">Masyarakat</h1>
-                        <button class="btn btn-primary me-md-2" type="button">Tambah</button>
+                        <button type="button" class="btn btn-dark">+ Tambah</button>
                     </div>
 
                     <!-- DataTales Example -->
