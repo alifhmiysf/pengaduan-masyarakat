@@ -39,17 +39,20 @@ https://templatemo.com/tm-590-topic-listing
     <main>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Pengaduan</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="#">Features</a>
-                        <a class="nav-link" href="#">Pricing</a>
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </div>
+                <a class="navbar-brand" href="#">Navbar</a>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -70,14 +73,10 @@ https://templatemo.com/tm-590-topic-listing
         <section class="featured-section">
             <div class="container">
                 <div class="row justify-content-center">
-
+                    <h2>jasdbas</h2>
                     <div class="col-lg-9 col-12 mb-4 mb-lg-0">
                         <div class="custom-block bg-white shadow-lg">
-                            <form action="">
-                                <div class="form-group">
-                                    <h1>tes 1234</h1>
-                                </div>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
