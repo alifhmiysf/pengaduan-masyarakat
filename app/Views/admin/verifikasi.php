@@ -111,7 +111,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    
+
                     <h1 class="h3 mb-2 text-gray-800 col align-self-start">Verifikasi</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -131,7 +131,7 @@
                                     <tbody>
                                         <tr>
                                             <th scope="row">1</th>
-                                            <td>Kinar Aurasae</td>
+                                            <td>tes</td>
                                             <td>12/2/20</td>
                                             <td>Korem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum </td>
                                             <td>
