@@ -20,15 +20,30 @@
         <h1 class="judul">Sign Up</h1>
 
         <div class="login-form">
-          <form action="">
-            <input type="nik" placeholder="nik" class="input-nik" />
-            <input type="text" placeholder="Username" class="input-username" />
-            <input type="telepon" placeholder="+62" class="input-telepon" />
-            <input type="password" placeholder="Password" class="input-password" />
-            <input type="confirm-password" placeholder="confirm Password" class="input-confirm-password" />
-            <p>Don't have an account?<a href="#"> Sign Up </a> </p>
-            <button class="signin" type="submit">Sign Up</button>
-          </form>
+                        <?php
+                        $session = session();
+                        $error = $session->getFlashdata('error');
+                        ?>
+                        <h5 class=" text-center">Register</h5>
+                        <?php if ($error) { ?>
+                            <p style="color:red">Terjadi Kesalahan:
+                            <ul>
+                                <?php foreach ($error as $e) { ?>
+                                    <li><?php echo $e ?></li>
+                                <?php } ?>
+                            </ul>
+                            </p>
+                        <?php } ?>
+                        <form method="post" action="LoginController/valid_register">
+                          <input type="text" name="nik" placeholder="nik" required class="input-nik" />
+                          <input type="text" name="username" placeholder="Username" required class="input-username" />
+                          <input type="text" name="telepon" placeholder="+62" required class="input-telepon" />
+                          <input type="password" name="password" placeholder="Password" required class="input-password" />
+                          <input type="password" placeholder="confirm Password" required class="input-confirm-password" />
+                          <p>Don't have an account?<a href="#"> Sign Up </a> </p>
+                          <!-- <a h class="signin" type="submit">Sign Up</a> -->
+                          <button type="submit" name="register" class="btn btn-primary btn-block mb-4">Register</button>
+                        </form>
         </div>
       </div>
     </div>

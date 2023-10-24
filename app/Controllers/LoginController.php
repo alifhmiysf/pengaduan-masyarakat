@@ -9,6 +9,11 @@ class LoginController extends BaseController
     public function __construct()
     {
         $this->MasyarakatModel = new \App\Models\MasyarakatModel();
+        //meload validation
+        $this->validation = \Config\Services::validation();
+        
+        //meload session
+        $this->session = \Config\Services::session();
     }
 
 
@@ -17,20 +22,37 @@ class LoginController extends BaseController
         return view('layout/login');
     }
 
-    public function autentifikasi()
+    public function registrasi()
     {
-        $data = $this->request->getPost();
+        return view('layout/register');
+    }
 
-        $this->validation->run($data, 'register' );
-        $errors =$this->validation->getErrors();
-        if($errors) {
-            session()->setFlashdata('error',  $errors);
+
+    public function valid_register()
+    {
+        //tangkap data dari form 
+        $data = $this->request->getPost();
+        
+        //jalankan validasi
+        $this->validation->run($data, 'register');
+        
+        //cek errornya
+        $errors = $this->validation->getErrors();
+        
+        //jika ada error kembalikan ke halaman register
+        if($errors){
+            session()->setFlashdata('error', $errors);
             return redirect()->to('/auth/register');
         }
-
-
+        
+        //jika tdk ada error 
+        
+        //buat salt
         $salt = uniqid('', true);
+        
+        //hash password digabung dengan salt
         $password = md5($data['password']).$salt;
+        
 
         $this->MasyarakatModel->save([
             'nik' => $data['nik'],
@@ -44,12 +66,11 @@ class LoginController extends BaseController
         return redirect()->to('/auth/login');
     }
 
+
+    
     public function logout()
     {
 
     }
-    public function registrasi()
-    {
-        return view('layout/register');
-    }
+    
 }

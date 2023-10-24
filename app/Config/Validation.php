@@ -38,6 +38,22 @@ class Validation extends BaseConfig
         'single' => 'CodeIgniter\Validation\Views\single',
     ];
 
+    public $register = [
+        'username' => 'alpha_numeric|is_unique[user.username]',
+        'password' => 'min_length[8]alpha_numeric_punct',
+        'confirm' => 'matches[password]'
+    ];
+    public $register_errors = [
+        'username' => [
+            'alpha_numeric' => 'Username hanya boleh mengandung huruf dan angka ',
+            'is_unique' => 'Username sudah dipakai'
+        ],
+        'password' => [
+            'min_length' => 'password harus terdiri dari 8 kata',
+            'alpha_numeric_punct ' => 'Password hanya boleh mengandung angka,huruf, dan karakter yang valid'
+
+        ]
+    ];
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
