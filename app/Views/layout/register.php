@@ -34,13 +34,13 @@
                             </ul>
                             </p>
                         <?php } ?>
-                        <form method="post" action="LoginController/valid_register">
+                        <form method="post" action="<?= base_url('auth/register') ?>">
                           <input type="text" name="nik" placeholder="nik" required class="input-nik" />
                           <input type="text" name="username" placeholder="Username" required class="input-username" />
                           <input type="text" name="telepon" placeholder="+62" required class="input-telepon" />
                           <input type="password" name="password" placeholder="Password" required class="input-password" />
-                          <input type="password" placeholder="confirm Password" required class="input-confirm-password" />
-                          <p>Don't have an account?<a href="#"> Sign Up </a> </p>
+                          <input type="password" name="confirm" placeholder="confirm Password" required class="input-confirm-password" />
+                          <!-- <p>Don't have an account?<a href="#"> Sign Up </a> </p> -->
                           <!-- <a h class="signin" type="submit">Sign Up</a> -->
                           <button type="submit" name="register" class="btn btn-primary btn-block mb-4">Register</button>
                         </form>
