@@ -37,7 +37,7 @@ class PengaduanMasyarakat4 extends Migration
             ],
             'level' => [
                 'type' => 'ENUM',
-                'constraint' => ['0','1','2','3','4'],
+                'constraint' => ['1','2'],
             ],
         ]);
         $this->forge->addKey('id_petugas', true);
