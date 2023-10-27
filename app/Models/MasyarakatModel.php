@@ -16,7 +16,7 @@ class MasyarakatModel extends Model
     protected $allowedFields    = ['nik','username','password','salt','telepon'];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'date_created';
     protected $updatedField  = 'updated_at';
