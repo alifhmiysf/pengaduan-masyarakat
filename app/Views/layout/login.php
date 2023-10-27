@@ -23,12 +23,8 @@
           <form action="">
             <input type="text" placeholder="Username" class="input-username" />
             <input type="password" placeholder="Password" class="input-password" />
-
-
-            <p>Don't have an account?<a href="#"> Sign Up </a> </p>
-
-
             <button class="signin" type="submit">Sign In</button>
+            <p>Don't have an account?<a href="<?= base_url('auth/register') ?>"> Sign Up </a> </p>
           </form>
         </div>
       </div>
