@@ -15,3 +15,4 @@ $routes->get('/admin/verifikasi/', 'AdminController::verval');
 $routes->get('/admin/petugas/', 'AdminController::petugas');
 $routes->get('/admin/masyarakat/', 'AdminController::masyarakat');
 $routes->get('/pengaduan-masyarakat/home', 'MasyarakatController::index');
+$routes->get('/pengaduan-masyarakat/tanggapan', 'MasyarakatController::tanggapan');

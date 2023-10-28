@@ -10,4 +10,9 @@ class MasyarakatController extends BaseController
     {
         return view('users/index');
     }
+    public function tanggapan()
+    {
+        return view('users/tanggapan');
+    }
 }
+
