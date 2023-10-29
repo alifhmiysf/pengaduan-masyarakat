@@ -25,6 +25,7 @@ $routes->group('admin', function($routes) {
 $routes->group('pengaduan-masyarakat', function($routes) {
     // Rute Masyarakat
     $routes->get('home', 'MasyarakatController::index');
+    $routes->get('afterlogin', 'MasyarakatController::afterlogin');
     $routes->get('tanggapan', 'MasyarakatController::tanggapan');
 });
 

@@ -41,10 +41,18 @@ https://templatemo.com/tm-590-topic-listing
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Pengaduan</a>
 
-                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="<?= base_url('/pengaduan-masyarakat/home')?>">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/tanggapan') ?>">Tanggapan</a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a class="btn btn-outline-light" href="<?= base_url('/auth/login') ?>" role="button">Sign in</a>
-                    <a class="btn btn-outline-light" href="<?= base_url('/auth/register') ?>" role="button">Sign up</a>
+                    <a class="btn btn-outline-light" href="<?= base_url('/auth/login') ?>" role="button">Log Out</a>
                 </div>
             </div>
         </nav>

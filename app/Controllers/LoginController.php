@@ -118,7 +118,7 @@ class LoginController extends BaseController
         return redirect()->to('/petugas');
     } else {
         // Pengguna adalah masyarakat, arahkan sesuai peran
-        return redirect()->to('/pengaduan-masyarakat/home');
+        return redirect()->to('/pengaduan-masyarakat/afterlogin');
     }
 }
 
