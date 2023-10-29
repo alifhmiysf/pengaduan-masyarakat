@@ -18,12 +18,28 @@
     <div class="login">
       <div class="container">
         <h1 class="judul">Sign In</h1>
+        <?php
+        $session = session();
+        $login = $session->getFlashdata('login');
+        $username = $session->getFlashdata('username');
+        $password = $session->getFlashdata('password');
+        ?>
+        <?php if ($username) { ?>
+          <p style="color:red"><?php echo $username ?></p>
+        <?php } ?>
 
+        <?php if ($password) { ?>
+          <p style="color:red"><?php echo $password ?></p>
+        <?php } ?>
+
+        <?php if ($login) { ?>
+          <p style="color:green"><?php echo $login ?></p>
+        <?php } ?>
         <div class="login-form">
-          <form action="">
-            <input type="text" placeholder="Username" class="input-username" />
-            <input type="password" placeholder="Password" class="input-password" />
-            <button class="signin" type="submit">Sign In</button>
+          <form method="post" action="<?= base_url('auth/login') ?>">
+            <input type="text" name="username" placeholder="Username" class="input-username" />
+            <input type="password" name="password" placeholder="Password" class="input-password" />
+            <button class="signin" type="submit" name="signin">Sign In</button>
             <p>Don't have an account?<a href="<?= base_url('auth/register') ?>"> Sign Up </a> </p>
           </form>
         </div>

@@ -5,14 +5,28 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->post('auth/register', 'LoginController::valid_register');
+$routes->group('auth', function($routes) {
+    // Rute Registrasi
+    $routes->get('register', 'LoginController::registrasi');
+    $routes->post('register', 'LoginController::valid_register');
 
-$routes->get('/auth/login', 'LoginController::index');
-$routes->get('/auth/register', 'LoginController::registrasi');
-$routes->get('/admin', 'AdminController::index');
-$routes->get('/admin/verifikasi/', 'AdminController::verval');
-$routes->get('/admin/petugas/', 'AdminController::petugas');
-$routes->get('/admin/masyarakat/', 'AdminController::masyarakat');
-$routes->get('/pengaduan-masyarakat/home', 'MasyarakatController::index');
-$routes->get('/pengaduan-masyarakat/tanggapan', 'MasyarakatController::tanggapan');
+    // Rute Login dan Otentikasi
+    $routes->get('login', 'LoginController::index');
+    $routes->post('login', 'LoginController::valid_login');
+});
+
+$routes->group('admin', function($routes) {
+    $routes->get('/', 'AdminController::index');
+    $routes->get('verifikasi', 'AdminController::verval');
+    $routes->get('petugas', 'AdminController::petugas');
+    $routes->get('masyarakat', 'AdminController::masyarakat');
+});
+
+$routes->group('pengaduan-masyarakat', function($routes) {
+    // Rute Masyarakat
+    $routes->get('home', 'MasyarakatController::index');
+    $routes->get('tanggapan', 'MasyarakatController::tanggapan');
+});
+
+$routes->get('/', 'Home::index');
+
