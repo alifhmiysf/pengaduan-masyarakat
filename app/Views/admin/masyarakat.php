@@ -49,19 +49,19 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin')?>">
+                <a class="nav-link" href="<?= base_url('/admin') ?>">
                     <i class="fas fa-envelope"></i>
                     <span>Pengaduan</span></a>
             </li>
 
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin/petugas')?>">
+                <a class="nav-link" href="<?= base_url('/admin/petugas') ?>">
                     <i class="fas fa-user"></i>
                     <span>Petugas</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin/masyarakat')?>">
+                <a class="nav-link" href="<?= base_url('/admin/masyarakat') ?>">
                     <i class="fas fa-users"></i>
                     <span>Masyarakat</span></a>
             </li>
@@ -121,7 +121,30 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                
+                                <table class="table table-striped w-100" id="productTable">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Masyarakat</th>
+                                            <th>NIK</th>
+                                            <th>Username</th>
+                                            <th>Telepon</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($masyarakat as $row) : ?>
+                                            <tr>
+                                                <td><?= $row['id_masyarakat']; ?></td>
+                                                <td><?= $row['nik']; ?></td>
+                                                <td><?= $row['username']; ?></td>
+                                                <td><?= $row['telepon']; ?></td>
+                                                <td>
+                                                    <!-- Tambahkan tombol aksi sesuai kebutuhan -->
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

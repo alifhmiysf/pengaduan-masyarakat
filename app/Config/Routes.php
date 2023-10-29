@@ -19,7 +19,7 @@ $routes->group('admin', function ($routes) {
     $routes->get('/', 'AdminController::index');
     $routes->get('verifikasi', 'AdminController::verval');
     $routes->get('petugas', 'AdminController::petugas');
-    $routes->get('masyarakat', 'AdminController::masyarakat');
+    $routes->get('manajemen_masyarakat', 'ManajemenMasyarakat::index');
 });
 
 $routes->group('pengaduan-masyarakat', function ($routes) {
@@ -29,5 +29,6 @@ $routes->group('pengaduan-masyarakat', function ($routes) {
     $routes->get('tanggapan_after_login', 'MasyarakatController::tanggapan_after_login');
     $routes->get('tanggapan', 'MasyarakatController::tanggapan');
 });
+
 
 $routes->get('/', 'Home::index');
