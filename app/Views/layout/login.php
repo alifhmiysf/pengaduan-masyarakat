@@ -37,7 +37,7 @@
         <?php } ?>
         <div class="login-form">
           <form method="post" action="<?= base_url('auth/login') ?>">
-            <input type="text" name="username" placeholder="Username" class="input-username" />
+            <input type="text" name="username" placeholder="Username"   class="input-username "  />
             <input type="password" name="password" placeholder="Password" class="input-password" />
             <button class="signin" type="submit" name="signin">Sign In</button>
             <p>Don't have an account?<a href="<?= base_url('auth/register') ?>"> Sign Up </a> </p>

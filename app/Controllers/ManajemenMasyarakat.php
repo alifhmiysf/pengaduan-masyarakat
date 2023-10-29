@@ -42,22 +42,6 @@ class ManajemenMasyarakat extends ResourceController
         }
     }
 
-    public function create()
-    {
-        // Membuat data masyarakat baru
-        $data = $this->request->getPost();
-
-        $validation = \Config\Services::validation();
-        $validation->run($data, 'masyarakat');
-
-        if ($validation->hasErrors()) {
-            return $this->fail($validation->getErrors());
-        } else {
-            $this->MasyarakatModel->save($data);
-            return $this->respondCreated($data, 'Masyarakat berhasil ditambahkan.');
-        }
-    }
-
     public function update($id = null)
     {
         // Memperbarui data masyarakat berdasarkan ID

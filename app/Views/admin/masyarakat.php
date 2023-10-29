@@ -113,7 +113,7 @@
                     <!-- Page Heading -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <h1 class="h3 mb-2 text-gray-800 col align-self-start">Masyarakat</h1>
-                        <button type="button" class="btn btn-dark">+ Tambah</button>
+                        
                     </div>
 
                     <!-- DataTales Example -->
@@ -139,6 +139,15 @@
                                                 <td><?= $row['username']; ?></td>
                                                 <td><?= $row['telepon']; ?></td>
                                                 <td>
+                                                <button type="button" class="btn btn-outline-warning">Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-dash-fill" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
+                                                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                        </svg></button>
+                                                    <button type="button" class="btn btn-outline-danger">Delete <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-dash-fill" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
+                                                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                        </svg></button>
+
                                                     <!-- Tambahkan tombol aksi sesuai kebutuhan -->
                                                 </td>
                                             </tr>
