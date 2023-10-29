@@ -61,7 +61,7 @@
                     <span>Petugas</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/admin/masyarakat') ?>">
+                <a class="nav-link" href="<?= base_url('/admin/manajemen_masyarakat') ?>">
                     <i class="fas fa-users"></i>
                     <span>Masyarakat</span></a>
             </li>
