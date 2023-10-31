@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\MasyarakatModel;
 use App\Models\PetugasModel;
+
 class LoginController extends BaseController
 {
     public function __construct()
@@ -73,54 +74,99 @@ class LoginController extends BaseController
     }
 
 
-    public function valid_login()
-{
-    $data = $this->request->getPost();
+    public function valid_login_old()
+    {
+        $data = $this->request->getPost();
 
-    // Cari pengguna di tabel masyarakat
-    $masyarakat = $this->MasyarakatModel->where('username', $data['username'])->first();
+        // Cari pengguna di tabel masyarakat
+        $masyarakat = $this->MasyarakatModel->where('username', $data['username'])->first();
+        // $masyarakat = $this->MasyarakatModel->where('nik', $data['username'])->first();
 
-    if (!$masyarakat) {
-        // Jika pengguna tidak ditemukan di tabel masyarakat, coba mencari di tabel petugas
         $petugas = $this->PetugasModel->where('username', $data['username'])->first();
-
         if ($petugas) {
+            // Jika pengguna tidak ditemukan di tabel masyarakat, coba mencari di tabel petugas
+            // $petugas = $this->PetugasModel->where('username', $data['username'])->first();
+
+            //if ($petugas) {
             // Pengguna ditemukan di tabel petugas
+            // $role = $petugas['level']; // Ambil peran (role) dari pengguna petugas
             if (password_verify($data['password'] . $petugas['salt'], $petugas['password'])) {
-                $role = $petugas['role']; // Ambil peran (role) dari pengguna petugas
+                echo "lari ke admin";
             } else {
                 // Kata sandi salah
                 session()->setFlashdata('error', 'Password salah');
                 return redirect()->to('/auth/login');
             }
+            // } else {
+            //     // Jika pengguna tidak ditemukan di kedua tabel, tampilkan pesan kesalahan
+            //     session()->setFlashdata('error', 'Username tidak ditemukan');
+            //     return redirect()->to('/auth/login');
+            // }
         } else {
-            // Jika pengguna tidak ditemukan di kedua tabel, tampilkan pesan kesalahan
-            session()->setFlashdata('error', 'Username tidak ditemukan');
-            return redirect()->to('/auth/login');
+            // Pengguna ditemukan di tabel masyarakat
+            if (password_verify($data['password'] . $masyarakat['salt'], $masyarakat['password'])) {
+                $role = 'masyarakat'; // Pengguna adalah masyarakat
+            } else {
+                // Kata sandi salah
+                session()->setFlashdata('error', 'Password salah');
+                return redirect()->to('/auth/login');
+            }
         }
-    } else {
-        // Pengguna ditemukan di tabel masyarakat
-        if (password_verify($data['password'] . $masyarakat['salt'], $masyarakat['password'])) {
-            $role = 'masyarakat'; // Pengguna adalah masyarakat
+
+        // Selanjutnya, sesuaikan pengguna sesuai peran (role)
+        if ($role == 1) {
+            // Pengguna adalah admin, arahkan sesuai peran
+            return redirect()->to('/admin/manajemen_masyarakat');
+        } elseif ($role == 2) {
+            // Pengguna adalah petugas, arahkan sesuai peran
+            return redirect()->to('/admin/petugas');
         } else {
-            // Kata sandi salah
-            session()->setFlashdata('error', 'Password salah');
+            // Pengguna adalah masyarakat, arahkan sesuai peran
+            return redirect()->to('/pengaduan-masyarakat/afterlogin');
+        }
+    }
+
+    public function valid_login()
+    {
+        $data = $this->request->getPost();
+        $masyarakat = $this->MasyarakatModel->where('username', $data['username'])->first();
+        $petugas = $this->PetugasModel->where('username', $data['username'])->first();
+
+        if ($masyarakat) {
+            # cek password masyarakat
+            $cekPasswordM = password_verify($data['password'] . $masyarakat['salt'], $masyarakat['password']);
+            if ($cekPasswordM) {
+                # lanjut ke dashboard masyarakat
+                return redirect()->to('/pengaduan-masyarakat/afterlogin');
+            } else {
+                #tampilkan notifikasi password salah dan kembali ke halaman login
+                session()->setFlashdata('error', 'Password salah');
+                return redirect()->to('/auth/login');
+            }
+        } elseif ($petugas) {
+            # cek password petugas
+            $cekPasswordP = password_verify($data['password'], $petugas['password']);
+            if ($cekPasswordP) {
+                # lanjut ke dashboard petugas
+                if ($petugas['level'] == '1') {
+                    # menuju ke admin
+                    return redirect()->to('/admin/manajemen_masyarakat');
+                } else {
+                    # menuju ke petugas
+                    return redirect()->to('/admin/petugas');
+                }
+            } else {
+                #tampilkan notifikasi password salah dan kembali ke halaman login
+                session()->setFlashdata('error', 'Password salah');
+                return redirect()->to('/auth/login');
+            }
+        } else {
+            #tampilkan notifikasi username tidak terdaftar dan kembali ke halaman login
+            session()->setFlashdata('error', 'Username tidak terdaftar');
             return redirect()->to('/auth/login');
         }
     }
 
-    // Selanjutnya, sesuaikan pengguna sesuai peran (role)
-    if ($role == 'admin') {
-        // Pengguna adalah admin, arahkan sesuai peran
-        return redirect()->to('/admin');
-    } elseif ($role == 'petugas') {
-        // Pengguna adalah petugas, arahkan sesuai peran
-        return redirect()->to('/petugas');
-    } else {
-        // Pengguna adalah masyarakat, arahkan sesuai peran
-        return redirect()->to('/pengaduan-masyarakat/afterlogin');
-    }
-}
 
     public function logout()
     {
