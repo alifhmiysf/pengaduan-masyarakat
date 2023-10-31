@@ -152,7 +152,7 @@ class LoginController extends BaseController
                     return redirect()->to('/admin/manajemen_masyarakat');
                 } else {
                     # menuju ke petugas
-                    return redirect()->to('/admin/petugas');
+                    return redirect()->to('/petugas');
                 }
             } else {
                 #tampilkan notifikasi password salah dan kembali ke halaman login
