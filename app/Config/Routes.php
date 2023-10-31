@@ -30,5 +30,12 @@ $routes->group('pengaduan-masyarakat', function ($routes) {
     $routes->get('tanggapan', 'MasyarakatController::tanggapan');
 });
 
+$routes->group('petugas', function ($routes) {
+    // Rute petugas
+    $routes->get('/', 'PetugasController::index');
+    $routes->get('masyarakat', 'PetugasController::masyarakat');
+    $routes->get('verifikasi', 'PetugasController::verifikasi');
+});
+
 
 $routes->get('/', 'Home::index');
