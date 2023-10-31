@@ -145,8 +145,7 @@ class LoginController extends BaseController
             }
         } elseif ($petugas) {
             # cek password petugas
-            $cekPasswordP = password_verify($data['password'], $petugas['password']);
-            if ($cekPasswordP) {
+            if ($data['password'] . $petugas['salt'] == $petugas['password']) {
                 # lanjut ke dashboard petugas
                 if ($petugas['level'] == '1') {
                     # menuju ke admin
