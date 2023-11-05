@@ -75,32 +75,28 @@ https://templatemo.com/tm-590-topic-listing
                 <div class="row justify-content-center">
                     <div class="col-lg-9 col-12 mb-4 mb-lg-0">
                         <div class="custom-block bg-white shadow-lg">
-                            <form method="post" action="<?= site_url('pengaduan-masyarakat/afterloginn'); ?>" enctype="multipart/form-data">
+                            <form method="post" action="<?= site_url('PengirimanData/simpanData'); ?>">
                                 <div class="mb-3">
                                     <label for="NIK" class="form-label">NIK</label>
                                     <input type="text" class="form-control" id="NIK" name="NIK" placeholder="NIK">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="pengaduan" class="form-label">Pilih tanggal kejadian</label>
-                                    <input type="date" class="form-control" id="pengaduan" name="pengaduan">
+                                    <label for="kejadian" class="form-label">Pilih tanggal kejadian</label>
+                                    <input type="text" class="form-control" id="kejadian" name="kejadian" placeholder="kejadian">
                                 </div>
-
 
                                 <div class="mb-3">
                                     <label for="isi_laporan" class="form-label">Isi laporan</label>
                                     <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="3"></textarea>
                                 </div>
-
                                 <div class="mb-3">
-                                    <label for="file" class="form-label">Upload File</label>
-                                    <input type="file" class="form-control" id="file" name="file">
+                                    <label class="form-label" for="file">Upload</label>
+                                    <input type="file" class="form-control" id="inputGroupFile01">
                                 </div>
-
                                 <button type="submit" class="btn btn-primary">Kirim</button>
                             </form>
 
-<!-- s -->
 
                             <!-- <form action="">
                                 <div class="mb-3">

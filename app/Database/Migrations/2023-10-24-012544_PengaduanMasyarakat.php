@@ -34,7 +34,7 @@ class PengaduanMasyarakat extends Migration
                 'constraint' => '64',
             ],
             'telepon' => [
-                'type' => 'INT',
+                'type' => 'VARCHAR',
                 'constraint' => '13',
             ],
             'date_created' => [

@@ -26,9 +26,16 @@ $routes->group('pengaduan-masyarakat', function ($routes) {
     // Rute Masyarakat
     $routes->get('home', 'MasyarakatController::index');
     $routes->get('afterlogin', 'MasyarakatController::afterlogin');
+    $routes->get('sukses', 'PengaduanController::index');
+    $routes->post('afterloginn', 'PengaduanController::create');
+
+    $routes->get('sukses', 'PengaduanController::create');
     $routes->get('tanggapan_after_login', 'MasyarakatController::tanggapan_after_login');
     $routes->get('tanggapan', 'MasyarakatController::tanggapan');
 });
+$routes->post('pengaduan-masyarakat/create', 'PengaduanController::create');
+$routes->get('sukses', 'PengaduanController::index');
+$routes->get('sukses', 'PengaduanController::create');
 
 $routes->group('petugas', function ($routes) {
     // Rute petugas
