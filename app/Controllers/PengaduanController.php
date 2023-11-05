@@ -22,16 +22,22 @@ class PengaduanController extends ResourceController
         //meload session
         $this->session = \Config\Services::session();
     }
-    public function index()
-    {
-        return view('/users/afterlogin');
-    }
 
-    /**
-     * Return the properties of a resource object
-     *
-     * @return mixed
-     */
+    public function index()
+{
+    // Mendapatkan semua data masyarakat
+    $pengaduan = $this->PengaduanModel->findAll();
+
+    // Cetak data untuk memeriksa struktur
+    // print_r($pengaduan);
+
+    $data = [
+        'pengaduan' => $pengaduan,
+    ];
+
+    return view('admin/index', $data);
+}
+
     public function show($id = null)
     {
         //
@@ -53,33 +59,33 @@ class PengaduanController extends ResourceController
      * @return mixed
      */
     public function create()
-{
-    $nik = $this->request->getPost('NIK');
-    $tanggal_pengaduan = $this->request->getPost('pengaduan');
-    $isi_laporan = $this->request->getPost('isi_laporan');
-    $foto = $this->request->getFile('foto');
+    {
+        $nik = $this->request->getPost('NIK');
+        $tanggal_pengaduan = $this->request->getPost('pengaduan');
+        $isi_laporan = $this->request->getPost('isi_laporan');
+        $foto = $this->request->getFile('foto');
 
-    $newName = null; // Inisialisasi $newName dengan null
+        $newName = null; // Inisialisasi $newName dengan null
 
-    if ($foto && $foto->isValid() && !$foto->hasMoved()) {
-        $newName = $foto->getRandomName();
-        $foto->move(ROOTPATH . 'public/uploads/', $newName); // Simpan foto ke direktori 'uploads'
+        if ($foto && $foto->isValid() && !$foto->hasMoved()) {
+            $newName = $foto->getRandomName();
+            $foto->move(ROOTPATH . 'public/uploads/', $newName); // Simpan foto ke direktori 'uploads'
+        }
+
+        // Validasi berhasil, lanjutkan dengan penyimpanan data ke database atau operasi lainnya
+        $data = [
+            'nik' => $nik,
+            'tanggal_pengaduan' => $tanggal_pengaduan,
+            'isi_laporan' => $isi_laporan,
+            'foto' => $newName, // Simpan nama file, atau NULL jika tidak ada file yang valid
+        ];
+
+        // var_dump($nik, $tanggal_pengaduan, $isi_laporan, $foto->getName()); 
+        // die(); 
+        $this->PengaduanModel->insert($data);
+
+        return redirect()->to('/pengaduan-masyarakat/home')->with('success', 'Data berhasil disimpan.');
     }
-
-    // Validasi berhasil, lanjutkan dengan penyimpanan data ke database atau operasi lainnya
-    $data = [
-        'nik' => $nik,
-        'tanggal_pengaduan' => $tanggal_pengaduan,
-        'isi_laporan' => $isi_laporan,
-        'foto' => $newName, // Simpan nama file, atau NULL jika tidak ada file yang valid
-    ];
-
-    var_dump($nik, $tanggal_pengaduan, $isi_laporan, $foto->getName(), $newName); // Tambahkan ini
-
-    $this->PengaduanModel->insert($data);
-
-    return redirect()->to('/pengaduan-masyarakat/home')->with('success', 'Data berhasil disimpan.');
-}
 
 
 

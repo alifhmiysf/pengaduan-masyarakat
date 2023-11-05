@@ -16,17 +16,18 @@ $routes->group('auth', function ($routes) {
 });
 
 $routes->group('admin', function ($routes) {
-    $routes->get('/', 'AdminController::index');
+    $routes->get('/', 'PengaduanController::index');
     $routes->get('verifikasi', 'AdminController::verval');
     $routes->get('petugas', 'AdminController::petugas');
     $routes->get('manajemen_masyarakat', 'ManajemenMasyarakat::index');
+    
 });
 
 $routes->group('pengaduan-masyarakat', function ($routes) {
     // Rute Masyarakat
     $routes->get('home', 'MasyarakatController::index');
     $routes->get('afterlogin', 'MasyarakatController::afterlogin');
-    $routes->get('sukses', 'PengaduanController::index');
+    // $routes->get('sukses', 'PengaduanController::index');
 
     // Rute untuk pengaduan (gunakan POST untuk membuat pengaduan)
     $routes->post('afterloginn', 'PengaduanController::create'); 
