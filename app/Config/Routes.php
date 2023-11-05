@@ -27,15 +27,17 @@ $routes->group('pengaduan-masyarakat', function ($routes) {
     $routes->get('home', 'MasyarakatController::index');
     $routes->get('afterlogin', 'MasyarakatController::afterlogin');
     $routes->get('sukses', 'PengaduanController::index');
-    $routes->post('afterloginn', 'PengaduanController::create');
 
-    $routes->get('sukses', 'PengaduanController::create');
+    // Rute untuk pengaduan (gunakan POST untuk membuat pengaduan)
+    $routes->post('afterloginn', 'PengaduanController::create'); 
+    $routes->post('afterloginn', 'PengaduanController::index'); 
+
     $routes->get('tanggapan_after_login', 'MasyarakatController::tanggapan_after_login');
     $routes->get('tanggapan', 'MasyarakatController::tanggapan');
 });
-$routes->post('pengaduan-masyarakat/create', 'PengaduanController::create');
-$routes->get('sukses', 'PengaduanController::index');
-$routes->get('sukses', 'PengaduanController::create');
+
+// // Menggunakan resource untuk pengaduan-masyarakat dengan controller yang benar
+// $routes->resource('pengaduan-masyarakat', ['PengaduanController']); 
 
 $routes->group('petugas', function ($routes) {
     // Rute petugas
@@ -44,5 +46,5 @@ $routes->group('petugas', function ($routes) {
     $routes->get('verifikasi', 'PetugasController::verifikasi');
 });
 
-
 $routes->get('/', 'Home::index');
+

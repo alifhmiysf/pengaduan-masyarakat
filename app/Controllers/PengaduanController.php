@@ -63,10 +63,8 @@ class PengaduanController extends ResourceController
 
     if ($foto && $foto->isValid() && !$foto->hasMoved()) {
         $newName = $foto->getRandomName();
-        $foto->move('./uploads/', $newName);
+        $foto->move(ROOTPATH . 'public/uploads/', $newName); // Simpan foto ke direktori 'uploads'
     }
-
-    // ... (lanjutkan kode lainnya)
 
     // Validasi berhasil, lanjutkan dengan penyimpanan data ke database atau operasi lainnya
     $data = [
@@ -76,15 +74,13 @@ class PengaduanController extends ResourceController
         'foto' => $newName, // Simpan nama file, atau NULL jika tidak ada file yang valid
     ];
 
-    $this->PengaduanModel->insert($data);
+    var_dump($nik, $tanggal_pengaduan, $isi_laporan, $foto->getName(), $newName); // Tambahkan ini
 
-    // Simpan file ke direktori yang sesuai
-    if ($newName) {
-        $foto->move(ROOTPATH . './uploads'); // Sesuaikan dengan direktori penyimpanan yang sesuai
-    }
+    $this->PengaduanModel->insert($data);
 
     return redirect()->to('/pengaduan-masyarakat/home')->with('success', 'Data berhasil disimpan.');
 }
+
 
 
 

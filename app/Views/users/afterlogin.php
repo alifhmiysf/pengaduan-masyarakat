@@ -93,8 +93,8 @@ https://templatemo.com/tm-590-topic-listing
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="file" class="form-label">Upload File</label>
-                                    <input type="file" class="form-control" id="file" name="file">
+                                    <label for="foto" class="form-label">Upload foto</label>
+                                    <input type="file" class="form-control" id="foto" name="foto">
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Kirim</button>
