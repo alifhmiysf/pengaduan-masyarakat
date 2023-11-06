@@ -116,7 +116,7 @@
                     <h1 class="h3 mb-2 text-gray-800">Pengaduan Masyarakat</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-<h1>da</h1>
+                        <h1>da</h1>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -127,6 +127,7 @@
                                             <th>NIK</th>
                                             <th>Isi Laporan</th>
                                             <th>Foto</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -138,6 +139,19 @@
                                                 <td><?= $row['nik']; ?></td>
                                                 <td><?= $row['isi_laporan']; ?></td>
                                                 <td><?= $row['foto']; ?></td>
+                                                <td>
+                                                    <?php if ($row['status'] == 0) : ?>
+                                                        Diajukan
+                                                    <?php elseif ($row['status'] == 1) : ?>
+                                                        Diterima
+                                                    <?php elseif ($row['status'] == 2) : ?>
+                                                        Diproses
+                                                    <?php elseif ($row['status'] == 3) : ?>
+                                                        Selesai
+                                                    <?php elseif ($row['status'] == 4) : ?>
+                                                        Ditolak
+                                                    <?php endif; ?>
+                                                </td>
                                                 <td>
                                                     <button type="button" class="btn btn-outline-warning">Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-dash-fill" viewBox="0 0 16 16">
                                                             <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
@@ -152,7 +166,7 @@
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
-                                    </table>
+                                </table>
                             </div>
                         </div>
                     </div>
