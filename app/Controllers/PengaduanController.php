@@ -21,6 +21,12 @@ class PengaduanController extends ResourceController
 
         //meload session
         $this->session = \Config\Services::session();
+
+        if(!session()->getFlashdata('isLogin'))
+        {
+            session()->setFlashdata("pesan","Anda Belum Login harap Login terlebih dahulu untuk mengakses semua fitur");
+            return redirect()->to('/login');
+        }
     }
 
     public function index()
@@ -74,6 +80,7 @@ class PengaduanController extends ResourceController
 
         // Validasi berhasil, lanjutkan dengan penyimpanan data ke database atau operasi lainnya
         $data = [
+            'id_masyarakat' => $this->session->get('id_masyarakat'),
             'nik' => $nik,
             'tanggal_pengaduan' => $tanggal_pengaduan,
             'isi_laporan' => $isi_laporan,

@@ -35,6 +35,9 @@ $routes->group('pengaduan-masyarakat', function ($routes) {
 
     $routes->get('tanggapan_after_login', 'MasyarakatController::tanggapan_after_login');
     $routes->get('tanggapan', 'MasyarakatController::tanggapan');
+
+    $routes->get('/status_terima','PengaduanController::terima');
+    $routes->get('/status_tolak','PengaduanController::tolak');
 });
 
 // // Menggunakan resource untuk pengaduan-masyarakat dengan controller yang benar

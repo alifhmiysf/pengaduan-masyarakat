@@ -11,6 +11,7 @@ class LoginController extends BaseController
     public function __construct()
     {
         $this->MasyarakatModel = new \App\Models\MasyarakatModel();
+       
         $this->PetugasModel = new \App\Models\PetugasModel();
 
         //meload validation
@@ -137,6 +138,12 @@ class LoginController extends BaseController
             $cekPasswordM = password_verify($data['password'] . $masyarakat['salt'], $masyarakat['password']);
             if ($cekPasswordM) {
                 # lanjut ke dashboard masyarakat
+                # Setup session 
+                $this->MasyarakatModel->where('id_masyarakat',session()->getFlashdata('id_masyarakat'))->first();
+                $this->session->set([
+                    "isLogin" => TRUE,
+                    "id_masyarakat" => $masyarakat['id_masyarakat'],
+                ]);
                 return redirect()->to('/pengaduan-masyarakat/afterlogin');
             } else {
                 #tampilkan notifikasi password salah dan kembali ke halaman login

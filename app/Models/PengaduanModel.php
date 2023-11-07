@@ -13,7 +13,7 @@ class PengaduanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['tanggal_pengaduan','nik','isi_laporan','foto','status'];
+    protected $allowedFields    = ['id_masyarakat','tanggal_pengaduan','nik','isi_laporan','foto','status'];
 
     // Dates
     protected $useTimestamps = false;

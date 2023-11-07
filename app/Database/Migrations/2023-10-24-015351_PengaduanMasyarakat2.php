@@ -9,6 +9,11 @@ class PengaduanMasyarakat2 extends Migration
     public function up()
     {
         $this->forge->addField([
+            'id_masyarakat' => [
+                'type' => 'INT',
+                'constraint' => '11',
+                'unsigned' => true,
+            ],
             'id_pengaduan' => [
                 'type' => 'INT',
                 'constraint' => '10',
