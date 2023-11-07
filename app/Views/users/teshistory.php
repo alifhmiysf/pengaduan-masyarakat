@@ -13,6 +13,11 @@
 </head>
 
 <body>
+    
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="<?= base_url('/pengaduan-masyarakat/afterlogin')  ?>" class="btn btn-primary"> <==== Kembali =====></a>
+                    <a class="btn btn-outline-primary" href="<?= base_url('/auth/login') ?>" role="button">Log Out</a>
+                </div>
     <div class="container border border-dark mt-5">
         <!-- Button trigger modal -->
 
