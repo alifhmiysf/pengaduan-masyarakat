@@ -13,7 +13,14 @@ class MasyarakatController extends BaseController
         $this->PengaduanModel = new \App\Models\PengaduanModel();
         $this->session = session();
     }
+
     public function index()
+    {
+        return view('users/index');
+    }
+
+
+    public function history()
     {
 
         // Mendapatkan semua data masyarakat
@@ -22,13 +29,13 @@ class MasyarakatController extends BaseController
 
 
         // Cetak data untuk memeriksa struktur
-        
+
 
         $data = [
             'pengaduan' => $pengaduan,
         ];
 
-        return view('users/teshistory',$data);
+        return view('users/teshistory', $data);
     }
     public function tanggapan()
     {
