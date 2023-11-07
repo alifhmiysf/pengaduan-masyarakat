@@ -139,7 +139,7 @@ class LoginController extends BaseController
             if ($cekPasswordM) {
                 # lanjut ke dashboard masyarakat
                 # Setup session 
-                $this->MasyarakatModel->where('id_masyarakat',session()->getFlashdata('id_masyarakat'))->first();
+                
                 $this->session->set([
                     "isLogin" => TRUE,
                     "id_masyarakat" => $masyarakat['id_masyarakat'],
