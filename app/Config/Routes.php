@@ -26,6 +26,7 @@ $routes->group('admin', function ($routes) {
 $routes->group('pengaduan-masyarakat', function ($routes) {
     // Rute Masyarakat
     $routes->get('home', 'MasyarakatController::index');
+    $routes->get('history1', 'MasyarakatController::history1');
     $routes->get('history', 'MasyarakatController::history');
     $routes->get('afterlogin', 'MasyarakatController::afterlogin');
     // $routes->get('sukses', 'PengaduanController::index');

@@ -49,4 +49,8 @@ class MasyarakatController extends BaseController
     {
         return view('users/tanggapan_after_login');
     }
+    public function history1()
+    {
+        return view('users/history');
+    }
 }
