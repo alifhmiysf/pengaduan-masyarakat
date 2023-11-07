@@ -25,7 +25,7 @@
             <h1>judul</h1>
             <div class="row">
                 <div class="col-6"><button type="button" class="btn btn-primary mt-5 d-grid gap-2 d-md-flex justify-content-md-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Launch demo modal
+                        Detail
                     </button></div>
             </div>
 oi
@@ -48,8 +48,8 @@ oi
                             <?php endforeach; ?>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            
+                            <button type="button" class="btn btn-success">Selesai</button>
                         </div>
                     </div>
                 </div>

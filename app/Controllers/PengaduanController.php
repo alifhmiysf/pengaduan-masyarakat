@@ -91,7 +91,7 @@ class PengaduanController extends ResourceController
         // die(); 
         $this->PengaduanModel->insert($data);
 
-        return redirect()->to('/pengaduan-masyarakat/home')->with('success', 'Data berhasil disimpan.');
+        return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Data berhasil disimpan.');
     }
 
 
