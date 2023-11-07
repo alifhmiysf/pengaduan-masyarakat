@@ -49,6 +49,9 @@ https://templatemo.com/tm-590-topic-listing
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/tanggapan_after_login') ?>">Tanggapan</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/tanggapan_after_login') ?>">History</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
