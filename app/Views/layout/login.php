@@ -17,7 +17,7 @@
 
     <div class="login">
       <div class="container">
-        <h1 class="judul">Sign In</h1>
+        <h1 class="judul">Daftarrrr</h1>
         <?php
         $session = session();
         $login = $session->getFlashdata('login');
