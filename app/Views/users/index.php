@@ -39,7 +39,7 @@ https://templatemo.com/tm-590-topic-listing
     <main>
         <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #243D54;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Pengaduann</a>
+                <a class="navbar-brand" href="#">Pengaduan</a>
 
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
