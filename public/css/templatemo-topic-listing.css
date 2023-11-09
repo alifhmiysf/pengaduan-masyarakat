@@ -455,7 +455,6 @@ strong {
   position: relative;
   overflow: hidden;
   padding: 30px;
-  transition: all 0.3s ease;
   height: 100%;
 }
 

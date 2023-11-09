@@ -1,0 +1,9 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5; /* Ganti dengan warna latar belakang yang Anda inginkan */
+    text-align: center; /* Pusatkan teks di dalam footer */
+    padding: 10px 0; /* Tambahkan padding atas dan bawah sesuai kebutuhan */
+}
+
