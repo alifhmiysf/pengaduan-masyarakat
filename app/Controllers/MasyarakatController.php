@@ -22,21 +22,17 @@ class MasyarakatController extends BaseController
 
     public function history()
     {
-
-        // Mendapatkan semua data masyarakat
-        $pengaduan = $this->PengaduanModel->findAll();
-        $pengaduan_masyarakat = $this->PengaduanModel->where("id_masyarakat", $this->session->get('id_masyarakat'))->first();
-
-
-        // Cetak data untuk memeriksa struktur
-
+        // Mendapatkan semua data pengaduan untuk pengguna yang saat ini login
+        $id_masyarakat = $this->session->get('id_masyarakat');
+        $pengaduan = $this->PengaduanModel->where("id_masyarakat", $id_masyarakat)->findAll();
 
         $data = [
             'pengaduan' => $pengaduan,
         ];
 
-        return view('users/teshistory', $data);
+        return view('users/history', $data);
     }
+
     public function tanggapan()
     {
         return view('users/tanggapan');
@@ -49,8 +45,5 @@ class MasyarakatController extends BaseController
     {
         return view('users/tanggapan_after_login');
     }
-    public function history1()
-    {
-        return view('users/history');
-    }
+    
 }

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,29 +12,9 @@
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-
-    <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
-
-    <link href="<?= base_url('css/bootstrap-icons.css') ?>" rel="stylesheet">
-
-    <link href="<?= base_url('css/templatemo-topic-listing.css') ?>" rel="stylesheet">
-
-    <link href="<?= base_url('css/history.css') ?>" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
-    <!--
-
-TemplateMo 590 topic listing
-
-https://templatemo.com/tm-590-topic-listing
-
--->
 </head>
 
 <body id="top">
@@ -42,7 +22,6 @@ https://templatemo.com/tm-590-topic-listing
         <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #243D54;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Pengaduan</a>
-
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
@@ -61,15 +40,13 @@ https://templatemo.com/tm-590-topic-listing
                 </div>
             </div>
         </nav>
-
-
-        
-
         <div class="card border-0  w-50 mx-auto my-5 d-grid gap-2 d-md-flex justify">
             <h3>History</h3>
             <hr>
         </div>
 
+        <?php foreach ($pengaduan as $row) : ?>
+    <div class="container">
         <div class="card border-0 shadow w-50 mx-auto my-5 d-grid gap-2 d-md-flex justify-content-md-end " style="padding: 20px;">
             <div class="row g-0">
                 <div class="col-6 col-sm-1" style="height: auto;">
@@ -80,19 +57,18 @@ https://templatemo.com/tm-590-topic-listing
                 </div>
                 <div class="col" style="height: auto;">
                     <!-- Konten  -->
-                    di isi judul laporan
+                    Diisi judul laporan
                 </div>
 
                 <div class="col d-flex justify-content-end ">
                     <!-- Konten kolom kanan -->
-                    <a type="button" class=" " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Lihat detail</a>
+                    <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan']; ?>" data-bs-whatever="@mdo">Lihat detail</a>
                 </div>
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class=" modal-dialog modal-lg">
+        <div class="modal fade" id="exampleModal<?= $row['id_pengaduan']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Judul history</h5>
@@ -109,30 +85,28 @@ https://templatemo.com/tm-590-topic-listing
                                         <h2>Identitas</h2>
                                     </ul>
                                     <ul>
-                                        id masyarakat :
+                                        id masyarakat : <?= $row['id_masyarakat']; ?>
                                     </ul>
                                     <ul>
-                                        id pengaduan :
+                                        id pengaduan : <?= $row['id_pengaduan']; ?>
                                     </ul>
                                     <ul>
-                                        tanggal pengaduan :
+                                        tanggal pengaduan : <?= $row['tanggal_pengaduan']; ?>
                                     </ul>
                                     <ul>
-                                        nik :
+                                        nik : <?= $row['nik']; ?>
                                     </ul>
                                     <ul>
-                                        status :
+                                        status : <?= $row['status']; ?>
                                     </ul>
                                     <ul>
                                         <h2>Isi laporan</h2>
                                     </ul>
                                     <ul>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt accusamus perferendis odio tempora distinctio possimus veniam nulla inventore. Tempora expedita obcaecati iste architecto repellat earum rem impedit dolorum ipsam cumque.
+                                        <?= $row['isi_laporan']; ?>
                                     </ul>
                                 </div>
-                                
                             </div>
-                            
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -141,15 +115,12 @@ https://templatemo.com/tm-590-topic-listing
                 </div>
             </div>
         </div>
-        
+    </div>
+<?php endforeach; ?>
     </main>
 
     <!-- JAVASCRIPT FILES -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/click-scroll.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 
