@@ -11,7 +11,7 @@ class LoginController extends BaseController
     public function __construct()
     {
         $this->MasyarakatModel = new \App\Models\MasyarakatModel();
-       
+
         $this->PetugasModel = new \App\Models\PetugasModel();
 
         //meload validation
@@ -139,7 +139,7 @@ class LoginController extends BaseController
             if ($cekPasswordM) {
                 # lanjut ke dashboard masyarakat
                 # Setup session 
-                
+
                 $this->session->set([
                     "isLogin" => TRUE,
                     "id_masyarakat" => $masyarakat['id_masyarakat'],
@@ -176,5 +176,8 @@ class LoginController extends BaseController
 
     public function logout()
     {
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/auth/login')->with('success', 'Anda berhasil logout.');
     }
 }

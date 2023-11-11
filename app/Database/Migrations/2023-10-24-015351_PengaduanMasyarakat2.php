@@ -20,6 +20,10 @@ class PengaduanMasyarakat2 extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'judul' => [
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ],
             'tanggal_pengaduan' => [
                 'type' => 'DATETIME',
             ],

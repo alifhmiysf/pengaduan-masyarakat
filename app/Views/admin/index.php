@@ -122,6 +122,7 @@
                                         <tr>
                                             <th>id_pengaduan</th>
                                             <th>tanggal_pengaduan</th>
+                                            <th>Judul</th>
                                             <th>NIK</th>
                                             <th>Isi Laporan</th>
                                             <th>Foto</th>
@@ -134,6 +135,7 @@
                                             <tr>
                                                 <td><?= $row['id_pengaduan']; ?></td>
                                                 <td><?= $row['tanggal_pengaduan']; ?></td>
+                                                <td><?= $row['judul']; ?></td>
                                                 <td><?= $row['nik']; ?></td>
                                                 <td><?= $row['isi_laporan']; ?></td>
                                                 <td><?= $row['foto']; ?></td>

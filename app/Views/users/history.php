@@ -25,7 +25,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/home') ?>">Home</a>
+                            <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/tanggapan_after_login') ?>">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/tanggapan_after_login') ?>">Tanggapan</a>
@@ -36,7 +36,8 @@
                     </ul>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a class="btn btn-outline-light" href="<?= base_url('/auth/login') ?>" role="button">Log Out</a>
+                <a class="btn btn-outline-light" href="<?= base_url('/auth/logout') ?>" role="button">Log Out</a>
+
                 </div>
             </div>
         </nav>
@@ -57,7 +58,7 @@
                 </div>
                 <div class="col" style="height: auto;">
                     <!-- Konten  -->
-                    Diisi judul laporan
+                    <?= $row['judul']; ?>
                 </div>
 
                 <div class="col d-flex justify-content-end ">
@@ -71,14 +72,14 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Judul history</h5>
+                        <h5 class="modal-title" id="exampleModalLabel"><?= $row['judul']; ?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <img src="<?= base_url('img/forest.jpg') ?>" alt="" class="img-fluid w-100">
+                                <img src="<?= base_url('uploads/') . $row['foto']; ?>" alt="" class="img-fluid w-100">
                                 </div>
                                 <div class="col">
                                     <ul>

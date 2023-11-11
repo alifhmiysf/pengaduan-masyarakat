@@ -55,7 +55,7 @@ https://templatemo.com/tm-590-topic-listing
                     </ul>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a class="btn btn-outline-light" href="<?= base_url('/auth/login') ?>" role="button">Log Out</a>
+                    <a class="btn btn-outline-light" href="<?= base_url('/auth/logout') ?>" role="button">Log Out</a>
                 </div>
             </div>
         </nav>
@@ -80,9 +80,15 @@ https://templatemo.com/tm-590-topic-listing
                         <div class="custom-block bg-white shadow-lg">
                             <form method="post" action="<?= site_url('pengaduan-masyarakat/afterloginn'); ?>" enctype="multipart/form-data">
                                 <div class="mb-3">
+                                    <label for="judul" class="form-label">Judul</label>
+                                    <input type="text" class="form-control" id="judul" name="judul" placeholder="judul">
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="NIK" class="form-label">NIK</label>
                                     <input type="text" class="form-control" id="NIK" name="NIK" placeholder="NIK">
                                 </div>
+
 
                                 <div class="mb-3">
                                     <label for="pengaduan" class="form-label">Pilih tanggal kejadian</label>
@@ -103,7 +109,7 @@ https://templatemo.com/tm-590-topic-listing
                                 <button type="submit" class="btn btn-primary">Kirim</button>
                             </form>
 
-<!-- s -->
+                            <!-- s -->
 
                             <!-- <form action="">
                                 <div class="mb-3">

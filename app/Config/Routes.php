@@ -42,6 +42,9 @@ $routes->group('pengaduan-masyarakat', function ($routes) {
     $routes->get('/status_tolak','PengaduanController::tolak');
 });
 
+// Contoh rute pada file routes.php
+$routes->get('/auth/logout', 'LoginController::logout');
+
 // // Menggunakan resource untuk pengaduan-masyarakat dengan controller yang benar
 // $routes->resource('pengaduan-masyarakat', ['PengaduanController']); 
 

@@ -22,27 +22,26 @@ class PengaduanController extends ResourceController
         //meload session
         $this->session = \Config\Services::session();
 
-        if(!session()->getFlashdata('isLogin'))
-        {
-            session()->setFlashdata("pesan","Anda Belum Login harap Login terlebih dahulu untuk mengakses semua fitur");
+        if (!session()->getFlashdata('isLogin')) {
+            session()->setFlashdata("pesan", "Anda Belum Login harap Login terlebih dahulu untuk mengakses semua fitur");
             return redirect()->to('/login');
         }
     }
 
     public function index()
-{
-    // Mendapatkan semua data masyarakat
-    $pengaduan = $this->PengaduanModel->findAll();
+    {
+        // Mendapatkan semua data masyarakat
+        $pengaduan = $this->PengaduanModel->findAll();
 
-    // Cetak data untuk memeriksa struktur
-    // print_r($pengaduan);
+        // Cetak data untuk memeriksa struktur
+        // print_r($pengaduan);
 
-    $data = [
-        'pengaduan' => $pengaduan,
-    ];
+        $data = [
+            'pengaduan' => $pengaduan,
+        ];
 
-    return view('admin/index', $data);
-}
+        return view('admin/index', $data);
+    }
 
     public function show($id = null)
     {
@@ -66,6 +65,7 @@ class PengaduanController extends ResourceController
      */
     public function create()
     {
+        $judul = $this->request->getPost('judul');
         $nik = $this->request->getPost('NIK');
         $tanggal_pengaduan = $this->request->getPost('pengaduan');
         $isi_laporan = $this->request->getPost('isi_laporan');
@@ -81,6 +81,7 @@ class PengaduanController extends ResourceController
         // Validasi berhasil, lanjutkan dengan penyimpanan data ke database atau operasi lainnya
         $data = [
             'id_masyarakat' => $this->session->get('id_masyarakat'),
+            'judul' => $judul,
             'nik' => $nik,
             'tanggal_pengaduan' => $tanggal_pengaduan,
             'isi_laporan' => $isi_laporan,
