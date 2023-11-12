@@ -44,6 +44,7 @@ $routes->group('pengaduan-masyarakat', function ($routes) {
 
 // Contoh rute pada file routes.php
 $routes->get('/auth/logout', 'LoginController::logout');
+$routes->add('admincontroller/tanggapan', 'AdminController::tanggapan', ['as' => 'admin_tanggapan', 'filter' => 'auth']);
 
 // // Menggunakan resource untuk pengaduan-masyarakat dengan controller yang benar
 // $routes->resource('pengaduan-masyarakat', ['PengaduanController']); 

@@ -14,12 +14,18 @@
     <!-- Custom fonts for this template-->
     <link href="<?= base_url(' assets-dashboard-admin/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('css/style-register.css') ?>">
+
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="<?= base_url('assets-dashboard-admin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets-dashboard-admin/css/style.css') ?>">
+
+
+    <!-- Bootstrap CSS dari CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS dari CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -114,7 +120,6 @@
                     <h1 class="h3 mb-2 text-gray-800">Pengaduan Masyarakat</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <h1>da</h1>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -130,6 +135,7 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+                                    <!-- ... (kode sebelumnya) ... -->
                                     <tbody>
                                         <?php foreach ($pengaduan as $row) : ?>
                                             <tr>
@@ -138,44 +144,71 @@
                                                 <td><?= $row['judul']; ?></td>
                                                 <td><?= $row['nik']; ?></td>
                                                 <td><?= $row['isi_laporan']; ?></td>
-                                                <td><?= $row['foto']; ?></td>
+                                                <td><img src="<?= base_url('uploads/') . $row['foto']; ?>" alt="" class="img-fluid w-100"></td>
                                                 <td>
                                                     <?php if ($row['status'] == 0) : ?>
-                                                        Diajukan
+                                                        <div class="alert alert-info" role="alert">Diajukan</div>
                                                     <?php elseif ($row['status'] == 1) : ?>
-                                                        Diterima
+                                                        <div class="alert alert-success" role="alert">Diterima</div>
                                                     <?php elseif ($row['status'] == 2) : ?>
-                                                        Diproses
+                                                        <div class="alert alert-warning" role="alert">Diproses</div>
                                                     <?php elseif ($row['status'] == 3) : ?>
-                                                        <div class="alert alert-success" role="alert">
-                                                            Selesai
-                                                        </div>
+                                                        <div class="alert alert-success" role="alert">Selesai</div>
                                                     <?php elseif ($row['status'] == 4) : ?>
-                                                        Ditolak
+                                                        <div class="alert alert-danger" role="alert">Ditolak</div>
                                                     <?php endif; ?>
                                                 </td>
                                                 <td>
-                                                    <!-- <button type="button" class="btn btn-outline-warning">Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-dash-fill" viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
-                                                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                                        </svg></button>
-                                                    <button type="button" class="btn btn-outline-danger">Delete <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-dash-fill" viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
-                                                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                                        </svg></button>
-                                                    Tambahkan tombol aksi sesuai kebutuhan -->
-                                                    <?php if ($row['status'] == 0) : ?>
-                                                        <a href="/status_terima">Terima</a>
-                                                        <a href="/status_tolak">Tolak</a>
-                                                    <?php elseif ($row['status'] == 1) : ?>
-                                                        <a>Beri Tanggapan</a>
-                                                    <?php elseif ($row['status'] == 2) : ?>
-                                                        <a>Beri Tanggapan</a>
+                                                    <!-- Tambahkan logika di sini untuk tombol aksi sesuai kebutuhan -->
+                                                    <?php if ($row['status'] == 2) : ?>
+                                                        <!-- Button trigger modal -->
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                            Tanggapan
+                                                        </button>
+
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <form method="post" action="<?= base_url('admincontroller/tanggapan') ?>">
+
+                                                                            <div class="mb-3">
+                                                                                <label for="tanggal_tanggapan" class="form-label">Tanggal Tanggapan</label>
+                                                                                <input type="date" class="form-control" id="tanggal_tanggapan" name="tanggal_tanggapan">
+                                                                            </div>
+
+                                                                            <div class="mb-3">
+                                                                                <label for="tanggapan" class="form-label">Tanggapan</label>
+                                                                                <textarea class="form-control" id="tanggapan" name="tanggapan"></textarea>
+                                                                            </div>
+
+
+                                                                            <div class="mb-3">
+                                                                                <label for="id_petugas" class="form-label">id_petugas</label>
+                                                                                <input type="text" class="form-control" id="id_petugas" name="id_petugas">
+                                                                            </div>
+
+
+                                                                            <button type="submit" class="btn btn-primary">Kirim Tanggapan</button>
+
+                                                                        </form>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     <?php endif; ?>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
+                                    <!-- ... (kode setelahnya) ... -->
+
                                 </table>
                             </div>
                         </div>
@@ -225,7 +258,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url(' assets-dashboard-admin/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url(' js/jquery.min.js') ?>"></script>
     <script src="<?= base_url('assets-dashboard-admin/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
     <!-- Core plugin JavaScript-->
