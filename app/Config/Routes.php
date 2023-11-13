@@ -13,6 +13,7 @@ $routes->group('auth', function ($routes) {
     // Rute Login dan Otentikasi
     $routes->get('login', 'LoginController::index');
     $routes->post('login', 'LoginController::valid_login');
+    $routes->get('logout', 'LoginController::logout');
 });
 
 $routes->group('admin', function ($routes) {
@@ -36,14 +37,14 @@ $routes->group('pengaduan-masyarakat', function ($routes) {
     $routes->post('afterloginn', 'PengaduanController::index'); 
 
     $routes->get('tanggapan_after_login', 'MasyarakatController::tanggapan_after_login');
-    $routes->get('tanggapan', 'MasyarakatController::tanggapan');
+    
 
     $routes->get('/status_terima','PengaduanController::terima');
     $routes->get('/status_tolak','PengaduanController::tolak');
 });
 
 // Contoh rute pada file routes.php
-$routes->get('/auth/logout', 'LoginController::logout');
+
 $routes->post('/admin/tambah_tanggapan/(:any)','AdminController::tanggapan/$1');
 // // Menggunakan resource untuk pengaduan-masyarakat dengan controller yang benar
 // $routes->resource('pengaduan-masyarakat', ['PengaduanController']); 

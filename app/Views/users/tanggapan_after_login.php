@@ -23,7 +23,7 @@
 
     <link href="<?= base_url('css/templatemo-topic-listing.css') ?>" rel="stylesheet">
 
-    
+
 
     <!--
 
@@ -49,7 +49,7 @@ https://templatemo.com/tm-590-topic-listing
                             <a class="nav-link active" aria-current="page" href="<?= base_url('/pengaduan-masyarakat/tanggapan_after_login') ?>">Tanggapan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"  href="<?= base_url('/pengaduan-masyarakat/history') ?>">History</a>
+                            <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/history') ?>">History</a>
                         </li>
                     </ul>
                 </div>
@@ -70,8 +70,16 @@ https://templatemo.com/tm-590-topic-listing
                     <div class="col-lg-9 col-12 mb-4 mb-lg-0">
                         <div class="custom-block bg-white shadow-lg">
                             <!--- Tempat form ---->
-
-
+                            <?php foreach ($tanggapanc as $row) : ?>
+                            <div class="card" style="width: 35rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= $row['status']; ?></h5>
+                                    
+                                    <p class="card-text"><?= $row['tanggapan']; ?></p>
+                                    
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>

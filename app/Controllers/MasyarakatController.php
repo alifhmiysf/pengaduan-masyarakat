@@ -4,12 +4,14 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\PengaduanModel;
+use App\Models\TanggapanModel;
 
 class MasyarakatController extends BaseController
 {
 
     public function __construct()
     {
+        $this->TanggapanModel = new \App\Models\TanggapanModel();
         $this->PengaduanModel = new \App\Models\PengaduanModel();
         $this->session = session();
     }
@@ -35,8 +37,23 @@ class MasyarakatController extends BaseController
 
     public function tanggapan()
     {
-        return view('users/tanggapan');
+        // Mendapatkan id_masyarakat dari session
+        $id_masyarakat = session()->get('id_masyarakat');
+        // Membuat instance model TanggapanModel
+        $tanggapanModel = new TanggapanModel();
+        // Mengambil data tanggapan berdasarkan id_masyarakat
+        $tanggapanc = $tanggapanModel->where("id_tanggapan", $id_tanggapan)->findAll();
+        // Menyiapkan data untuk dikirimkan ke view
+        $data = [
+            'tanggapanc' => $tanggapanc,
+        ];
+        // Menampilkan view dengan data
+        return view('pengaduan-masyarakat/tanggapan_after_login', $data);
     }
+
+
+
+
     public function afterlogin()
     {
         return view('users/afterlogin');
@@ -45,5 +62,4 @@ class MasyarakatController extends BaseController
     {
         return view('users/tanggapan_after_login');
     }
-    
 }
