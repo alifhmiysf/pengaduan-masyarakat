@@ -174,12 +174,12 @@
 
                                                     <?php if ($row['status'] == 1) : ?>
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                        <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan'] ?>">
                                                             Tanggapan
                                                         </button>
 
                                                         <!-- Modal -->
-                                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal fade" id="exampleModal<?= $row['id_pengaduan'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
@@ -187,7 +187,7 @@
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        <form method="post" action="<?= base_url('admincontroller/tanggapan') ?>">
+                                                                        <form method="post" action="/admin/tambah_tanggapan/<?= $row['id_pengaduan'] ?>">
                                                                             <div class="mb-3">
                                                                                 <label for="tanggal_tanggapan" class="form-label">Tanggal Tanggapan</label>
                                                                                 <input type="date" class="form-control" id="tanggal_tanggapan" name="tanggal_tanggapan">
@@ -210,12 +210,12 @@
 
                                                     <?php if ($row['status'] == 2) : ?>
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                        <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan'] ?>">
                                                             Tanggapan
                                                         </button>
 
                                                         <!-- Modal -->
-                                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal fade" id="exampleModal<?= $row['id_pengaduan'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
@@ -223,7 +223,7 @@
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        <form method="post" action="<?= base_url('admincontroller/tanggapan') ?>">
+                                                                        <form method="post" action="/admin/tambah_tanggapan/<?= $row['id_pengaduan'] ?>">
 
                                                                             <div class="mb-3">
                                                                                 <label for="tanggal_tanggapan" class="form-label">Tanggal Tanggapan</label>
