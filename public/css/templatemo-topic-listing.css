@@ -11,13 +11,13 @@
   --link-hover-color:             #13547a;
 
   --body-font-family:             'Open Sans', sans-serif;
-  --title-font-family:            'Montserrat', sans-serif;
+  --title-font-family:            'Poppins', sans-serif;
 
   --h1-font-size:                 58px;
   --h2-font-size:                 46px;
   --h3-font-size:                 32px;
   --h4-font-size:                 28px;
-  --h5-font-size:                 24px;
+  --h5-font-size:                 15px;
   --h6-font-size:                 22px;
   --p-font-size:                  20px;
   --menu-font-size:               14px;
@@ -442,6 +442,7 @@ strong {
 /*---------------------------------------
   TOPICS              
 -----------------------------------------*/
+
 
 
 .featured-section .row {

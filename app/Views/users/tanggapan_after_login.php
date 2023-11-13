@@ -17,14 +17,13 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
 
-    <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('bootstrap-5.0.2/css/bootstrap.min.css') ?>" rel="stylesheet">
 
-    <link href="<?= base_url('css/bootstrap-icons.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('bootstrap-5.0.2/css/bootstrap-icons.css') ?>" rel="stylesheet">
 
     <link href="<?= base_url('css/templatemo-topic-listing.css') ?>" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    
 
     <!--
 
@@ -44,13 +43,13 @@ https://templatemo.com/tm-590-topic-listing
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/home') ?>">Home</a>
+                            <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/afterlogin') ?>">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="<?= base_url('/pengaduan-masyarakat/tanggapan_after_login') ?>">Tanggapan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="<?= base_url('/pengaduan-masyarakat/home') ?>">History</a>
+                            <a class="nav-link"  href="<?= base_url('/pengaduan-masyarakat/history') ?>">History</a>
                         </li>
                     </ul>
                 </div>
