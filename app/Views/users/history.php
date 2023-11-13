@@ -42,7 +42,6 @@
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a class="btn btn-outline-light" href="<?= base_url('/auth/logout') ?>" role="button">Log Out</a>
-
                 </div>
             </div>
         </nav>
