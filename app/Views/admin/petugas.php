@@ -139,22 +139,28 @@
                                             <th scope="col">Username</th>
                                             <th scope="col">Password</th>
                                             <th scope="col">Telepon</th>
+                                            <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Kinar Aurasae</td>
-                                            <td>Kinzxa</td>
-                                            <td>AKSDJHASKD</td>
-                                            <td>092833748239</td>
-                                            <td>
-                                                <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button class="btn btn-dark" type="button">Edit</button>
-                                                    <button class="btn btn-dark" type="button">Delet</button>
-                                                </div>
-                                            </td>
+                                            <?php foreach ($petugas as $row) : ?>
+                                        <tr>
+                                            <td><?= $row['id_petugas']; ?></td>
+                                            <td><?= $row['nama_petugas']; ?></td>
+                                            <td><?= $row['username']; ?></td>
+                                            <td><?= $row['telepon']; ?></td>
                                         </tr>
+                                    <?php endforeach; ?>
+                                    <tr>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button class="btn btn-dark" type="button">Edit</button>
+                                        <button class="btn btn-dark" type="button">Delet</button>
+                                    </div>
+                                    </tr>
+                                    
+                                    </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

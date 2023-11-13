@@ -26,7 +26,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'auth' => Auth::class, // Sesuaikan dengan nama filter yang Anda buat
+        // 'auth' => Auth::class, // Sesuaikan dengan nama filter yang Anda buat
     ];
 
     /**
