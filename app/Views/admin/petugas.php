@@ -122,7 +122,43 @@
                     <!-- Page Heading -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <h1 class="h3 mb-2 text-gray-800 col align-self-start">Petugas</h1>
-                        <button type="button" class="btn btn-dark">+ Tambah</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Launch demo modal
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <div class="container-fluid">
+                                        <form>
+                                            <label for="inlineFormNama" class="m-2">Nama</label>
+                                            <input type="nama" class="form-control m-2" id="inlineFormNama">
+                                            <label for="inlineFormUsername" class="m-2">Username</label>
+                                            <input type="username" class="form-control m-2" id="inlineFormUsername">
+                                            <label for="inlineFormPassword" class="m-2">Password</label>
+                                            <input type="password" class="form-control m-2" id="inlineFormPassword">
+                                            <label for="inlineFormEmail" class="m-2">No Telepon</label>
+                                            <input type="no telepon" class="form-control m-2" id="inlineFormNotelepon">
+                                            <div class="form-check m-2">
+                                            </div>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <br>
                     <!-- DataTales Example -->
@@ -153,12 +189,12 @@
                                         </tr>
                                     <?php endforeach; ?>
                                     <tr>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button class="btn btn-dark" type="button">Edit</button>
-                                        <button class="btn btn-dark" type="button">Delet</button>
-                                    </div>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button class="btn btn-dark" type="button">Edit</button>
+                                            <button class="btn btn-dark" type="button">Delet</button>
+                                        </div>
                                     </tr>
-                                    
+
                                     </td>
                                     </tr>
                                     </tbody>
@@ -219,7 +255,7 @@
 
     <!-- Core plugin JavaScript-->
     <script src="<?= base_url(' assets-dashboard-admin/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url(' assets-dashboard-admin/js/sb-admin-2.min.js') ?>"></script>
 
