@@ -122,7 +122,7 @@
                     <!-- Page Heading -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <h1 class="h3 mb-2 text-gray-800 col align-self-start">Masyarakat</h1>
-                        
+
                     </div>
 
                     <!-- DataTales Example -->
@@ -148,15 +148,42 @@
                                                 <td><?= $row['username']; ?></td>
                                                 <td><?= $row['telepon']; ?></td>
                                                 <td>
-                                                <button type="button" class="btn btn-outline-warning">Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-dash-fill" viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
-                                                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                                        </svg></button>
-                                                    <button type="button" class="btn btn-outline-danger">Delete <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-dash-fill" viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
-                                                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                                        </svg></button>
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                        Ubah Password
+                                                    </button>
 
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="staticBackdropLabel">Reset password</h5>
+                                                                </div>
+                                                                <form method="post" action="">
+                                                                    <div class="modal-body">
+
+                                                                        <label for="inputPassword" class="col-sm col-form-label">Masukan Password</label>
+                                                                        <div class="col-sm">
+                                                                            <input type="password" class="form-control" id="inputPassword">
+                                                                        </div>
+
+                                                                        <label for="inputPassword" class="col-sm col-form-label">Konfirmasi Password </label>
+                                                                        <div class="col-sm">
+                                                                            <input type="password" class="form-control" id="inputPassword">
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Simpan</button>
+
+                                                                    </div>
+                                                                </form>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <!-- Tambahkan tombol aksi sesuai kebutuhan -->
                                                 </td>
                                             </tr>
@@ -219,7 +246,7 @@
 
     <!-- Core plugin JavaScript-->
     <script src="<?= base_url(' assets-dashboard-admin/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url(' assets-dashboard-admin/js/sb-admin-2.min.js') ?>"></script>
 
