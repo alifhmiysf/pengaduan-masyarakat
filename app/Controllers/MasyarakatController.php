@@ -37,19 +37,28 @@ class MasyarakatController extends BaseController
 
     public function tanggapan()
     {
-        // Mendapatkan id_masyarakat dari session
-        $id_masyarakat = session()->get('id_masyarakat');
+        // Mendapatkan id_pengaduan dari sesi
+        $id_pengaduan = session()->get('id_pengaduan');
+
         // Membuat instance model TanggapanModel
-        $tanggapanModel = new TanggapanModel();
-        // Mengambil data tanggapan berdasarkan id_masyarakat
-        $tanggapanc = $tanggapanModel->where("id_tanggapan", $id_tanggapan)->findAll();
+        $tanggapann = $this->TanggapanModel->where('id_pengaduan', $id_pengaduan)->findAll();
+
         // Menyiapkan data untuk dikirimkan ke view
         $data = [
-            'tanggapanc' => $tanggapanc,
+            'tanggapann' => $tanggapann,
         ];
+
+        var_dump($tanggapann);
+
         // Menampilkan view dengan data
-        return view('pengaduan-masyarakat/tanggapan_after_login', $data);
+        return view('users/tanggapan_after_login', $data);
     }
+
+
+
+
+
+
 
 
 

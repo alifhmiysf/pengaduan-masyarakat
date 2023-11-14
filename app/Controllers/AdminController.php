@@ -23,7 +23,6 @@ class AdminController extends BaseController
         $this->TanggapanModel = new TanggapanModel();
         $this->PetugasModel = new \App\Models\PetugasModel();
         $this->session = \Config\Services::session();
-        
     }
 
     public function index()
@@ -133,7 +132,42 @@ class AdminController extends BaseController
             return redirect()->to('/admin')->with('error', 'Gagal menyimpan data tanggapan.');
         }
 
+        //mengubah status
+        $pengaduan = $this->PengaduanModel->find($id_pengaduan);
+        if ($pengaduan['status'] == '1') {
+            $this->PengaduanModel->set(['status' => '2'])->where('id_pengaduan', $id_pengaduan)->update();
+        }
+
         // Berhasil disimpan, kembalikan ke halaman admin dengan pesan sukses
         return redirect()->to('/admin')->with('success', 'Data tanggapan berhasil disimpan.');
+    }
+
+
+    public function terima($id_pengaduan)
+    {
+        // echo $id_pengaduan; 
+        $this->PengaduanModel->set(['status' => '1'])->where('id_pengaduan', $id_pengaduan)->update();
+
+        return redirect()->to('/admin')->with('success', 'Pengaduan diterima.');
+    }
+
+    public function tolak($id_pengaduan)
+    {
+        // echo $id_pengaduan; 
+        $this->PengaduanModel->set(['status' => '3'])->where('id_pengaduan', $id_pengaduan)->update();
+
+        return redirect()->to('/admin')->with('danger', 'Pengaduan ditolak.');
+    }
+
+    public function tambah_tanggapan($id_pengaduan)
+    {
+        $pengaduan = $this->PengaduanModel->find($id_pengaduan);
+        if ($pengaduan['status'] == '1') {
+            $this->PengaduanModel->set(['status' => '2'])->where('id_pengaduan', $id_pengaduan)->update();
+
+            return redirect()->to('/admin')->with('success', 'Tanggapan berhasil dikirim. Pengaduan selesai.');
+        } else {
+            return redirect()->to('/admin')->with('warning', 'Pengaduan sudah selesai.');
+        }
     }
 }

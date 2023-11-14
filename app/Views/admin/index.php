@@ -149,12 +149,10 @@
                                                     <?php if ($row['status'] == 0) : ?>
                                                         <div class="alert alert-info" role="alert">Diajukan</div>
                                                     <?php elseif ($row['status'] == 1) : ?>
-                                                        <div class="alert alert-success" role="alert">Diterima</div>
-                                                    <?php elseif ($row['status'] == 2) : ?>
                                                         <div class="alert alert-warning" role="alert">Diproses</div>
-                                                    <?php elseif ($row['status'] == 3) : ?>
+                                                    <?php elseif ($row['status'] == 2) : ?>
                                                         <div class="alert alert-success" role="alert">Selesai</div>
-                                                    <?php elseif ($row['status'] == 4) : ?>
+                                                    <?php elseif ($row['status'] == 3) : ?>
                                                         <div class="alert alert-danger" role="alert">Ditolak</div>
                                                     <?php endif; ?>
                                                 </td>
@@ -164,8 +162,10 @@
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <div class="d-flex mt-3 ">
-                                                                        <button class="btn btn-success mr-4" type="button">Terima</button>
-                                                                        <button class="btn btn-danger" type="button">Tolak</button>
+                                                                        <!-- <button class="btn btn-success mr-4" type="button">Terima</button> -->
+                                                                        <!-- <button class="btn btn-danger" type="button">Tolak</button> -->
+                                                                        <a href="<?= base_url('admincontroller/terima/' . $row['id_pengaduan']); ?>" class="btn btn-success" >Terima</a>
+                                                                        <a href="<?= base_url('admincontroller/tolak/' . $row['id_pengaduan']); ?>" class="btn btn-danger">Tolak</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -187,7 +187,7 @@
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        <form method="post" action="/admin/tambah_tanggapan/<?= $row['id_pengaduan'] ?>">
+                                                                        <form method="post" action="/admin/tanggapan/<?= $row['id_pengaduan'] ?>">
                                                                             <div class="mb-3">
                                                                                 <label for="tanggal_tanggapan" class="form-label">Tanggal Tanggapan</label>
                                                                                 <input type="date" class="form-control" id="tanggal_tanggapan" name="tanggal_tanggapan">
@@ -203,50 +203,6 @@
                                                                             <button type="submit" class="btn btn-primary">Kirim Tanggapan</button>
                                                                         </form>
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    <?php endif; ?>
-
-                                                    <?php if ($row['status'] == 2) : ?>
-                                                        <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan'] ?>">
-                                                            Tanggapan
-                                                        </button>
-
-                                                        <!-- Modal -->
-                                                        <div class="modal fade" id="exampleModal<?= $row['id_pengaduan'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        <form method="post" action="/admin/tambah_tanggapan/<?= $row['id_pengaduan'] ?>">
-
-                                                                            <div class="mb-3">
-                                                                                <label for="tanggal_tanggapan" class="form-label">Tanggal Tanggapan</label>
-                                                                                <input type="date" class="form-control" id="tanggal_tanggapan" name="tanggal_tanggapan">
-                                                                            </div>
-
-                                                                            <div class="mb-3">
-                                                                                <label for="tanggapan" class="form-label">Tanggapan</label>
-                                                                                <textarea class="form-control" id="tanggapan" name="tanggapan"></textarea>
-                                                                            </div>
-
-
-                                                                            <div class="mb-3">
-                                                                                <label for="id_petugas" class="form-label">id_petugas</label>
-                                                                                <input type="text" class="form-control" id="id_petugas" name="id_petugas">
-                                                                            </div>
-
-
-                                                                            <button type="submit" class="btn btn-primary">Kirim Tanggapan</button>
-
-                                                                        </form>
-                                                                    </div>
-
                                                                 </div>
                                                             </div>
                                                         </div>

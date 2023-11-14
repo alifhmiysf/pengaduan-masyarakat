@@ -21,33 +21,21 @@ $routes->group('admin', function ($routes) {
     $routes->get('verifikasi', 'AdminController::verval');
     $routes->get('petugas', 'AdminController::petugas');
     $routes->get('manajemen_masyarakat', 'ManajemenMasyarakat::index');
-    
+    $routes->post('tambah_tanggapan/(:any)','AdminController::tanggapan/$1');
 });
 
 $routes->group('pengaduan-masyarakat', function ($routes) {
     // Rute Masyarakat
     $routes->get('home', 'MasyarakatController::index');
-    $routes->get('history1', 'MasyarakatController::history1');
     $routes->get('history', 'MasyarakatController::history');
     $routes->get('afterlogin', 'MasyarakatController::afterlogin');
-    // $routes->get('sukses', 'PengaduanController::index');
 
-    // Rute untuk pengaduan (gunakan POST untuk membuat pengaduan)
     $routes->post('afterloginn', 'PengaduanController::create'); 
     $routes->post('afterloginn', 'PengaduanController::index'); 
 
-    $routes->get('tanggapan_after_login', 'MasyarakatController::tanggapan_after_login');
+    $routes->get('tanggapan_after_login', 'MasyarakatController::tanggapan');
     
-
-    $routes->get('/status_terima','PengaduanController::terima');
-    $routes->get('/status_tolak','PengaduanController::tolak');
 });
-
-// Contoh rute pada file routes.php
-
-$routes->post('/admin/tambah_tanggapan/(:any)','AdminController::tanggapan/$1');
-// // Menggunakan resource untuk pengaduan-masyarakat dengan controller yang benar
-// $routes->resource('pengaduan-masyarakat', ['PengaduanController']); 
 
 $routes->group('petugas', function ($routes) {
     // Rute petugas
@@ -55,6 +43,9 @@ $routes->group('petugas', function ($routes) {
     $routes->get('masyarakat', 'PetugasController::masyarakat');
     $routes->get('verifikasi', 'PetugasController::verifikasi');
 });
+$routes->get('admincontroller/terima/(:num)', 'AdminController::terima/$1');
+$routes->get('admincontroller/tolak/(:num)', 'AdminController::tolak/$1');
+$routes->post('admin/tanggapan/(:num)', 'AdminController::Tanggapan/$1');
 
 $routes->get('/', 'Home::index');
 

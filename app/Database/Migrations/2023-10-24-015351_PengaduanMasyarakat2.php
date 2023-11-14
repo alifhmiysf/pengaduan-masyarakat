@@ -40,7 +40,7 @@ class PengaduanMasyarakat2 extends Migration
             ],
             'status' => [
                 'type' => 'ENUM',
-                'constraint' => ['0','1','2','3','4'],
+                'constraint' => ['0','1','2','3'],
             ],
         ]);
         $this->forge->addKey('id_pengaduan', true);
