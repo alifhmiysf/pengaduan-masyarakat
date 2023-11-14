@@ -23,7 +23,7 @@
 
     <link href="<?= base_url('css/templatemo-topic-listing.css') ?>" rel="stylesheet">
 
-    
+
     <!--
 
 TemplateMo 590 topic listing
@@ -43,9 +43,6 @@ https://templatemo.com/tm-590-topic-listing
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="<?= base_url('/pengaduan-masyarakat/afterlogin') ?>">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/tanggapan_after_login') ?>">Tanggapan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/history') ?>">History</a>
@@ -76,6 +73,7 @@ https://templatemo.com/tm-590-topic-listing
                 <div class="row justify-content-center">
                     <div class="col-lg-9 col-12 mb-4 mb-lg-0">
                         <div class="custom-block bg-white shadow-lg">
+
                             <form method="post" action="<?= site_url('pengaduan-masyarakat/afterloginn'); ?>" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="judul" class="form-label">Judul</label>
@@ -106,27 +104,7 @@ https://templatemo.com/tm-590-topic-listing
 
                                 <button type="submit" class="btn btn-primary">Kirim</button>
                             </form>
-
-                            <!-- s -->
-
-                            <!-- <form action="">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">NIK</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="NIK">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Pilih tanggal kejadian</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="kejadian">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Isi laporan</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <label class="input-group-text" for="inputGroupFile01">Upload</label>
-                                    <input type="file" class="form-control" id="inputGroupFile01">
-                                </div>
-                            </form> -->
+                            
                         </div>
                     </div>
                 </div>

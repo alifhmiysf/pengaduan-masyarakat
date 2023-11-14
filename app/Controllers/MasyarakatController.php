@@ -27,32 +27,35 @@ class MasyarakatController extends BaseController
         // Mendapatkan semua data pengaduan untuk pengguna yang saat ini login
         $id_masyarakat = $this->session->get('id_masyarakat');
         $pengaduan = $this->PengaduanModel->where("id_masyarakat", $id_masyarakat)->findAll();
+        $tanggapann = $this->TanggapanModel->findAll();
 
         $data = [
             'pengaduan' => $pengaduan,
+            'tanggapann' => $tanggapann,
         ];
 
         return view('users/history', $data);
     }
 
     public function tanggapan()
-    {
-        // Mendapatkan id_pengaduan dari sesi
-        $id_pengaduan = session()->get('id_pengaduan');
+{
+    // Mendapatkan id_pengaduan dari sesi atau sumber lainnya
 
-        // Membuat instance model TanggapanModel
-        $tanggapann = $this->TanggapanModel->where('id_pengaduan', $id_pengaduan)->findAll();
+    // Mengambil data tanggapan berdasarkan id_pengaduan
+    $tanggapann = $this->TanggapanModel->where('id_pengaduan', $id_pengaduan)->findAll();
 
-        // Menyiapkan data untuk dikirimkan ke view
-        $data = [
-            'tanggapann' => $tanggapann,
-        ];
+    // Cetak data untuk memeriksa struktur
+    // print_r($pengaduan);
 
-        var_dump($tanggapann);
+    // Menyiapkan data untuk dikirimkan ke view
+    $data = [
+        'tanggapan' => $tanggapann,
+    ];
 
-        // Menampilkan view dengan data
-        return view('users/tanggapan_after_login', $data);
-    }
+    // Menampilkan view dengan data
+    return view('users/history', $data);
+}
+
 
 
 

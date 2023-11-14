@@ -73,6 +73,7 @@ https://templatemo.com/tm-590-topic-listing
                             <?php foreach ($tanggapann as $row) : ?>
                                 <div class="card" style="width: 35rem;">
                                     <div class="card-body">
+                                        <h1>da</h1>
                                         <h5 class="card-title"><?= $row['status']; ?></h5>
                                         <p class="card-text"><?= $row['tanggapan']; ?></p>
                                     </div>
@@ -85,7 +86,7 @@ https://templatemo.com/tm-590-topic-listing
             </div>
         </section>
 
-
+<h1>dad</h1>
 
 
         <section class="faq-section section-padding" id="section_4">

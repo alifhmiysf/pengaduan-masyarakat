@@ -33,9 +33,6 @@
                             <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/afterlogin') ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('/pengaduan-masyarakat/tanggapan_after_login') ?>">Tanggapan</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="<?= base_url('/pengaduan-masyarakat/history') ?>">History</a>
                         </li>
                     </ul>
@@ -102,7 +99,16 @@
                                                 nik : <?= $row['nik']; ?>
                                             </ul>
                                             <ul>
-                                                status : <?= $row['status']; ?>
+                                                status :
+                                                <?php if ($row['status'] == 0) : ?>
+                                                    <div class="alert alert-info" role="alert">Diajukan</div>
+                                                <?php elseif ($row['status'] == 1) : ?>
+                                                    <div class="alert alert-warning" role="alert">Diproses</div>
+                                                <?php elseif ($row['status'] == 2) : ?>
+                                                    <div class="alert alert-success" role="alert">Selesai</div>
+                                                <?php elseif ($row['status'] == 3) : ?>
+                                                    <div class="alert alert-danger" role="alert">Ditolak</div>
+                                                <?php endif; ?>
                                             </ul>
                                             <ul>
                                                 <h2>Isi laporan</h2>
@@ -110,8 +116,69 @@
                                             <ul>
                                                 <?= $row['isi_laporan']; ?>
                                             </ul>
+                                            <ul>
+                                                <h2>Tanggapan</h2>
+                                            </ul>
+                                            <?php foreach ($tanggapann as $t) : ?>
+                                                <?php if ($t['id_pengaduan'] == $row['id_pengaduan']) : ?>
+                                                    <ul>
+                                                        <?= $t['tanggapan']; ?>
+                                                    </ul>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="card" style="width: auto;border: none;">
+                                                        <div class="card-body">
+                                                            <div class="modal-dialog modal-xl">
+                                                                <form method="post" action="<?= site_url('pengaduan-masyarakat/afterloginn'); ?>" enctype="multipart/form-data" class="mb-5">
+                                                                    <div class="mb-3">
+                                                                        <label for="judul" class="form-label">Judul</label>
+                                                                        <input type="text" class="form-control" id="judul" name="judul" placeholder="judul">
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="NIK" class="form-label">NIK</label>
+                                                                        <input type="text" class="form-control" id="NIK" name="NIK" placeholder="NIK">
+                                                                    </div>
+
+
+                                                                    <div class="mb-3">
+                                                                        <label for="pengaduan" class="form-label">Pilih tanggal kejadian</label>
+                                                                        <input type="date" class="form-control" id="pengaduan" name="pengaduan">
+                                                                    </div>
+
+
+                                                                    <div class="mb-3">
+                                                                        <label for="isi_laporan" class="form-label">Isi laporan</label>
+                                                                        <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="3"></textarea>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="foto" class="form-label">Upload foto</label>
+                                                                        <input type="file" class="form-control" id="foto" name="foto">
+                                                                    </div>
+
+                                                                    <button type="submit" class="btn btn-primary">Kirim</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+        
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
