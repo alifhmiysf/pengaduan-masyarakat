@@ -54,14 +54,14 @@
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1>Pengaduan Masyarakat </h1>
+                        <h1>Pengaduan Masyarakat</h1>
                         <p class="mb-4">Pengaduan masyarakat adalah proses atau mekanisme yang memungkinkan individu atau kelompok masyarakat untuk menyampaikan keluhan, masalah, atau permasalahan tertentu kepada pihak yang berwenang atau instansi yang relevan.</p>
                         <p><a href="<?= base_url('/auth/login') ?>" class="btn btn-white-outline">Lapor sekarang</a></p>
                     </div>
                 </div>
                 <div class="col-lg-7 ">
                     <div class="hero-img-wrap">
-                        <img src="<?= base_url('img/orang2.jpg') ?>" class="img-fluid">
+                        <img src="<?= base_url('img/bantuan.jpg') ?>" class="img-fluid">
                     </div>
                 </div>
             </div>
