@@ -65,7 +65,47 @@
                         <div class="col d-flex justify-content-end ">
                             <!-- Konten kolom kanan -->
                             <a type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan']; ?>" data-bs-whatever="@mdo">Lihat detail</a>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Edit
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="mb-5" method="post" action="<?= site_url('pengaduan/update'); ?>" enctype="multipart/form-data">
+                                                <input type="hidden" name="id" value="<?= $row['id_pengaduan']; ?>">
+
+                                                <div class="mb-3">
+                                                    <label for="judul" class="form-label">Judul</label>
+                                                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul" value="<?= $row['judul']; ?>">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="isi_laporan" class="form-label">Isi Pengaduan</label>
+                                                    <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="3"><?= $row['isi_laporan']; ?></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <button type="submit" class="btn btn-primary">Update Pengaduan</button>
+                                                    <a href="<?= site_url('/pengaduan-masyarakat/history'); ?>" class="btn btn-secondary">Kembali</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -128,57 +168,6 @@
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="card" style="width: auto;border: none;">
-                                                        <div class="card-body">
-                                                            <div class="modal-dialog modal-xl">
-                                                                <form method="post" action="<?= site_url('pengaduan-masyarakat/afterloginn'); ?>" enctype="multipart/form-data" class="mb-5">
-                                                                    <div class="mb-3">
-                                                                        <label for="judul" class="form-label">Judul</label>
-                                                                        <input type="text" class="form-control" id="judul" name="judul" placeholder="judul">
-                                                                    </div>
-
-                                                                    <div class="mb-3">
-                                                                        <label for="NIK" class="form-label">NIK</label>
-                                                                        <input type="text" class="form-control" id="NIK" name="NIK" placeholder="NIK">
-                                                                    </div>
-
-
-                                                                    <div class="mb-3">
-                                                                        <label for="pengaduan" class="form-label">Pilih tanggal kejadian</label>
-                                                                        <input type="date" class="form-control" id="pengaduan" name="pengaduan">
-                                                                    </div>
-
-
-                                                                    <div class="mb-3">
-                                                                        <label for="isi_laporan" class="form-label">Isi laporan</label>
-                                                                        <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="3"></textarea>
-                                                                    </div>
-
-                                                                    <div class="mb-3">
-                                                                        <label for="foto" class="form-label">Upload foto</label>
-                                                                        <input type="file" class="form-control" id="foto" name="foto">
-                                                                    </div>
-
-                                                                    <button type="submit" class="btn btn-primary">Kirim</button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-        
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
