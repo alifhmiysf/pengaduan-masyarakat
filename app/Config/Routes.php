@@ -46,6 +46,8 @@ $routes->group('petugas', function ($routes) {
 $routes->get('admincontroller/terima/(:num)', 'AdminController::terima/$1');
 $routes->get('admincontroller/tolak/(:num)', 'AdminController::tolak/$1');
 $routes->post('admin/tanggapan/(:num)', 'AdminController::Tanggapan/$1');
+$routes->post('/tambahpetugas', 'PetugasController::tambahpetugas');
+
 
 $routes->get('/', 'Home::index');
 

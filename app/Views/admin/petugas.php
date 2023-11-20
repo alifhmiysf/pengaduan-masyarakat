@@ -42,7 +42,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            
+
 
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('/admin') ?>">
@@ -132,25 +132,27 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                    <div class="container-fluid">
-                                        <form>
-                                            <label for="inlineFormNama" class="m-2">Nama</label>
-                                            <input type="nama" class="form-control m-2" id="inlineFormNama">
-                                            <label for="inlineFormUsername" class="m-2">Username</label>
-                                            <input type="username" class="form-control m-2" id="inlineFormUsername">
-                                            <label for="inlineFormPassword" class="m-2">Password</label>
-                                            <input type="password" class="form-control m-2" id="inlineFormPassword">
-                                            <label for="inlineFormEmail" class="m-2">No Telepon</label>
-                                            <input type="no telepon" class="form-control m-2" id="inlineFormNotelepon">
-                                            <div class="form-check m-2">
-                                            </div>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </form>
+                                        <div class="container-fluid">
+                                            <form action="<?= base_url('/tambahpetugas') ?>" method="post">
+                                                <label for="nama">Nama</label>
+                                                <input type="text" id="nama_petugas" name="nama_petugas" placeholder="nama" class="form-control" required>
+
+                                                <label for="username">Username</label>
+                                                <input type="text" id="username" name="username" class="form-control" required>
+
+                                                <label for="password">Password</label>
+                                                <input type="password" id="password" name="password" class="form-control" required>
+
+                                                <label for="no_telepon">No Telepon</label>
+                                                <input type="text" id="telepon" name="telepon" class="form-control" required>
+
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            
+
                                     </div>
                                 </div>
                             </div>

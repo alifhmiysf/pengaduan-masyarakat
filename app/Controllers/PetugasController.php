@@ -27,6 +27,38 @@ class PetugasController extends BaseController
     }
 
 
+    public function tambahpetugas()
+{
+    // Mendapatkan semua data petugas
+    $petugas = $this->PetugasModel->findAll();
+
+    // Mengambil data dari formulir menggunakan request
+    $data = $this->request->getPost();
+
+    // Cetak data untuk memeriksa struktur
+    // print_r($petugas);
+
+    // Generate salt untuk keamanan password
+    $salt = uniqid('', true);
+
+    // Hash password dengan password_hash
+    $password = password_hash($data['password'] . $salt, PASSWORD_BCRYPT);
+
+    // Inisialisasi model PetugasModel
+    $PetugasModel = new PetugasModel();
+
+    // Menyimpan data ke database menggunakan model
+    $PetugasModel->save([
+        'nama_petugas' => $data['nama_petugas'],
+        'username' => $data['username'],
+        'password' => $password,
+        'telepon' => $data['telepon'],
+    ]);
+
+    return redirect()->to('/admin/petugas')->with('success', 'Petugas added successfully');
+}
+
+
     public function masyarakat()
     {
         return view('petugas/masyarakat');
