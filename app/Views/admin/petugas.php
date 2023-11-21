@@ -23,13 +23,10 @@
 </head>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
         <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
-
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
@@ -37,19 +34,14 @@
                 </div>
                 <div class="sidebar-brand-text mx-3">Admin</div>
             </a>
-
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
             <!-- Nav Item - Dashboard -->
-
-
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('/admin') ?>">
                     <i class="fas fa-envelope"></i>
                     <span>Pengaduan</span></a>
             </li>
-
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('/admin/petugas') ?>">
@@ -62,10 +54,6 @@
                     <span>Masyarakat</span></a>
             </li>
             <hr class="sidebar-divider">
-
-
-
-
         </ul>
         <!-- End of Sidebar -->
 
@@ -120,7 +108,7 @@
                         <h1 class="h3 mb-2 text-gray-800 col align-self-start">Petugas</h1>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Launch demo modal
+                            Tambah Petugas +
                         </button>
 
                         <!-- Modal -->
@@ -135,7 +123,7 @@
                                         <div class="container-fluid">
                                             <form action="<?= base_url('/tambahpetugas') ?>" method="post">
                                                 <label for="nama">Nama</label>
-                                                <input type="text" id="nama_petugas" name="nama_petugas" placeholder="nama" class="form-control" required>
+                                                <input type="text" id="nama_petugas" name="nama_petugas"  class="form-control" required>
 
                                                 <label for="username">Username</label>
                                                 <input type="text" id="username" name="username" class="form-control" required>
@@ -149,10 +137,6 @@
                                                 <button type="submit" class="btn btn-primary">Save</button>
                                             </form>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
                                     </div>
                                 </div>
                             </div>

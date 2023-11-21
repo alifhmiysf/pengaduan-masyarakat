@@ -47,7 +47,7 @@ $routes->get('admincontroller/terima/(:num)', 'AdminController::terima/$1');
 $routes->get('admincontroller/tolak/(:num)', 'AdminController::tolak/$1');
 $routes->post('admin/tanggapan/(:num)', 'AdminController::Tanggapan/$1');
 $routes->post('/tambahpetugas', 'PetugasController::tambahpetugas');
-$routes->post('pengaduan/update', 'PengaduanController::update');
+$routes->add('admin/reset-password', 'Admin::resetPassword');
 
 
 $routes->get('/', 'Home::index');

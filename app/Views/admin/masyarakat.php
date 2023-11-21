@@ -42,7 +42,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            
+
 
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('/admin') ?>">
@@ -156,27 +156,14 @@
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="staticBackdropLabel">Reset password</h5>
                                                                 </div>
-                                                                <form method="post" action="">
-                                                                    <div class="modal-body">
-
-                                                                        <label for="inputPassword" class="col-sm col-form-label">Masukan Password</label>
-                                                                        <div class="col-sm">
-                                                                            <input type="password" class="form-control" id="inputPassword">
-                                                                        </div>
-
-                                                                        <label for="inputPassword" class="col-sm col-form-label">Konfirmasi Password </label>
-                                                                        <div class="col-sm">
-                                                                            <input type="password" class="form-control" id="inputPassword">
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Simpan</button>
-
-                                                                    </div>
-                                                                </form>
-
+                                                                <!-- isi form  -->
+                                                                <?php echo form_open('admin/reset-password'); ?>
+                                                                <label for="new_password">New Password:</label>
+                                                                <input type="password" name="new_password" required>
+                                                                <label for="confirm_password">Confirm Password:</label>
+                                                                <input type="password" name="confirm_password" required>
+                                                                <button type="submit">Reset Password</button>
+                                                                <?php echo form_close(); ?>
                                                             </div>
                                                         </div>
                                                     </div>

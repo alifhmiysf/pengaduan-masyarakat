@@ -44,10 +44,7 @@
             </a>
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
             <!-- Nav Item - Dashboard -->
-            
-
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('/admin') ?>">
                     <i class="fas fa-envelope"></i>
@@ -160,7 +157,7 @@
                                                                     <div class="d-flex mt-3 ">
                                                                         <!-- <button class="btn btn-success mr-4" type="button">Terima</button> -->
                                                                         <!-- <button class="btn btn-danger" type="button">Tolak</button> -->
-                                                                        <a href="<?= base_url('admincontroller/terima/' . $row['id_pengaduan']); ?>" class="btn btn-success" >Terima</a>
+                                                                        <a href="<?= base_url('admincontroller/terima/' . $row['id_pengaduan']); ?>" class="btn btn-success">Terima</a>
                                                                         <a href="<?= base_url('admincontroller/tolak/' . $row['id_pengaduan']); ?>" class="btn btn-danger">Tolak</a>
                                                                     </div>
                                                                 </div>
