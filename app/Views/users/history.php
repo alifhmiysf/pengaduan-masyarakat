@@ -67,42 +67,45 @@
                             <a type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan']; ?>" data-bs-whatever="@mdo">Lihat detail</a>
                             <!-- Button trigger modal -->
                             <?php if ($row['status'] == 0) : ?>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Edit
-                            </button>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Edit
+                                    </button>
+                                    <button class="btn btn-danger ml-3">Delete </button>
+                                </div>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form class="mb-5" method="post" action="<?= site_url('pengaduan/update'); ?>" enctype="multipart/form-data">
-                                            <input type="text" name="id_pengaduan" value="<?= $row['id_pengaduan']; ?>">
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form class="mb-5" method="post" action="<?= site_url('pengaduan/update'); ?>" enctype="multipart/form-data">
+                                                    <input type="text" name="id_pengaduan" value="<?= $row['id_pengaduan']; ?>">
 
 
-                                            
-                                                <div class="mb-3">
-                                                    <label for="judul" class="form-label">Judul</label>
-                                                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul" value="<?= $row['judul']; ?>">
-                                                </div>
 
-                                                <div class="mb-3">
-                                                    <label for="isi_laporan" class="form-label">Isi Pengaduan</label>
-                                                    <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="3"><?= $row['isi_laporan']; ?></textarea>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <button type="submit" class="btn btn-primary">Update Pengaduan</button>
-                                                    <a href="<?= site_url('/pengaduan-masyarakat/history'); ?>" class="btn btn-secondary">Kembali</a>
-                                                </div>
-                                            </form>
+                                                    <div class="mb-3">
+                                                        <label for="judul" class="form-label">Judul</label>
+                                                        <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul" value="<?= $row['judul']; ?>">
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="isi_laporan" class="form-label">Isi Pengaduan</label>
+                                                        <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="3"><?= $row['isi_laporan']; ?></textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <button type="submit" class="btn btn-primary">Update Pengaduan</button>
+                                                        <a href="<?= site_url('/pengaduan-masyarakat/history'); ?>" class="btn btn-secondary">Kembali</a>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             <?php endif; ?>
                         </div>
 

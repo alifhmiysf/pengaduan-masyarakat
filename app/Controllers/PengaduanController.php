@@ -128,6 +128,15 @@ class PengaduanController extends ResourceController
         
         $isDataValid = $validation->withRequest($this->request)->run();
     
+        
+        if ($isDataValid) {
+            $model->update($this->request->getPost('id_pengaduan'), [
+                "judul" => $this->request->getPost('judul'),
+                "isi_laporan" => $this->request->getPost('isi_laporan'),
+            ]); 
+            return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Pengaduan berhasil diperbarui.');
+        } 
+
         // if ($isDataValid) { q
         //     $model->set([
         //         "judul" => $this->request->getPost('judul'),
@@ -136,13 +145,6 @@ class PengaduanController extends ResourceController
     
         //     return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Pengaduan berhasil diperbarui.');
         // } 
-        if ($isDataValid) {
-            $model->update($this->request->getPost('id_pengaduan'), [
-                "judul" => $this->request->getPost('judul'),
-                "isi_laporan" => $this->request->getPost('isi_laporan'),
-            ]); 
-            return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Pengaduan berhasil diperbarui.');
-        } 
 
 
     }
