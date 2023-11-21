@@ -119,30 +119,30 @@ class PengaduanController extends ResourceController
         $model = new PengaduanModel();
 
         // $data['pengaduan'] = $model->where('id_pengaduan', $id_pengaduan)->first();
-    
+
         $validation = \Config\Services::validation();
         $validation->setRules([
             'judul' => 'required',
             'isi_laporan' => 'required',
         ]);
-        
+
         $isDataValid = $validation->withRequest($this->request)->run();
-    
-        
+
+
         if ($isDataValid) {
             $model->update($this->request->getPost('id_pengaduan'), [
                 "judul" => $this->request->getPost('judul'),
                 "isi_laporan" => $this->request->getPost('isi_laporan'),
-            ]); 
+            ]);
             return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Pengaduan berhasil diperbarui.');
-        } 
+        }
 
         // if ($isDataValid) { q
         //     $model->set([
         //         "judul" => $this->request->getPost('judul'),
         //         "isi_laporan" => $this->request->getPost('isi_laporan'),
         //     ])->where('id_pengaduan', $this->request->getPost('id_pengaduan'))->update();
-    
+
         //     return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Pengaduan berhasil diperbarui.');
         // } 
 
@@ -157,8 +157,18 @@ class PengaduanController extends ResourceController
      *
      * @return mixed
      */
-    public function delete($id = null)
+    public function delete($id_pengaduan = null)
     {
-        //
+        if ($id_pengaduan === null) {
+            // Handle the case where ID is not provided
+            // You might redirect to an error page or show an error message
+        }
+
+        // Perform the delete operation
+        $model = new PengaduanModel();
+        $model->delete($id_pengaduan);
+
+        // Redirect back after deletion
+        return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Pengaduan berhasil dihapus.');
     }
 }

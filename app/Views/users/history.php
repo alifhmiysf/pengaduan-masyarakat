@@ -98,7 +98,7 @@
                                                         <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="3"><?= $row['isi_laporan']; ?></textarea>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <button type="submit" class="btn btn-primary">Update Pengaduan</button>
+                                                        <button type="submit"  class="btn btn-primary">Update Pengaduan</button>
                                                         <a href="<?= site_url('/pengaduan-masyarakat/history'); ?>" class="btn btn-secondary">Kembali</a>
                                                     </div>
                                                 </form>
