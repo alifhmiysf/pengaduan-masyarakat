@@ -14,12 +14,14 @@
     <!-- Custom fonts for this template-->
     <link href="<?= base_url(' assets-dashboard-admin/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+    <!-- <link rel="stylesheet" href="<?= base_url('bootstrap-5.0.2/css/bootstrap.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('css/style-register.css') ?>"> -->
     <!-- Custom styles for this template-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="<?= base_url('assets-dashboard-admin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets-dashboard-admin/css/style.css') ?>">
+    
+    
 </head>
 
 <body id="page-top">
@@ -62,9 +64,6 @@
                     <span>Masyarakat</span></a>
             </li>
             <hr class="sidebar-divider">
-
-
-
 
         </ul>
         <!-- End of Sidebar -->
@@ -155,19 +154,40 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="staticBackdropLabel">Reset password</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
-                                                                <!-- isi form  -->
-                                                                <?php echo form_open('admin/reset-password'); ?>
-                                                                <label for="new_password">New Password:</label>
-                                                                <input type="password" name="new_password" required>
-                                                                <label for="confirm_password">Confirm Password:</label>
-                                                                <input type="password" name="confirm_password" required>
-                                                                <button type="submit">Reset Password</button>
-                                                                <?php echo form_close(); ?>
+                                                                <div class="modal-body">
+                                                                    <!-- isi form  -->
+                                                                    <form method="post" action="<?= base_url('admin/reset-password') ?>">
+                                                                        <div class="row g-3 align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <label for="new_password" class="col-form-label">New Password:</label>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <input type="password" name="new_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="row g-3 align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <label for="confirm_password" class="col-form-label">Confirm Password:</label>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <input type="password" name="confirm_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <button class="btn btn-primary" type="submit">Reset Password</button>
+                                                                    </form>
+                                                                </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!-- Tambahkan tombol aksi sesuai kebutuhan -->
+
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
