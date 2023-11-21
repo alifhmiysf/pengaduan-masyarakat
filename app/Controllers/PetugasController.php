@@ -52,6 +52,7 @@ class PetugasController extends BaseController
         'nama_petugas' => $data['nama_petugas'],
         'username' => $data['username'],
         'password' => $password,
+        'salt' => $salt,
         'telepon' => $data['telepon'],
     ]);
 
