@@ -167,6 +167,7 @@
                                             <td><?= $row['id_petugas']; ?></td>
                                             <td><?= $row['nama_petugas']; ?></td>
                                             <td><?= $row['username']; ?></td>
+                                            <td><?= $row['password']; ?></td>
                                             <td><?= $row['telepon']; ?></td>
                                         </tr>
                                     <?php endforeach; ?>

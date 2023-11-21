@@ -63,16 +63,19 @@
                         </div>
 
                         <div class="col d-flex justify-content-end ">
-                            <!-- Konten kolom kanan -->
-                            <a type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan']; ?>" data-bs-whatever="@mdo">Lihat detail</a>
+                            
+
+
+
                             <!-- Button trigger modal -->
                             <?php if ($row['status'] == 0) : ?>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-danger ml-3">Delete </button>
+                                    <a type="button" class="btn "  style="height: 40px;" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan']; ?>" data-bs-whatever="@mdo">Lihat detail</a>
+                                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"  style="height: 40px;">Edit</button>
+                                    <button class="btn btn-danger ml-3"  style="height: 40px;">Delete </button>
                                 </div>
+
+
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
