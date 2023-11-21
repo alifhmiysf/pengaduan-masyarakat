@@ -70,7 +70,7 @@ class MasyarakatController extends BaseController
             if ($this->validate($validation)) {
             // Ambil password baru dari formulir
             $newPassword = $this->request->getPost('password');
-
+                
             // Hash password baru
             $hashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
 
