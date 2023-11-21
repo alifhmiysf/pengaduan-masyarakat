@@ -170,5 +170,6 @@ class PengaduanController extends ResourceController
 
         // Redirect back after deletion
         return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Pengaduan berhasil dihapus.');
+
     }
 }

@@ -152,7 +152,7 @@ class LoginController extends BaseController
             }
         } elseif ($petugas) {
             # cek password petugas
-            if ($data['password'] . $petugas['salt'] == $petugas['password']) {
+            if (password_verify($data['password'] . $petugas['salt'],$petugas['password']) ) {
                 # lanjut ke dashboard petugas
                 if ($petugas['level'] == '1') {
                     # menuju ke admin
@@ -162,6 +162,7 @@ class LoginController extends BaseController
                     return redirect()->to('/petugas');
                 }
             } else {
+               
                 #tampilkan notifikasi password salah dan kembali ke halaman login
                 session()->setFlashdata('error', 'Password salah');
                 return redirect()->to('/auth/login');

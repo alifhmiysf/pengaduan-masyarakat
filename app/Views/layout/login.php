@@ -35,6 +35,10 @@
         <?php if ($login) { ?>
           <p style="color:green"><?php echo $login ?></p>
         <?php } ?>
+
+        <?php if(session()->getFlashdata('error')) : ?>
+          <p style="color:green"><?php echo session()->getFlashdata('error'); ?></p>
+        <?php endif; ?>
         <div class="login-form">
           <form method="post" action="<?= base_url('auth/login') ?>">
             <input type="text" name="username" placeholder="Username"   class="input-username "  />

@@ -63,16 +63,16 @@
                         </div>
 
                         <div class="col d-flex justify-content-end ">
-                            
+
 
 
 
                             <!-- Button trigger modal -->
                             <?php if ($row['status'] == 0) : ?>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <a type="button" class="btn "  style="height: 40px;" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan']; ?>" data-bs-whatever="@mdo">Lihat detail</a>
-                                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"  style="height: 40px;">Edit</button>
-                                    <button class="btn btn-danger ml-3"  style="height: 40px;">Delete </button>
+                                    <a type="button" class="btn " style="height: 40px;" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan']; ?>" data-bs-whatever="@mdo">Lihat detail</a>
+                                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 40px;">Edit</button>
+                                    <a href="<?= base_url('/pengaduan/delete') ?>" class="btn btn-danger">Delete</a>
                                 </div>
 
 
@@ -101,7 +101,7 @@
                                                         <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="3"><?= $row['isi_laporan']; ?></textarea>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <button type="submit"  class="btn btn-primary">Update Pengaduan</button>
+                                                        <button type="submit" class="btn btn-primary">Update Pengaduan</button>
                                                         <a href="<?= site_url('/pengaduan-masyarakat/history'); ?>" class="btn btn-secondary">Kembali</a>
                                                     </div>
                                                 </form>

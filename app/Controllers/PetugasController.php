@@ -42,7 +42,7 @@ class PetugasController extends BaseController
     $salt = uniqid('', true);
 
     // Hash password dengan password_hash
-    $password = password_hash($data['password'] . $salt, PASSWORD_BCRYPT);
+    $password = password_hash($data['password'] . $salt,PASSWORD_BCRYPT);
 
     // Inisialisasi model PetugasModel
     $PetugasModel = new PetugasModel();
