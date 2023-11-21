@@ -95,7 +95,7 @@ class PengaduanController extends ResourceController
         return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Data berhasil disimpan.');
     }
 
-    
+
 
 
 
@@ -114,10 +114,41 @@ class PengaduanController extends ResourceController
      *
      * @return mixed
      */
-    public function update($id = null)
+    public function update($id_pengaduan = null)
     {
-        //
+        $model = new PengaduanModel();
+
+        // $data['pengaduan'] = $model->where('id_pengaduan', $id_pengaduan)->first();
+    
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'judul' => 'required',
+            'isi_laporan' => 'required',
+        ]);
+        
+        $isDataValid = $validation->withRequest($this->request)->run();
+    
+        // if ($isDataValid) { q
+        //     $model->set([
+        //         "judul" => $this->request->getPost('judul'),
+        //         "isi_laporan" => $this->request->getPost('isi_laporan'),
+        //     ])->where('id_pengaduan', $this->request->getPost('id_pengaduan'))->update();
+    
+        //     return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Pengaduan berhasil diperbarui.');
+        // } 
+        if ($isDataValid) {
+            $model->update($this->request->getPost('id_pengaduan'), [
+                "judul" => $this->request->getPost('judul'),
+                "isi_laporan" => $this->request->getPost('isi_laporan'),
+            ]); 
+            return redirect()->to('/pengaduan-masyarakat/history')->with('success', 'Pengaduan berhasil diperbarui.');
+        } 
+
+
     }
+
+
+
 
     /**
      * Delete the designated resource object from the model

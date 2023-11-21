@@ -66,6 +66,7 @@
                             <!-- Konten kolom kanan -->
                             <a type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan']; ?>" data-bs-whatever="@mdo">Lihat detail</a>
                             <!-- Button trigger modal -->
+                            <?php if ($row['status'] == 0) : ?>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Edit
                             </button>
@@ -80,8 +81,10 @@
                                         </div>
                                         <div class="modal-body">
                                             <form class="mb-5" method="post" action="<?= site_url('pengaduan/update'); ?>" enctype="multipart/form-data">
-                                                <input type="hidden" name="id" value="<?= $row['id_pengaduan']; ?>">
+                                            <input type="text" name="id_pengaduan" value="<?= $row['id_pengaduan']; ?>">
 
+
+                                            
                                                 <div class="mb-3">
                                                     <label for="judul" class="form-label">Judul</label>
                                                     <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul" value="<?= $row['judul']; ?>">
@@ -97,13 +100,10 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <?php endif; ?>
                         </div>
 
                     </div>
