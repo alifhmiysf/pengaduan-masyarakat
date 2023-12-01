@@ -13,14 +13,14 @@ class PengaduanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_masyarakat','judul','tanggal_pengaduan','nik','isi_laporan','foto','status'];
+    protected $allowedFields    = ['id_masyarakat','judul','tanggal_pengaduan','hapus_pengaduan','nik','isi_laporan','foto','status'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'tanggal_pengaduan';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    protected $updatedField  = '';
+    protected $deletedField  = 'hapus_pengaduan';
 
     // Validation
     protected $validationRules      = [];

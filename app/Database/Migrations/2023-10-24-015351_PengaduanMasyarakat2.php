@@ -27,6 +27,9 @@ class PengaduanMasyarakat2 extends Migration
             'tanggal_pengaduan' => [
                 'type' => 'DATETIME',
             ],
+            'hapus_pengaduan' => [
+                'type' => 'DATETIME',
+            ],
             'nik' => [
                 'type' => 'VARCHAR',
                 'constraint' => '16',

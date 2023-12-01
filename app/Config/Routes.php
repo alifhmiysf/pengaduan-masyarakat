@@ -49,7 +49,7 @@ $routes->post('admin/tanggapan/(:num)', 'AdminController::Tanggapan/$1');
 $routes->post('/tambahpetugas', 'PetugasController::tambahpetugas');
 $routes->add('admin/reset-password', 'admin::resetPassword');
 $routes->post('pengaduan/update', 'PengaduanController::update');
-$routes->post('pengaduan/delete', 'PengaduanController::delete');
+$routes->get('/pengaduan/delete/(:num)', 'PengaduanController::delete/$1');
 
 
 $routes->get('/', 'Home::index');

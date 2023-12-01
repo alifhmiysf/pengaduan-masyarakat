@@ -160,7 +160,7 @@ class PengaduanController extends ResourceController
     public function delete($id_pengaduan = null)
     {
         if ($id_pengaduan === null) {
-            // Handle the case where ID is not provided
+            // Handle the cas   e where ID is not provided
             // You might redirect to an error page or show an error message
         }
 
