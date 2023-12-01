@@ -120,30 +120,39 @@
                                         <h5 class="modal-title" id="exampleModalLabel">Tambah Petugas/Administrator</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    
+
                                     <div class="modal-body">
                                         <div class="container-fluid">
                                             <form action="<?= base_url('/tambahpetugas') ?>" method="post">
-                                            <div class="mb-3">
-                                                <label for="nama">Nama</label>
-                                                <input type="text" id="nama_petugas" name="nama_petugas"  class="form-control" required>
-                                            </div>
+                                                <div class="mb-3">
+                                                    <label for="nama">Nama</label>
+                                                    <input type="text" id="nama_petugas" name="nama_petugas" class="form-control" required>
+                                                </div>
 
-                                            <div class="mb-3">
-                                                <label for="username">Username</label>
-                                                <input type="text" id="username" name="username" class="form-control" required>
-                                            </div>
+                                                <div class="mb-3">
+                                                    <label for="username">Username</label>
+                                                    <input type="text" id="username" name="username" class="form-control" required>
+                                                </div>
 
-                                            <div class="mb-3">
-                                                <label for="password">Password</label>
-                                                <input type="password" id="password" name="password" class="form-control" required>
-                                            </div>
+                                                <div class="mb-3">
+                                                    <label for="password">Password</label>
+                                                    <input type="password" id="password" name="password" class="form-control" required>
+                                                </div>
 
-                                            <div class="mb-3">
-                                                <label for="no_telepon">No Telepon</label>
-                                                <input type="text" id="telepon" name="telepon" class="form-control" required>
-                                            </div>
-                                            
+                                                <div class="mb-3">
+                                                    <label for="no_telepon">No Telepon</label>
+                                                    <input type="text" id="telepon" name="telepon" class="form-control" required>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="level">Role</label>
+                                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                        <option value="1">Administrator</option>
+                                                        <option value="2">Petugas</option>
+                                                    </select>
+                                                </div>
+
+
                                                 <button type="submit" class="btn btn-primary mt-4">Simpan</button>
                                             </form>
                                         </div>
@@ -179,8 +188,9 @@
                                             <td><?= $row['username']; ?></td>
                                             <td><?= $row['password']; ?></td>
                                             <td><?= $row['telepon']; ?></td>
-                                            <td><button class="btn btn-dark" type="button">Reset Password</button>
-                                            <button class="btn btn-dark" type="button">Edit</button></td>
+                                            <td><button class="btn btn-outline-danger" type="button">Reset Password</button>
+                                                <button class="btn btn-outline-warning" type="button">Edit</button>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
 
