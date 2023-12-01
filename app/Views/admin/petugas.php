@@ -17,6 +17,7 @@
     <!-- <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('css/style-register.css') ?>"> -->
     <!-- Custom styles for this template-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="<?= base_url('assets-dashboard-admin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets-dashboard-admin/css/style.css') ?>">
@@ -108,7 +109,7 @@
                         <h1 class="h3 mb-2 text-gray-800 col align-self-start">Petugas</h1>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Tambah Petugas +
+                            Tambah +
                         </button>
 
                         <!-- Modal -->
@@ -116,25 +117,34 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Petugas/Administrator</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
+                                    
                                     <div class="modal-body">
                                         <div class="container-fluid">
                                             <form action="<?= base_url('/tambahpetugas') ?>" method="post">
+                                            <div class="mb-3">
                                                 <label for="nama">Nama</label>
                                                 <input type="text" id="nama_petugas" name="nama_petugas"  class="form-control" required>
+                                            </div>
 
+                                            <div class="mb-3">
                                                 <label for="username">Username</label>
                                                 <input type="text" id="username" name="username" class="form-control" required>
+                                            </div>
 
+                                            <div class="mb-3">
                                                 <label for="password">Password</label>
                                                 <input type="password" id="password" name="password" class="form-control" required>
+                                            </div>
 
+                                            <div class="mb-3">
                                                 <label for="no_telepon">No Telepon</label>
                                                 <input type="text" id="telepon" name="telepon" class="form-control" required>
-
-                                                <button type="submit" class="btn btn-primary">Save</button>
+                                            </div>
+                                            
+                                                <button type="submit" class="btn btn-primary mt-4">Simpan</button>
                                             </form>
                                         </div>
                                     </div>
@@ -169,14 +179,10 @@
                                             <td><?= $row['username']; ?></td>
                                             <td><?= $row['password']; ?></td>
                                             <td><?= $row['telepon']; ?></td>
+                                            <td><button class="btn btn-dark" type="button">Reset Password</button>
+                                            <button class="btn btn-dark" type="button">Edit</button></td>
                                         </tr>
                                     <?php endforeach; ?>
-                                    <tr>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button class="btn btn-dark" type="button">Edit</button>
-                                            <button class="btn btn-dark" type="button">Delet</button>
-                                        </div>
-                                    </tr>
 
                                     </td>
                                     </tr>
@@ -234,7 +240,6 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url(' assets-dashboard-admin/vendor/jquery/jquery.min.js') ?>"></script>
-    <script src="<?= base_url('assets-dashboard-admin/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="<?= base_url(' assets-dashboard-admin/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
