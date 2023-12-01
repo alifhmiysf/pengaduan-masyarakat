@@ -20,6 +20,10 @@ class PengaduanMasyarakat2 extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'username' => [
+                'type' => 'VARCHAR',
+                'constraint' => '25',
+            ],
             'judul' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',

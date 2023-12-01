@@ -25,6 +25,7 @@ class MasyarakatController extends BaseController
     public function history()
     {
         // Mendapatkan semua data pengaduan untuk pengguna yang saat ini login
+        
         $id_masyarakat = $this->session->get('id_masyarakat');
         $pengaduan = $this->PengaduanModel->where("id_masyarakat", $id_masyarakat)->findAll();
         $tanggapann = $this->TanggapanModel->findAll();

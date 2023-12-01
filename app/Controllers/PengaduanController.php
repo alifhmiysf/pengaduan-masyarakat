@@ -78,9 +78,12 @@ class PengaduanController extends ResourceController
             $foto->move(ROOTPATH . 'public/uploads/', $newName); // Simpan foto ke direktori 'uploads'
         }
         $nik = $this->session->get('nik');
+        $username = $this->session->get('username');
+
         // Validasi berhasil, lanjutkan dengan penyimpanan data ke database atau operasi lainnya
         $data = [
             'id_masyarakat' => $this->session->get('id_masyarakat'),
+            'username' => $username,
             'judul' => $judul,
             'nik' => $nik,
             'tanggal_pengaduan' => $tanggal_pengaduan,

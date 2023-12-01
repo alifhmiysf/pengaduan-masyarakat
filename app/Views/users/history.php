@@ -87,10 +87,14 @@
                                             </div>
                                             <div class="modal-body">
                                                 <form class="mb-5" method="post" action="<?= site_url('pengaduan/update'); ?>" enctype="multipart/form-data">
-                                                    <input type="text" name="id_pengaduan" value="<?= $row['id_pengaduan']; ?>">
+                                                    
 
 
 
+                                                    <div class="mb-3">
+                                                        <label for="id_pengaduan" class="form-label">id_pengaduan</label>
+                                                        <input type="text" class="form-control" id="id_pengaduan" name="id_pengaduan" placeholder="id_pengaduan" readonly value="<?= $row['id_pengaduan']; ?>">
+                                                    </div>
                                                     <div class="mb-3">
                                                         <label for="judul" class="form-label">Judul</label>
                                                         <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul" value="<?= $row['judul']; ?>">
@@ -134,6 +138,9 @@
                                             </ul>
                                             <ul>
                                                 id masyarakat : <?= $row['id_masyarakat']; ?>
+                                            </ul>
+                                            <ul>
+                                                username : <?= $row['username']; ?>
                                             </ul>
                                             <ul>
                                                 id pengaduan : <?= $row['id_pengaduan']; ?>
