@@ -181,6 +181,6 @@ class LoginController extends BaseController
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('/auth/login')->with('success', 'Anda berhasil logout.');
+        return redirect()->to('/pengaduan-masyarakat/home')->with('success', 'Anda berhasil logout.');
     }
 }
