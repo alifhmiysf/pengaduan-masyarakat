@@ -80,12 +80,12 @@ https://templatemo.com/tm-590-topic-listing
                                     <input type="text" class="form-control" id="judul" name="judul" placeholder="judul">
                                 </div>
 
-                                <div class="mb-3">
+                                <!-- <div class="mb-3">
                                     <label for="NIK" class="form-label">NIK</label>
                                     <input type="text" class="form-control" id="NIK" name="NIK" placeholder="NIK">
-                                </div>
+                                </div> -->
 
-
+                                
                                 <div class="mb-3">
                                     <label for="pengaduan" class="form-label">Pilih tanggal kejadian</label>
                                     <input type="date" class="form-control" id="pengaduan" name="pengaduan">

@@ -66,7 +66,7 @@ class PengaduanController extends ResourceController
     public function create()
     {
         $judul = $this->request->getPost('judul');
-        $nik = $this->request->getPost('NIK');
+        // $nik = $this->request->getPost('NIK');
         $tanggal_pengaduan = $this->request->getPost('pengaduan');
         $isi_laporan = $this->request->getPost('isi_laporan');
         $foto = $this->request->getFile('foto');
@@ -77,7 +77,7 @@ class PengaduanController extends ResourceController
             $newName = $foto->getRandomName();
             $foto->move(ROOTPATH . 'public/uploads/', $newName); // Simpan foto ke direktori 'uploads'
         }
-
+        $nik = $this->session->get('nik');
         // Validasi berhasil, lanjutkan dengan penyimpanan data ke database atau operasi lainnya
         $data = [
             'id_masyarakat' => $this->session->get('id_masyarakat'),

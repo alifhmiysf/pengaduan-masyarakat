@@ -143,6 +143,7 @@ class LoginController extends BaseController
                 $this->session->set([
                     "isLogin" => TRUE,
                     "id_masyarakat" => $masyarakat['id_masyarakat'],
+                    "nik" => $masyarakat['nik'],
                 ]);
                 return redirect()->to('/pengaduan-masyarakat/afterlogin');
             } else {
