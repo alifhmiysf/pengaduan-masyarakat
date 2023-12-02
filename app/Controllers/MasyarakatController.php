@@ -60,45 +60,59 @@ class MasyarakatController extends BaseController
     }
 
     public function resetpw()
-{
-    $MasyarakatModel = new MasyarakatModel();
+    {
+        $MasyarakatModel = new \App\Models\MasyarakatModel();
 
-    // Mendapatkan ID masyarakat dari formulir
-    $id_masyarakat = $this->request->getPost('id_masyarakat');
+        // Mendapatkan ID masyarakat dari formulir
+        $id_masyarakat = $this->request->getPost('id_masyarakat');
 
-    if (!$id_masyarakat) {
-        return redirect()->to('/admin/manajemen_masyarakat')->with('error', 'Invalid user ID');
+        // Pengecekan ID masyarakat
+        if (!$id_masyarakat) {
+            return redirect()->to('/admin/manajemen_masyarakat')->with('error', 'Invalid user ID');
+        }
+
+        // Validasi form reset password
+        $validationRules = [
+            'new_password'      => 'required|min_length[8]',
+            'confirm_password'  => 'required|matches[new_password]',
+        ];
+
+        if ($this->validate($validationRules)) {
+            // Ambil password baru dari formulir
+            $newPassword = $this->request->getPost('new_password');
+
+            // Mendapatkan data masyarakat dari database
+            $user = $MasyarakatModel->find($id_masyarakat);
+
+            // Pengecekan apakah data masyarakat ditemukan
+            if (!$user) {
+                return redirect()->to('/admin/manajemen_masyarakat')->with('error', 'User not found');
+            }
+
+            // Ambil salt dari data masyarakat
+            $userSalt = $user['salt'];
+
+            // Hash password baru dengan salt
+            $hashedPassword = password_hash($newPassword . $userSalt, PASSWORD_BCRYPT);
+
+            // Simpan password baru ke dalam database
+            $MasyarakatModel->update($id_masyarakat, [
+                'password' => $hashedPassword,
+            ]);
+
+            return redirect()->to('/admin/manajemen_masyarakat')->with('success', 'Password reset successfully!');
+        } else {
+            // Jika validasi gagal, tampilkan form reset password dengan pesan kesalahan
+            $data['validation'] = $this->validator;
+            $data['id_masyarakat'] = $id_masyarakat;
+            dd($this->validator->getErrors());
+            return view('admin/reset_password', $data);
+        }
     }
 
-    // Validasi form reset password
-    $validationRules = [
-        'new_password'      => 'required|min_length[8]',
-        'confirm_password'  => 'required|matches[new_password]',
-    ];
 
-    if ($this->validate($validationRules)) {
-        // Ambil password baru dari formulir
-        $newPassword = $this->request->getPost('new_password');
 
-        // Hash password baru
-        $hashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
 
-        // Simpan password baru ke dalam database bersamaan dengan salt
-        $MasyarakatModel->where('id_masyarakat', $id_masyarakat)->update([
-            'password' => $hashedPassword,
-            'salt' => $newSalt,  // Ganti nilai salt jika diperlukan
-        ]);
-
-        return redirect()->to('/admin/manajemen_masyarakat')->with('success', 'Password reset successfully!');
-    } else {
-        // Jika validasi gagal, tampilkan form reset password dengan pesan kesalahan
-        $data['validation'] = $this->validator;
-        $data['id_masyarakat'] = $id_masyarakat;
-        return view('admin/reset_password', $data);
-    }
-}
-
-    
 
 
 

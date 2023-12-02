@@ -159,7 +159,7 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <!-- isi form  -->
-                                                                    <form method="post" action="<?= base_url('masyarakat/resetpw/'); ?>">
+                                                                    <form method="post" action="<?= base_url('masyarakat/resetpw'); ?>">
                                                                         <input type="hidden" name="id_masyarakat" value="<?= $id_masyarakat ?? ''; ?>">
                                                                         <!-- Formulir lainnya -->
 
