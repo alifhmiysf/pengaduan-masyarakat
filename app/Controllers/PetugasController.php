@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\PetugasModel;
+use App\Models\MasyarakatModel;
+use App\Models\PengaduanModel;
 
 class PetugasController extends BaseController
 {
@@ -11,17 +13,19 @@ class PetugasController extends BaseController
     public function __construct()
     {
         $this->PetugasModel = new \App\Models\PetugasModel();
+        $this->MasyarakatModel = new \App\Models\MasyarakatModel();
+        $this->PengaduanModel = new \App\Models\PengaduanModel();
     }
     public function index()
     {
-        // Mendapatkan semua data petugas
-        $petugas = $this->PetugasModel->findAll();
+        // Mendapatkan semua data masyarakat
+        $pengaduan = $this->PengaduanModel->findAll();
 
         // Cetak data untuk memeriksa struktur
-        // print_r($petugas);
+        // print_r($pengaduan);
 
         $data = [
-            'petugas' => $petugas, // Use lowercase 'petugas' here
+            'pengaduan' => $pengaduan,
         ];
         return view('petugas/index', $data);
     }
@@ -63,7 +67,14 @@ class PetugasController extends BaseController
 
     public function masyarakat()
     {
-        return view('petugas/masyarakat');
+        // Mendapatkan semua data masyarakat
+        $masyarakat = $this->MasyarakatModel->findAll();
+
+        $data = [
+            'masyarakat' => $masyarakat,
+        ];
+
+        return view('petugas/masyarakat', $data);
     }
 
     public function verifikasi()

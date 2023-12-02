@@ -1,9 +1,4 @@
-/*
-* Template Name: UntreeStore
-* Template Author: Untree.co
-* Author URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 body {
   overflow-x: hidden;
@@ -102,7 +97,7 @@ a {
   @media (min-width: 768px) {
     .hero {
       padding: calc(4rem - 30px) 0 4rem 0; } }
-  @media (min-width: 992px) {
+  @media (min-width: 552px) {
     .hero {
       padding: calc(8rem - 30px) 0 8rem 0; } }
   .hero .intro-excerpt {
@@ -110,7 +105,7 @@ a {
     z-index: 4; }
     @media (min-width: 992px) {
       .hero .intro-excerpt {
-        max-width: 450px; } }
+        max-width: 1450px; } }
   .hero h1 {
     font-weight: 700;
     color: #ffffff;
@@ -127,9 +122,8 @@ a {
       position: relative;
       top: 0px;
       right: 0px;
-      z-index: 2;
-      max-width: 780px;
-      left: -20px; }
+      max-width: auto;
+      left: -50px; }
       @media (min-width: 768px) {
         .hero .hero-img-wrap img {
           right: 0px;
@@ -138,16 +132,17 @@ a {
         .hero .hero-img-wrap img {
           left: 0px;
           top: -80px;
-          position: absolute;
+          position: relative;
           right: -50px; } }
       @media (min-width: 1200px) {
         .hero .hero-img-wrap img {
           left: 0px;
-          top: -80px;
+          top: -30px;
           right: -100px; } }
     .hero .hero-img-wrap:after {
       content: "";
       position: absolute;
+      bottom:100px;
       width: 255px;
       height: 217px;
       background-image: url("../images/dots-light.svg");
@@ -155,7 +150,7 @@ a {
       background-repeat: no-repeat;
       right: -100px;
       top: -0px; }
-      @media (min-width: 1200px) {
+      @media (min-width: 100px) {
         .hero .hero-img-wrap:after {
           top: -40px; } }
 

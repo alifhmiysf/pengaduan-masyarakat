@@ -106,7 +106,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <h1 class="h3 mb-2 text-gray-800 col align-self-start">Petugas</h1>
+                        <h1 class="h3 mb-2 text-gray-800 col align-self-start">Manajemen Petugas</h1>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Tambah +
@@ -197,45 +197,45 @@
 
                                             </td>
                                             <td> <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                                        Ubah Password
-                                                    </button>
+                                                    Ubah Password
+                                                </button>
 
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="staticBackdropLabel">Reset password</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <!-- isi form  -->
-                                                                    <form method="post" action="<?= base_url('admin/reset-password') ?>">
-                                                                        <div class="row g-3 align-items-center">
-                                                                            <div class="mb-3">
-                                                                                <label for="new_password" class="col-form-label">New Password:</label>
-                                                                                <input type="password" name="new_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
-                                                                            </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="staticBackdropLabel">Reset password</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <!-- isi form  -->
+                                                                <form method="post" action="<?= base_url('admin/reset-password') ?>">
+                                                                    <div class="row g-3 align-items-center">
+                                                                        <div class="mb-3">
+                                                                            <label for="new_password" class="col-form-label">New Password:</label>
+                                                                            <input type="password" name="new_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
                                                                         </div>
+                                                                    </div>
 
 
-                                                                        <div class="row g-3 align-items-center">
-                                                                            <div class="mb-3">
-                                                                                <label for="confirm_password" class="col-form-label">Confirm Password:</label>
-                                                                                <input type="password" name="confirm_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
-                                                                            </div>
+                                                                    <div class="row g-3 align-items-center">
+                                                                        <div class="mb-3">
+                                                                            <label for="confirm_password" class="col-form-label">Confirm Password:</label>
+                                                                            <input type="password" name="confirm_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
                                                                         </div>
-                                                                        <br>
-                                                                        <button class="btn btn-primary" type="submit">Reset Password</button>
-                                                                    </form>
-                                                                </div>
+                                                                    </div>
+                                                                    <br>
+                                                                    <button class="btn btn-primary" type="submit">Reset Password</button>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
                                                 <button class="btn btn-outline-warning" type="button">Edit</button>
-                                                
 
-                                                
+
+
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -258,7 +258,10 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script>. All Rights Reserved. &mdash; Designed by Pengaduan <!-- License information: https://untree.co/license/ -->
+                        </p>
                     </div>
                 </div>
             </footer>

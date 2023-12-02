@@ -117,7 +117,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <h1 class="h3 mb-2 text-gray-800 col align-self-start">Masyarakat</h1>
+                        <h1 class="h3 mb-2 text-gray-800 col align-self-start">Manajemen Masyarakat</h1>
 
                     </div>
 
@@ -203,7 +203,10 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script>. All Rights Reserved. &mdash; Designed by Pengaduan <!-- License information: https://untree.co/license/ -->
+                        </p>
                     </div>
                 </div>
             </footer>

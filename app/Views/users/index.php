@@ -1,10 +1,4 @@
-<!-- /*
-* Bootstrap 5
-* Template Name: Furni
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
+
 <!doctype html>
 <html lang="en">
 
@@ -211,7 +205,7 @@
                     <div class="col-lg-6">
                         <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
-                            </script>. All Rights Reserved. &mdash; Designed by Fahmi <!-- License information: https://untree.co/license/ -->
+                            </script>. All Rights Reserved. &mdash; Designed by Pengaduan <!-- License information: https://untree.co/license/ -->
                         </p>
                     </div>
 

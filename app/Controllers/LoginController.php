@@ -85,9 +85,6 @@ class LoginController extends BaseController
 
         $petugas = $this->PetugasModel->where('username', $data['username'])->first();
         if ($petugas) {
-            // Jika pengguna tidak ditemukan di tabel masyarakat, coba mencari di tabel petugas
-            // $petugas = $this->PetugasModel->where('username', $data['username'])->first();
-
             //if ($petugas) {
             // Pengguna ditemukan di tabel petugas
             // $role = $petugas['level']; // Ambil peran (role) dari pengguna petugas
@@ -98,11 +95,6 @@ class LoginController extends BaseController
                 session()->setFlashdata('error', 'Password salah');
                 return redirect()->to('/auth/login');
             }
-            // } else {
-            //     // Jika pengguna tidak ditemukan di kedua tabel, tampilkan pesan kesalahan
-            //     session()->setFlashdata('error', 'Username tidak ditemukan');
-            //     return redirect()->to('/auth/login');
-            // }
         } else {
             // Pengguna ditemukan di tabel masyarakat
             if (password_verify($data['password'] . $masyarakat['salt'], $masyarakat['password'])) {
@@ -181,6 +173,6 @@ class LoginController extends BaseController
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('/pengaduan-masyarakat/home')->with('success', 'Anda berhasil logout.');
+        return redirect()->to('/')->with('success', 'Anda berhasil logout.');
     }
 }

@@ -30,11 +30,6 @@ class AdminController extends BaseController
         return view('admin/index');
     }
 
-    // public function verval()
-    // {
-    //     return view('admin/verifikasi');
-    // }
-
     public function petugas()
     {
         // Mendapatkan semua data petugas
@@ -56,44 +51,6 @@ class AdminController extends BaseController
 
 
 
-    //     public function tanggapan()
-    // {
-    //     // Ambil data dari formulir
-    //     $tanggal_tanggapan = $this->request->getPost('tanggal_tanggapan');
-    //     $tanggapan = $this->request->getPost('tanggapan');
-    //     $id_petugas = $this->request->getPost('id_petugas');
-
-    //     // Validasi formulir
-    //     $validationRules = [
-    //         'tanggal_tanggapan' => 'required|valid_date',
-    //         'tanggapan' => 'required',
-    //         'id_petugas' => 'required|numeric',
-    //     ];
-
-    //     $validation = \Config\Services::validation();
-
-    //     if (!$validation->run($this->request->getPost(), $validationRules)) {
-    //         // Tangani kesalahan validasi
-    //         return redirect()->back()->withInput()->with('error', $validation->listErrors());
-    //     }
-
-    //     // Persiapkan data untuk disimpan
-    //     $data = [
-    //         'tanggal_tanggapan' => esc($tanggal_tanggapan),
-    //         'tanggapan' => esc($tanggapan),
-    //         'id_petugas' => (int) $id_petugas,
-    //     ];
-
-    //     // Lakukan penyisipan data
-    //     if (!$this->TanggapanModel->insert($data)) {
-    //         // Tangani kesalahan penyisipan
-    //         log_message('error', 'Gagal menyimpan data tanggapan.');
-    //         return redirect()->to('/admin')->with('error', 'Gagal menyimpan data tanggapan.');
-    //     }
-
-    //     // Berhasil disimpan, kembalikan ke halaman admin dengan pesan sukses
-    //     return redirect()->to('/admin')->with('success', 'Data tanggapan berhasil disimpan.');
-    // }
 
     public function Tanggapan($id_pengaduan = null)
     {
@@ -107,16 +64,12 @@ class AdminController extends BaseController
             'tanggapan' => 'required',
             'id_petugas' => 'required|numeric',
         ];
-
         $validation = \Config\Services::validation();
-
         $validation->setRules($validationRules);
-
         if (!$validation->run($this->request->getPost())) {
             // Tangani kesalahan validasi
             return redirect()->back()->withInput()->with('error', $validation->listErrors());
         }
-
         // Persiapkan data untuk disimpan
         $data = [
             'id_pengaduan' => $id_pengaduan,
@@ -124,7 +77,6 @@ class AdminController extends BaseController
             'tanggapan' => esc($tanggapan),
             'id_petugas' => (int) $id_petugas,
         ];
-
         // Lakukan penyisipan data tanggapan
         if (!$this->TanggapanModel->insert($data)) {
             // Tangani kesalahan penyisipan
