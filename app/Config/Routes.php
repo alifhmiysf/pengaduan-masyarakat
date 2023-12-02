@@ -33,8 +33,6 @@ $routes->group('pengaduan-masyarakat', function ($routes) {
 
     $routes->post('afterloginn', 'PengaduanController::create'); 
     $routes->post('afterloginn', 'PengaduanController::index'); 
-
-    $routes->get('tanggapan_after_login', 'MasyarakatController::tanggapan');
     
 });
 
@@ -42,7 +40,6 @@ $routes->group('petugas', function ($routes) {
     // Rute petugas
     $routes->get('/', 'PetugasController::index');
     $routes->get('masyarakat', 'PetugasController::masyarakat');
-    $routes->get('verifikasi', 'PetugasController::verifikasi');
 });
 $routes->get('admincontroller/terima/(:num)', 'AdminController::terima/$1');
 $routes->get('admincontroller/tolak/(:num)', 'AdminController::tolak/$1');
@@ -51,8 +48,9 @@ $routes->post('/tambahpetugas', 'PetugasController::tambahpetugas');
 $routes->add('admin/reset-password', 'admin::resetPassword');
 $routes->post('pengaduan/update', 'PengaduanController::update');
 $routes->get('/pengaduan/delete/(:num)', 'PengaduanController::delete/$1');
+
+
 $routes->post('masyarakat/resetpw', 'MasyarakatController::resetpw');
 
-// default url:
 $routes->get('/', 'MasyarakatController::index');
 // $routes->get('/', 'Home::index');

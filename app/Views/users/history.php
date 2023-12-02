@@ -26,7 +26,7 @@
     <main>
         <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #243D54;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Pengaduan</a>
+                <a class="navbar-brand" href="<?= base_url('/pengaduan-masyarakat/afterlogin') ?>">Pengaduan</a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
@@ -131,28 +131,14 @@
                                     <div class="row">
                                         <div class="col">
                                             <img src="<?= base_url('uploads/') . $row['foto']; ?>" alt="" class="img-fluid w-100">
+                                            <ul class="mt-3">
+                                            <p>Isi laporan :</p>
+                                                <?= $row['isi_laporan']; ?>
+                                            </ul>
                                         </div>
                                         <div class="col">
-                                            <ul>
-                                                <h2>Identitas</h2>
-                                            </ul>
-                                            <ul>
-                                                id masyarakat : <?= $row['id_masyarakat']; ?>
-                                            </ul>
-                                            <ul>
-                                                username : <?= $row['username']; ?>
-                                            </ul>
-                                            <ul>
-                                                id pengaduan : <?= $row['id_pengaduan']; ?>
-                                            </ul>
-                                            <ul>
-                                                tanggal pengaduan : <?= $row['tanggal_pengaduan']; ?>
-                                            </ul>
-                                            <ul>
-                                                nik : <?= $row['nik']; ?>
-                                            </ul>
-                                            <ul>
-                                                status :
+                                        <ul>
+                                                <p>status laporan :</p> 
                                                 <?php if ($row['status'] == 0) : ?>
                                                     <div class="alert alert-info" role="alert">Diajukan</div>
                                                 <?php elseif ($row['status'] == 1) : ?>
@@ -164,21 +150,35 @@
                                                 <?php endif; ?>
                                             </ul>
                                             <ul>
-                                                <h2>Isi laporan</h2>
+                                                <p>Identitas Pelapor :</p>
                                             </ul>
                                             <ul>
-                                                <?= $row['isi_laporan']; ?>
+                                                NIK : <?= $row['nik']; ?>
                                             </ul>
                                             <ul>
-                                                <h2>Tanggapan</h2>
+                                                Nama Pelapor  : <?= $row['username']; ?>
                                             </ul>
-                                            <?php foreach ($tanggapann as $t) : ?>
+                                            <ul>
+                                                Tanggal Pengaduan : <?= $row['tanggal_pengaduan']; ?>
+                                            </ul>
+                                            <ul>
+                                                ID Pengaduan : <?= $row['id_pengaduan']; ?>
+                                            </ul>
+                                            <ul>
+                                                ID Pelapor : <?= $row['id_masyarakat']; ?>
+                                            </ul>
+                                            
+                                            <ul  class="mt-5">
+                                                <P>Tanggapan : </P>
+                                                <?php foreach ($tanggapann as $t) : ?>
                                                 <?php if ($t['id_pengaduan'] == $row['id_pengaduan']) : ?>
                                                     <ul>
                                                         <?= $t['tanggapan']; ?>
                                                     </ul>
                                                 <?php endif; ?>
                                             <?php endforeach; ?>
+                                            </ul>
+                                            
                                         </div>
                                     </div>
                                 </div>

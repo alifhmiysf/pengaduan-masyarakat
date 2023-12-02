@@ -37,7 +37,7 @@ https://templatemo.com/tm-590-topic-listing
     <main>
         <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #243D54;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Pengaduan</a>
+                <a class="navbar-brand" href="<?= base_url('/pengaduan-masyarakat/afterlogin') ?>">Pengaduan</a>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
@@ -79,12 +79,6 @@ https://templatemo.com/tm-590-topic-listing
                                     <label for="judul" class="form-label">Judul</label>
                                     <input type="text" class="form-control" id="judul" name="judul" placeholder="judul">
                                 </div>
-
-                                <!-- <div class="mb-3">
-                                    <label for="NIK" class="form-label">NIK</label>
-                                    <input type="text" class="form-control" id="NIK" name="NIK" placeholder="NIK">
-                                </div> -->
-
                                 
                                 <div class="mb-3">
                                     <label for="pengaduan" class="form-label">Pilih tanggal kejadian</label>
