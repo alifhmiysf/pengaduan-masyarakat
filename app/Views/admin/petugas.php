@@ -146,7 +146,7 @@
 
                                                 <div class="mb-3">
                                                     <label for="level">Role</label>
-                                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                    <select class="form-select form-select-lg mb-3" name="level" aria-label=".form-select-lg example">
                                                         <option value="1">Administrator</option>
                                                         <option value="2">Petugas</option>
                                                     </select>
@@ -174,8 +174,8 @@
                                             <th scope="col">No</th>
                                             <th scope="col">Nama petugas</th>
                                             <th scope="col">Username</th>
-                                            <th scope="col">Password</th>
                                             <th scope="col">Telepon</th>
+                                            <th scope="col">Role</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
@@ -186,10 +186,56 @@
                                             <td><?= $row['id_petugas']; ?></td>
                                             <td><?= $row['nama_petugas']; ?></td>
                                             <td><?= $row['username']; ?></td>
-                                            <td><?= $row['password']; ?></td>
                                             <td><?= $row['telepon']; ?></td>
-                                            <td><button class="btn btn-outline-danger" type="button">Reset Password</button>
+                                            <td>
+
+                                                <?php if ($row['level'] == 1) : ?>
+                                                    <div class="alert alert-info" role="alert">Administrator</div>
+                                                <?php elseif ($row['level'] == 2) : ?>
+                                                    <div class="alert alert-warning" role="alert">Petugas</div>
+                                                <?php endif; ?>
+
+                                            </td>
+                                            <td> <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                        Ubah Password
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="staticBackdropLabel">Reset password</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <!-- isi form  -->
+                                                                    <form method="post" action="<?= base_url('admin/reset-password') ?>">
+                                                                        <div class="row g-3 align-items-center">
+                                                                            <div class="mb-3">
+                                                                                <label for="new_password" class="col-form-label">New Password:</label>
+                                                                                <input type="password" name="new_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="row g-3 align-items-center">
+                                                                            <div class="mb-3">
+                                                                                <label for="confirm_password" class="col-form-label">Confirm Password:</label>
+                                                                                <input type="password" name="confirm_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <button class="btn btn-primary" type="submit">Reset Password</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 <button class="btn btn-outline-warning" type="button">Edit</button>
+                                                
+
+                                                
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

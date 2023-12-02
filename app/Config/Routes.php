@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\MasyarakatController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -50,6 +51,10 @@ $routes->post('/tambahpetugas', 'PetugasController::tambahpetugas');
 $routes->add('admin/reset-password', 'admin::resetPassword');
 $routes->post('pengaduan/update', 'PengaduanController::update');
 $routes->get('/pengaduan/delete/(:num)', 'PengaduanController::delete/$1');
+
+// File: app/Config/Routes.php
+$routes->post('masyarakat/resetpw', 'MasyarakatController::resetpw');
+
 
 
 $routes->get('/', 'Home::index');

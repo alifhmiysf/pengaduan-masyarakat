@@ -17,11 +17,12 @@
     <!-- <link rel="stylesheet" href="<?= base_url('bootstrap-5.0.2/css/bootstrap.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('css/style-register.css') ?>"> -->
     <!-- Custom styles for this template-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="<?= base_url('assets-dashboard-admin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets-dashboard-admin/css/style.css') ?>">
-    
-    
+
+
 </head>
 
 <body id="page-top">
@@ -158,24 +159,20 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <!-- isi form  -->
-                                                                    <form method="post" action="<?= base_url('admin/reset-password') ?>">
+                                                                    <form method="post" action="<?= base_url('masyarakat/resetpw/'); ?>">
+                                                                        <input type="hidden" name="id_masyarakat" value="<?= $id_masyarakat ?? ''; ?>">
+                                                                        <!-- Formulir lainnya -->
+
                                                                         <div class="row g-3 align-items-center">
-                                                                            <div class="col-auto">
+                                                                            <div class="mb-3">
                                                                                 <label for="new_password" class="col-form-label">New Password:</label>
-                                                                            </div>
-                                                                            <div class="col-auto">
                                                                                 <input type="password" name="new_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
                                                                             </div>
-                                                                            <div class="col-auto">
-                                                                                
-                                                                            </div>
                                                                         </div>
-                                                                        <br>
+
                                                                         <div class="row g-3 align-items-center">
-                                                                            <div class="col-auto">
+                                                                            <div class="mb-3">
                                                                                 <label for="confirm_password" class="col-form-label">Confirm Password:</label>
-                                                                            </div>
-                                                                            <div class="col-auto">
                                                                                 <input type="password" name="confirm_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
                                                                             </div>
                                                                         </div>
@@ -183,7 +180,6 @@
                                                                         <button class="btn btn-primary" type="submit">Reset Password</button>
                                                                     </form>
                                                                 </div>
-
                                                             </div>
                                                         </div>
                                                     </div>

@@ -54,6 +54,7 @@ class PetugasController extends BaseController
         'password' => $password,
         'salt' => $salt,
         'telepon' => $data['telepon'],
+        'level' => $data['level'], 
     ]);
 
     return redirect()->to('/admin/petugas')->with('success', 'Petugas added successfully');
