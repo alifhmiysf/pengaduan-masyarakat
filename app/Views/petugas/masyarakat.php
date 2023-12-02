@@ -38,7 +38,7 @@
                 </div>
                 <div class="sidebar-brand-text mx-3">Admin</div>
             </a>
-
+            <hr class="sidebar-divider my-0">
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('/petugas') ?>">
                     <i class="fas fa-envelope"></i>

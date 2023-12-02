@@ -52,8 +52,6 @@
                     <i class="fas fa-envelope"></i>
                     <span>Pengaduan</span></a>
             </li>
-
-            <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('/admin/petugas') ?>">
                     <i class="fas fa-user"></i>
@@ -64,7 +62,6 @@
                     <i class="fas fa-users"></i>
                     <span>Masyarakat</span></a>
             </li>
-            <hr class="sidebar-divider">
 
         </ul>
         <!-- End of Sidebar -->
