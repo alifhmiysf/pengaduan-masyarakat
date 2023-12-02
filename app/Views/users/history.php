@@ -71,26 +71,21 @@
                             <?php if ($row['status'] == 0) : ?>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     
-                                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 40px;">Edit</button>
+                                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan']; ?>" style="height: 40px;">Edit</button>
                                     <a href="<?= base_url('/pengaduan/delete/' . $row['id_pengaduan']); ?>" class="btn btn-danger">Delete</a>
                                 </div>
 
-
-
                                 <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="exampleModal<?= $row['id_pengaduan']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Edit Laporan</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 <form class="mb-5" method="post" action="<?= site_url('pengaduan/update'); ?>" enctype="multipart/form-data">
                                                     
-
-
-
                                                     <div class="mb-3">
                                                         <label for="id_pengaduan" class="form-label">id_pengaduan</label>
                                                         <input type="text" class="form-control" id="id_pengaduan" name="id_pengaduan" placeholder="id_pengaduan" readonly value="<?= $row['id_pengaduan']; ?>">

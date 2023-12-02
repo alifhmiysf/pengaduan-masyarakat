@@ -36,6 +36,11 @@ $routes->group('petugas', function ($routes) {
 $routes->get('admincontroller/terima/(:num)', 'AdminController::terima/$1');
 $routes->get('admincontroller/tolak/(:num)', 'AdminController::tolak/$1');
 $routes->post('admin/tanggapan/(:num)', 'AdminController::Tanggapan/$1');
+
+$routes->get('petugascontroller/terima/(:num)', 'PetugasController::terima/$1');
+$routes->get('petugascontroller/tolak/(:num)', 'PetugasController::tolak/$1');
+$routes->post('petugas/tanggapan/(:num)', 'PetugasController::Tanggapan/$1');
+
 $routes->post('/tambahpetugas', 'PetugasController::tambahpetugas');
 $routes->post('pengaduan/update', 'PengaduanController::update');
 $routes->get('/pengaduan/delete/(:num)', 'PengaduanController::delete/$1');

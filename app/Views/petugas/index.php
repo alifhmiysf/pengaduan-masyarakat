@@ -144,10 +144,8 @@
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <div class="d-flex mt-3 ">
-                                                                        <!-- <button class="btn btn-success mr-4" type="button">Terima</button> -->
-                                                                        <!-- <button class="btn btn-danger" type="button">Tolak</button> -->
-                                                                        <a href="<?= base_url('admincontroller/terima/' . $row['id_pengaduan']); ?>" class="btn btn-success">Terima</a>
-                                                                        <a href="<?= base_url('admincontroller/tolak/' . $row['id_pengaduan']); ?>" class="btn btn-danger">Tolak</a>
+                                                                        <a href="<?= base_url('petugascontroller/terima/' . $row['id_pengaduan']); ?>" class="btn btn-success">Terima</a>
+                                                                        <a href="<?= base_url('petugascontroller/tolak/' . $row['id_pengaduan']); ?>" class="btn btn-danger">Tolak</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -169,7 +167,7 @@
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        <form method="post" action="/admin/tanggapan/<?= $row['id_pengaduan'] ?>">
+                                                                        <form method="post" action="/petugas/tanggapan/<?= $row['id_pengaduan'] ?>">
                                                                             <div class="mb-3">
                                                                                 <label for="tanggal_tanggapan" class="form-label">Tanggal Tanggapan</label>
                                                                                 <input type="date" class="form-control" id="tanggal_tanggapan" name="tanggal_tanggapan">
