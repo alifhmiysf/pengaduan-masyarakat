@@ -59,6 +59,7 @@ class MasyarakatController extends BaseController
         return view('users/history', $data);
     }
 
+    // reset password sisi admin
     public function resetpw()
     {
         $MasyarakatModel = new \App\Models\MasyarakatModel();
@@ -109,6 +110,8 @@ class MasyarakatController extends BaseController
             return view('admin/reset_password', $data);
         }
     }
+
+
     public function afterlogin()
     {
         return view('users/afterlogin');
