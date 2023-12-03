@@ -20,6 +20,7 @@ $routes->group('admin', function ($routes) {
     $routes->get('petugas', 'AdminController::petugas');
     $routes->get('manajemen_masyarakat', 'ManajemenMasyarakat::index');
     $routes->post('tambah_tanggapan/(:any)', 'AdminController::tanggapan/$1');
+    $routes->post('laporan', 'LaporanController::index');
 });
 
 $routes->group('pengaduan-masyarakat', function ($routes) {
