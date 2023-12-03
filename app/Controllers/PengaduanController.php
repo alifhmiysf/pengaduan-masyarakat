@@ -121,8 +121,6 @@ class PengaduanController extends ResourceController
     {
         $model = new PengaduanModel();
 
-        // $data['pengaduan'] = $model->where('id_pengaduan', $id_pengaduan)->first();
-
         $validation = \Config\Services::validation();
         $validation->setRules([
             'judul' => 'required',
@@ -131,9 +129,9 @@ class PengaduanController extends ResourceController
 
         $isDataValid = $validation->withRequest($this->request)->run();
 
-
         if ($isDataValid) {
-            $model->update($this->request->getPost('id_pengaduan'), [
+            $model->update($this->request->getPost('id_pengaduan'), 
+            [
                 "judul" => $this->request->getPost('judul'),
                 "isi_laporan" => $this->request->getPost('isi_laporan'),
             ]);

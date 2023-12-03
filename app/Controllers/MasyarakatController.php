@@ -59,7 +59,7 @@ class MasyarakatController extends BaseController
         return view('users/history', $data);
     }
 
-    
+
     // reset password masyarakat sisi admin
     public function showResetForm($id_masyarakat = null)
     {
@@ -146,6 +146,35 @@ class MasyarakatController extends BaseController
         // Redirect to a suitable page after updating
         return redirect()->to('/petugas/masyarakat')->with('success', 'Password reset successfully.');
     }
+
+
+
+    public function updatemasyarakat($id_masyarakat = null)
+    {
+        $model = new MasyarakatModel();
+
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'nik' => 'required',
+            'username' => 'required',
+            'telepon' => 'required',
+        ]);
+
+        $isDataValid = $validation->withRequest($this->request)->run();
+
+        if ($isDataValid) {
+            $model->update(
+                $this->request->getPost('id_masyarakat'),
+                [
+                    "nik" => $this->request->getPost('nik'),
+                    "username" => $this->request->getPost('username'),
+                    "telepon" => $this->request->getPost('telepon'),
+                ]
+            );
+            return redirect()->to('/admin/manajemen_masyarakat')->with('success', 'Data berhasil diperbarui.');
+        }
+    }
+
 
 
 
