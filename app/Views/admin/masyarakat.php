@@ -147,95 +147,95 @@
                                                 <td><?= $row['telepon']; ?></td>
                                                 <td>
                                                     <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $row['id_masyarakat'] ?>">
                                                         Ubah Password
                                                     </button>
 
                                                     <!-- Modal Ubah Password -->
-                                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="staticBackdrop<?= $row['id_masyarakat'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="staticBackdropLabel">Reset password</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <!-- isi form  -->
-                                                                    <form method="post" action="<?= base_url('masyarakat/resetpw'); ?>">
-                                                                        <input type="hidden" name="id_masyarakat" value="<?= $id_masyarakat ?? ''; ?>">
-                                                                        <!-- Formulir lainnya -->
+                                                                    <form method="post" action="<?= base_url('/masyarakat/reset-password/' . $row['id_masyarakat']); ?>">
 
-                                                                        <div class="row g-3 align-items-center">
-                                                                            <div class="mb-3">
-                                                                                <label for="new_password" class="col-form-label">New Password:</label>
-                                                                                <input type="password" name="new_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
-                                                                            </div>
-                                                                        </div>
 
-                                                                        <div class="row g-3 align-items-center">
-                                                                            <div class="mb-3">
-                                                                                <label for="confirm_password" class="col-form-label">Confirm Password:</label>
-                                                                                <input type="password" name="confirm_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
+
+                                                                            <div class="row g-3 align-items-center">
+                                                                                <div class="mb-3">
+                                                                                    <label for="new_password" class="col-form-label">New Password:</label>
+                                                                                    <input type="password" name="new_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <br>
-                                                                        <button class="btn btn-primary" type="submit">Reset Password</button>
-                                                                    </form>
+
+                                                                            <div class="row g-3 align-items-center">
+                                                                                <div class="mb-3">
+                                                                                    <label for="confirm_password" class="col-form-label">Confirm Password:</label>
+                                                                                    <input type="password" name="confirm_password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" required>
+                                                                                </div>
+                                                                            </div>
+                                                                            <br>
+                                                                            <button class="btn btn-primary" type="submit">Reset Password</button>
+                                                                        </form>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-                                                    Edit
-                                                </button>
+                                                        Edit
+                                                    </button>
 
-                                                <!-- Modal Edit -->
-                                                <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="staticBackdropLabel1">Edit</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <!-- isi form  -->
-                                                                <form method="post" action="">
-                                                                    <div class="mb-3">
-                                                                        <label for="nama">Nama</label>
-                                                                        <input type="text" id="nama_petugas" name="nama_petugas" class="form-control" required>
-                                                                    </div>
+                                                    <!-- Modal Edit -->
+                                                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="staticBackdropLabel1">Edit</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <!-- isi form  -->
+                                                                    <form method="post" action="">
+                                                                        <div class="mb-3">
+                                                                            <label for="nama">Nama</label>
+                                                                            <input type="text" id="nama_petugas" name="nama_petugas" class="form-control" required>
+                                                                        </div>
 
-                                                                    <div class="mb-3">
-                                                                        <label for="username">Username</label>
-                                                                        <input type="text" id="username" name="username" class="form-control" required>
-                                                                    </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="username">Username</label>
+                                                                            <input type="text" id="username" name="username" class="form-control" required>
+                                                                        </div>
 
-                                                                    <div class="mb-3">
-                                                                        <label for="password">Password</label>
-                                                                        <input type="password" id="password" name="password" class="form-control" required>
-                                                                    </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="password">Password</label>
+                                                                            <input type="password" id="password" name="password" class="form-control" required>
+                                                                        </div>
 
-                                                                    <div class="mb-3">
-                                                                        <label for="no_telepon">No Telepon</label>
-                                                                        <input type="text" id="telepon" name="telepon" class="form-control" required>
-                                                                    </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="no_telepon">No Telepon</label>
+                                                                            <input type="text" id="telepon" name="telepon" class="form-control" required>
+                                                                        </div>
 
-                                                                    <div class="mb-3">
-                                                                        <label for="level">Role</label>
-                                                                        <select class="form-select form-select-lg mb-3" name="level" aria-label=".form-select-lg example">
-                                                                            <option value="1">Administrator</option>
-                                                                            <option value="2">Petugas</option>
-                                                                        </select>
-                                                                    </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="level">Role</label>
+                                                                            <select class="form-select form-select-lg mb-3" name="level" aria-label=".form-select-lg example">
+                                                                                <option value="1">Administrator</option>
+                                                                                <option value="2">Petugas</option>
+                                                                            </select>
+                                                                        </div>
 
 
-                                                                    <button type="submit" class="btn btn-primary mt-4">Simpan</button>
-                                                                </form>
+                                                                        <button type="submit" class="btn btn-primary mt-4">Simpan</button>
+                                                                    </form>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
                                                 </td>
                                             </tr>

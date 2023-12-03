@@ -75,49 +75,6 @@ class LoginController extends BaseController
     }
 
 
-    public function valid_login_old()
-    {
-        $data = $this->request->getPost();
-
-        // Cari pengguna di tabel masyarakat
-        $masyarakat = $this->MasyarakatModel->where('username', $data['username'])->first();
-        // $masyarakat = $this->MasyarakatModel->where('nik', $data['username'])->first();
-
-        $petugas = $this->PetugasModel->where('username', $data['username'])->first();
-        if ($petugas) {
-            //if ($petugas) {
-            // Pengguna ditemukan di tabel petugas
-            // $role = $petugas['level']; // Ambil peran (role) dari pengguna petugas
-            if (password_verify($data['password'] . $petugas['salt'], $petugas['password'])) {
-                echo "lari ke admin";
-            } else {
-                // Kata sandi salah
-                session()->setFlashdata('error', 'Password salah');
-                return redirect()->to('/auth/login');
-            }
-        } else {
-            // Pengguna ditemukan di tabel masyarakat
-            if (password_verify($data['password'] . $masyarakat['salt'], $masyarakat['password'])) {
-                $role = 'masyarakat'; // Pengguna adalah masyarakat
-            } else {
-                // Kata sandi salah
-                session()->setFlashdata('error', 'Password salah');
-                return redirect()->to('/auth/login');
-            }
-        }
-
-        // Selanjutnya, sesuaikan pengguna sesuai peran (role)
-        if ($role == 1) {
-            // Pengguna adalah admin, arahkan sesuai peran
-            return redirect()->to('/admin/manajemen_masyarakat');
-        } elseif ($role == 2) {
-            // Pengguna adalah petugas, arahkan sesuai peran
-            return redirect()->to('/admin/petugas');
-        } else {
-            // Pengguna adalah masyarakat, arahkan sesuai peran
-            return redirect()->to('/pengaduan-masyarakat/afterlogin');
-        }
-    }
 
     public function valid_login()
     {

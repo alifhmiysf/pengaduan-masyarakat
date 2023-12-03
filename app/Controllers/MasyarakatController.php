@@ -59,7 +59,7 @@ class MasyarakatController extends BaseController
         return view('users/history', $data);
     }
 
-    // reset password sisi admin
+    // reset password masyarakat sisi admin
     public function resetpw()
     {
         $MasyarakatModel = new \App\Models\MasyarakatModel();
@@ -69,7 +69,7 @@ class MasyarakatController extends BaseController
 
         // Pengecekan ID masyarakat
         if (!$id_masyarakat) {
-            return redirect()->to('/admin/manajemen_masyarakat')->with('error', 'Invalid user ID');
+            return redirect()->to('masyarakat/resetpssw')->with('error', 'Invalid user ID');
         }
 
         // Validasi form reset password
@@ -109,6 +109,52 @@ class MasyarakatController extends BaseController
             dd($this->validator->getErrors());
             return view('admin/reset_password', $data);
         }
+    }
+
+    // ex reset pw
+    public function showResetForm($id_masyarakat = null)
+    {
+        // Load necessary models and libraries if needed
+
+        // Pass the user ID to the view
+        $data['id_masyarakat'] = $id_masyarakat;
+
+        return view('/admin/manajemen_masyarakat', $data);
+    }
+
+    public function updater($id_masyarakat = null)
+    {
+        // Get data from the form
+        $data = $this->request->getPost();
+
+        // Run validation
+        $validationRules = [
+            'new_password'      => 'required|min_length[8]',
+            'confirm_password'  => 'required|matches[new_password]',
+        ];
+
+        if (!$this->validate($validationRules)) {
+            // If validation fails, redirect back with errors
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        // Validation successful
+
+        // Get existing user data
+        $existingData = $this->MasyarakatModel->find($id_masyarakat);
+
+        $salt = uniqid('', true);
+
+        // Hash the new password
+        $hashedPassword = password_hash($data['new_password'] . $salt, PASSWORD_BCRYPT);
+        // Update the user data in the database
+        $this->MasyarakatModel->update($id_masyarakat, [
+            'password' => $hashedPassword,
+            'salt' => $salt,
+        ]);
+
+        // Redirect to a suitable page after updating
+        return redirect()->to('/admin/manajemen_masyarakat')->with('success', 'Password reset successfully.');
     }
 
 

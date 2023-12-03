@@ -47,6 +47,9 @@ $routes->get('/pengaduan/delete/(:num)', 'PengaduanController::delete/$1');
 
 
 $routes->post('masyarakat/resetpw', 'MasyarakatController::resetpw');
+$routes->post('masyarakat/reset-password/(:num)', 'MasyarakatController::updater/$1');
+$routes->get('masyarakat/reset-password/(:num)', 'MasyarakatController::showResetForm/$1');
+
 
 $routes->get('/', 'MasyarakatController::index');
 // $routes->get('/', 'Home::index');
