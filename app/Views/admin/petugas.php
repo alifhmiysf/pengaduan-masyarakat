@@ -238,48 +238,45 @@
                                                 </div>
 
 
-                                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop2<?= $row['id_petugas']; ?>">
                                                     Edit
                                                 </button>
 
                                                 <!-- Modal Edit -->
-                                                <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+                                                <div class="modal fade" id="staticBackdrop2<?= $row['id_petugas']; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="staticBackdropLabel1">Edit</h5>
+                                                                <h5 class="modal-title" id="staticBackdropLabel2">Edit</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <!-- isi form  -->
-                                                                <form method="post" action="">
+                                                                <form method="post" action="<?= site_url('data-petugas/update'); ?>" enctype="multipart/form-data">
+                                                                    <input class="form-control" id="id_petugas" name="id_petugas" placeholder="id_petugas" readonly value="<?= $row['id_petugas']; ?>">
                                                                     <div class="mb-3">
-                                                                        <label for="nama">Nama</label>
-                                                                        <input type="text" id="nama_petugas" name="nama_petugas" class="form-control" required>
+                                                                        <label for="nama_petugas">Nama</label>
+                                                                        <input type="text" id="nama_petugas" name="nama_petugas" class="form-control" required value="<?= $row['nama_petugas']; ?>">
                                                                     </div>
 
                                                                     <div class="mb-3">
                                                                         <label for="username">Username</label>
-                                                                        <input type="text" id="username" name="username" class="form-control" required>
-                                                                    </div>
-
-                                                                    <div class="mb-3">
-                                                                        <label for="password">Password</label>
-                                                                        <input type="password" id="password" name="password" class="form-control" required>
+                                                                        <input type="text" id="username" name="username" class="form-control" required value="<?= $row['username']; ?>">
                                                                     </div>
 
                                                                     <div class="mb-3">
                                                                         <label for="no_telepon">No Telepon</label>
-                                                                        <input type="text" id="telepon" name="telepon" class="form-control" required>
+                                                                        <input type="text" id="telepon" name="telepon" class="form-control" required value="<?= $row['telepon']; ?>">
                                                                     </div>
 
                                                                     <div class="mb-3">
                                                                         <label for="level">Role</label>
                                                                         <select class="form-select form-select-lg mb-3" name="level" aria-label=".form-select-lg example">
-                                                                            <option value="1">Administrator</option>
-                                                                            <option value="2">Petugas</option>
+                                                                            <option value="1" <?= ($row['level'] == 1) ? 'selected' : ''; ?>>Administrator</option>
+                                                                            <option value="2" <?= ($row['level'] == 2) ? 'selected' : ''; ?>>Petugas</option>
                                                                         </select>
                                                                     </div>
+
 
 
                                                                     <button type="submit" class="btn btn-primary mt-4">Simpan</button>

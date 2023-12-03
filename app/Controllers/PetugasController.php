@@ -195,5 +195,33 @@ class PetugasController extends BaseController
         }
     }
 
+    public function updatepetugas($id_petugas = null)
+    {
+        $model = new PetugasModel();
 
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'nama_petugas' => 'required',
+            'username' => 'required',
+            'telepon' => 'required',
+            'level' => 'required',
+        ]);
+
+        $isDataValid = $validation->withRequest($this->request)->run();
+
+        if ($isDataValid) {
+            // Ambil nilai 'level' dari formulir
+            $level = $this->request->getPost('level');
+            $model->update(
+                $this->request->getPost('id_petugas'),
+                [
+                    "nama_petugas" => $this->request->getPost('nama_petugas'),
+                    "username" => $this->request->getPost('username'),
+                    "telepon" => $this->request->getPost('telepon'),
+                    "level" => $level, // Fix: use the posted 'level' value
+                ]
+            );
+            return redirect()->to('/admin/petugas')->with('success', 'Data berhasil diperbarui.');
+        }
+    }
 }

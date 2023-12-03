@@ -58,6 +58,7 @@ $routes->get('petugas/reset-password/(:num)', 'MasyarakatController::showResetpw
 
 
 $routes->post('data-masyarakat/update', 'MasyarakatController::updatemasyarakat');
+$routes->post('data-petugas/update', 'PetugasController::updatepetugas');
 
 
 $routes->get('/', 'MasyarakatController::index');
