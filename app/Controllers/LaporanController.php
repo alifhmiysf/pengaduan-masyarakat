@@ -9,6 +9,6 @@ class LaporanController extends BaseController
 {
     public function index()
     {
-        return view('laporan');
+        return view('admin/laporan');
     }
 }
