@@ -34,6 +34,8 @@ $routes->group('pengaduan-masyarakat', function ($routes) {
 $routes->group('petugas', function ($routes) {
     $routes->get('/', 'PetugasController::index');
     $routes->get('masyarakat', 'PetugasController::masyarakat');
+    $routes->get('laporan', 'LaporanController::laporan');
+    $routes->get('printpdf', 'LaporanController::printpdf1');
 });
 $routes->get('admincontroller/terima/(:num)', 'AdminController::terima/$1');
 $routes->get('admincontroller/tolak/(:num)', 'AdminController::tolak/$1');

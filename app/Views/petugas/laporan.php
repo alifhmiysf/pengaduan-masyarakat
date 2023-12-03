@@ -77,22 +77,18 @@
                 <hr class="sidebar-divider my-0">
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('/admin') ?>">
+                    <a class="nav-link" href="<?= base_url('/petugas') ?>">
                         <i class="fas fa-envelope"></i>
                         <span>Pengaduan</span></a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('/admin/petugas') ?>">
-                        <i class="fas fa-user"></i>
-                        <span>Petugas</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('/admin/manajemen_masyarakat') ?>">
+                    <a class="nav-link" href="<?= base_url('/petugas/masyarakat/') ?>">
                         <i class="fas fa-users"></i>
                         <span>Masyarakat</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="admin/laporan">
+                    <a class="nav-link" href="<?= base_url('/admin/laporan') ?>">
                         <i class="fas fa-print"></i>
                         <span>Laporan PDF</span></a>
                 </li>
@@ -160,7 +156,7 @@
                     }
                     if ($pdf == false) {
                     ?>
-                        <button type="button" value="print PDF" onclick="window.open('<?php echo site_url('admin/printpdf') ?>','blank')" class="btn btn-primary "><i class="fas fa-print"></i> Laporan</button>
+                        <button type="button" value="print PDF" onclick="window.open('<?php echo site_url('petugas/printpdf') ?>','blank')" class="btn btn-primary "><i class="fas fa-print"></i> Laporan</button>
                     <?php } ?>
 
                     <br>

@@ -42,21 +42,21 @@
             <hr class="sidebar-divider my-0">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/petugas') ?>">
-                    <i class="fas fa-envelope"></i>
-                    <span>Pengaduan</span></a>
-            </li>
+                    <a class="nav-link" href="<?= base_url('/petugas') ?>">
+                        <i class="fas fa-envelope"></i>
+                        <span>Pengaduan</span></a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/petugas/masyarakat') ?>">
-                    <i class="fas fa-users"></i>
-                    <span>Masyarakat</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-print"></i>
-                    <span>Laporan PDF</span></a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('/petugas/masyarakat/') ?>">
+                        <i class="fas fa-users"></i>
+                        <span>Masyarakat</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('/admin/laporan') ?>">
+                        <i class="fas fa-print"></i>
+                        <span>Laporan PDF</span></a>
+                </li>
         </ul>
         <!-- End of Sidebar -->
 

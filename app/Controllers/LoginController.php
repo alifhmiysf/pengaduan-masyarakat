@@ -24,11 +24,17 @@ class LoginController extends BaseController
 
     public function index()
     {
+        if(session('id_masyarakat')) {
+            return redirect()->to(site_url('/pengaduan-masyarakat/afterlogin'));
+        }
         return view('layout/login');
     }
 
     public function registrasi()
     {
+        if(session('id_masyarakat')) {
+            return redirect()->to(site_url('/pengaduan-masyarakat/afterlogin'));
+        }
         return view('layout/register');
     }
 

@@ -20,6 +20,9 @@ class MasyarakatController extends BaseController
 
     public function index()
     {
+        if(session('id_masyarakat')) {
+            return redirect()->to(site_url('/pengaduan-masyarakat/afterlogin'));
+        }
         return view('users/index');
     }
 
