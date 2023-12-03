@@ -21,7 +21,7 @@ $routes->group('admin', function ($routes) {
     $routes->get('manajemen_masyarakat', 'ManajemenMasyarakat::index');
     $routes->post('tambah_tanggapan/(:any)', 'AdminController::tanggapan/$1');
     $routes->get('laporan', 'LaporanController::index');
-    $routes->post('laporan', 'LaporanController::index');
+    $routes->get('printpdf', 'LaporanController::printpdf');
 });
 
 $routes->group('pengaduan-masyarakat', function ($routes) {

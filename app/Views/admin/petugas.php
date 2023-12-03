@@ -54,7 +54,7 @@
                     <span>Masyarakat</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="admin/laporan">
                     <i class="fas fa-print"></i>
                     <span>Laporan PDF</span></a>
             </li>
