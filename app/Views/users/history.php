@@ -66,7 +66,7 @@
 
 
 
-                        <a type="button" class="btn " style="height: 40px;" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['id_pengaduan']; ?>" data-bs-whatever="@mdo">Lihat detail</a>
+                        <a type="button" class="btn " style="height: 40px;" data-bs-toggle="modal" data-bs-target="#exampleModal1<?= $row['id_pengaduan']; ?>" data-bs-whatever="@mdo">Lihat detail</a>
                             <!-- Button trigger modal -->
                             <?php if ($row['status'] == 0) : ?>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -114,7 +114,7 @@
                     </div>
                 </div>
 
-                <div class="modal fade" id="exampleModal<?= $row['id_pengaduan']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal1<?= $row['id_pengaduan']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
