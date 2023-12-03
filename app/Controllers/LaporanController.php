@@ -21,6 +21,7 @@ class LaporanController extends BaseController
         ];
         return view('admin/laporan',$data);
     }
+    
     public function printpdf()
     {
         $dompdf = new Dompdf();
@@ -30,6 +31,29 @@ class LaporanController extends BaseController
         ];
         $data['pengaduan'] = $pengaduan;
         $html = view('admin/laporan',$data);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4','landscape');
+        $dompdf->render();
+        $dompdf->stream();
+    }
+    public function laporan()
+    {
+        $pengaduan = $this->PengaduanModel->findAll();
+        $data = [
+            'pengaduan' => $pengaduan,
+        ];
+        return view('petugas/laporan',$data);
+    }
+    
+    public function printpdf1()
+    {
+        $dompdf = new Dompdf();
+        $pengaduan = $this->PengaduanModel->findAll();
+        $data = [
+            'pengaduan' => $pengaduan,
+        ];
+        $data['pengaduan'] = $pengaduan;
+        $html = view('petugas/laporan',$data);
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4','landscape');
         $dompdf->render();
