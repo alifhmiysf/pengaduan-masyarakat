@@ -53,7 +53,7 @@
                         <span>Masyarakat</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('/admin/laporan') ?>">
+                    <a class="nav-link" href="<?= base_url('/petugas/laporan') ?>">
                         <i class="fas fa-print"></i>
                         <span>Laporan PDF</span></a>
                 </li>
