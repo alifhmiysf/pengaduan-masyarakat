@@ -30,6 +30,10 @@ class PengaduanController extends ResourceController
 
     public function index()
     {
+        if (!$this->session->has('adminislogin')) {
+            // Redirect to the login page
+            return redirect()->to('/auth/login');
+        }
         // Mendapatkan semua data masyarakat
         $pengaduan = $this->PengaduanModel->findAll();
 

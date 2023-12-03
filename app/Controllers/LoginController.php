@@ -24,15 +24,16 @@ class LoginController extends BaseController
 
     public function index()
     {
-        if(session('id_masyarakat')) {
+        if (session('id_masyarakat')) {
             return redirect()->to(site_url('/pengaduan-masyarakat/afterlogin'));
         }
+
         return view('layout/login');
     }
 
     public function registrasi()
     {
-        if(session('id_masyarakat')) {
+        if (session('id_masyarakat')) {
             return redirect()->to(site_url('/pengaduan-masyarakat/afterlogin'));
         }
         return view('layout/register');
@@ -80,8 +81,6 @@ class LoginController extends BaseController
         return redirect()->to('/auth/login');
     }
 
-
-
     public function valid_login()
     {
         $data = $this->request->getPost();
@@ -89,47 +88,62 @@ class LoginController extends BaseController
         $petugas = $this->PetugasModel->where('username', $data['username'])->first();
 
         if ($masyarakat) {
-            # cek password masyarakat
+            // Check password for masyarakat
             $cekPasswordM = password_verify($data['password'] . $masyarakat['salt'], $masyarakat['password']);
             if ($cekPasswordM) {
-                # lanjut ke dashboard masyarakat
-                # Setup session 
-
+                // Set session for masyarakat
                 $this->session->set([
                     "isLogin" => TRUE,
+                    "userType" => "masyarakat", // Additional variable to identify user type
                     "id_masyarakat" => $masyarakat['id_masyarakat'],
                     "nik" => $masyarakat['nik'],
                     "username" => $masyarakat['username'],
                 ]);
                 return redirect()->to('/pengaduan-masyarakat/afterlogin');
             } else {
-                #tampilkan notifikasi password salah dan kembali ke halaman login
+                // Incorrect password for masyarakat
                 session()->setFlashdata('error', 'Password salah');
                 return redirect()->to('/auth/login');
             }
         } elseif ($petugas) {
-            # cek password petugas
+            // Check password for petugas
             if (password_verify($data['password'] . $petugas['salt'], $petugas['password'])) {
-                # lanjut ke dashboard petugas
+                // Set session for petugas
+
+                // Check if the petugas is an admin
                 if ($petugas['level'] == '1') {
-                    # menuju ke admin
+                    // Set additional session variable for admin petugas
+                    $adminSession = [
+                        'adminislogin' => true,
+                        'id_petugas' => $petugas['id_petugas'],
+                        'username' => $petugas['username'],
+                        'level' => $petugas['level']
+                    ];
+                    $this->session->set($adminSession);
                     return redirect()->to('/admin/manajemen_masyarakat');
                 } else {
-                    # menuju ke petugas
+                    // Set additional session variable for regular petugas
+                    $petugasSession = [
+                        'isPetugasLoggedIn' => true,
+                        'id_petugas' => $petugas['id_petugas'],
+                        'username' => $petugas['username'],
+                    ];
+                    $this->session->set($petugasSession);
+                    // Redirect to petugas dashboard
                     return redirect()->to('/petugas');
                 }
             } else {
-
-                #tampilkan notifikasi password salah dan kembali ke halaman login
+                // Incorrect password for petugas
                 session()->setFlashdata('error', 'Password salah');
                 return redirect()->to('/auth/login');
             }
         } else {
-            #tampilkan notifikasi username tidak terdaftar dan kembali ke halaman login
+            // Username not found
             session()->setFlashdata('error', 'Username tidak terdaftar');
             return redirect()->to('/auth/login');
         }
     }
+
 
 
     public function logout()

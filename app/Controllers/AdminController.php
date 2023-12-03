@@ -32,6 +32,10 @@ class AdminController extends BaseController
 
     public function petugas()
     {
+        if (!$this->session->has('adminislogin')) {
+            // Redirect to the login page
+            return redirect()->to('/auth/login');
+        }
         // Mendapatkan semua data petugas
         $petugas = $this->PetugasModel->findAll();
 

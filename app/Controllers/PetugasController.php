@@ -17,9 +17,14 @@ class PetugasController extends BaseController
         $this->MasyarakatModel = new \App\Models\MasyarakatModel();
         $this->PengaduanModel = new \App\Models\PengaduanModel();
         $this->TanggapanModel = new \App\Models\TanggapanModel();
+        $this->session = \Config\Services::session();
     }
     public function index()
     {
+        if (!$this->session->has('isPetugasLoggedIn')) {
+            // Redirect to the login page
+            return redirect()->to('/auth/login');
+        }
         // Mendapatkan semua data masyarakat
         $pengaduan = $this->PengaduanModel->findAll();
 
@@ -115,6 +120,10 @@ class PetugasController extends BaseController
 
     public function masyarakat()
     {
+        if (!$this->session->has('isPetugasLoggedIn')) {
+            // Redirect to the login page
+            return redirect()->to('/auth/login');
+        }
         $masyarakat = $this->MasyarakatModel->findAll();
 
         $data = [

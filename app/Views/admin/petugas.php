@@ -253,7 +253,7 @@
                                                             <div class="modal-body">
                                                                 <!-- isi form  -->
                                                                 <form method="post" action="<?= site_url('data-petugas/update'); ?>" enctype="multipart/form-data">
-                                                                    <input class="form-control" id="id_petugas" name="id_petugas" placeholder="id_petugas" readonly value="<?= $row['id_petugas']; ?>">
+                                                                    <input class="form-control" id="id_petugas" name="id_petugas" placeholder="id_petugas" type="hidden" value="<?= $row['id_petugas']; ?>">
                                                                     <div class="mb-3">
                                                                         <label for="nama_petugas">Nama</label>
                                                                         <input type="text" id="nama_petugas" name="nama_petugas" class="form-control" required value="<?= $row['nama_petugas']; ?>">

@@ -15,6 +15,10 @@ class LaporanController extends BaseController
 
     public function index()
     {
+        if (!$this->session->has('adminislogin')) {
+            // Redirect to the login page
+            return redirect()->to('/auth/login');
+        }
         $pengaduan = $this->PengaduanModel->findAll();
         $data = [
             'pengaduan' => $pengaduan,
@@ -24,6 +28,10 @@ class LaporanController extends BaseController
     
     public function printpdf()
     {
+        if (!$this->session->has('adminislogin')) {
+            // Redirect to the login page
+            return redirect()->to('/auth/login');
+        }
         $dompdf = new Dompdf();
         $pengaduan = $this->PengaduanModel->findAll();
         $data = [
@@ -38,6 +46,10 @@ class LaporanController extends BaseController
     }
     public function laporan()
     {
+        if (!$this->session->has('isPetugasLoggedIn')) {
+            // Redirect to the login page
+            return redirect()->to('/auth/login');
+        }
         $pengaduan = $this->PengaduanModel->findAll();
         $data = [
             'pengaduan' => $pengaduan,
@@ -47,6 +59,10 @@ class LaporanController extends BaseController
     
     public function printpdf1()
     {
+        if (!$this->session->has('isPetugasLoggedIn')) {
+            // Redirect to the login page
+            return redirect()->to('/auth/login');
+        }
         $dompdf = new Dompdf();
         $pengaduan = $this->PengaduanModel->findAll();
         $data = [

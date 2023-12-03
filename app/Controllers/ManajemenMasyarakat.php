@@ -16,10 +16,15 @@ class ManajemenMasyarakat extends ResourceController
     public function __construct()
     {
         $this->MasyarakatModel = new MasyarakatModel();
+        $this->session = \Config\Services::session();
     }
 
     public function index()
     {
+        if (!$this->session->has('adminislogin')) {
+            // Redirect to the login page
+            return redirect()->to('/auth/login');
+        }
         // Mendapatkan semua data masyarakat
         $masyarakat = $this->MasyarakatModel->findAll();
 

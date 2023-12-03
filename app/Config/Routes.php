@@ -16,7 +16,6 @@ $routes->group('auth', function ($routes) {
 
 $routes->group('admin', function ($routes) {
     $routes->get('/', 'PengaduanController::index');
-    $routes->get('verifikasi', 'AdminController::verval');
     $routes->get('petugas', 'AdminController::petugas');
     $routes->get('manajemen_masyarakat', 'ManajemenMasyarakat::index');
     $routes->post('tambah_tanggapan/(:any)', 'AdminController::tanggapan/$1');
