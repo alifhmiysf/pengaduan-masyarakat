@@ -11,8 +11,7 @@
 
     <title>Dashboard Admin</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap JS dari CDN -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom fonts for this template-->
@@ -24,6 +23,7 @@
     <link href="<?= base_url('assets-dashboard-admin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets-dashboard-admin/css/style.css') ?>">
 
+    
 
 </head>
 
