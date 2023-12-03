@@ -200,12 +200,12 @@
 
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $row['id_petugas'] ?>">
                                                     Ubah Password
                                                 </button>
 
                                                 <!-- Modal Ubah Password -->
-                                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal fade" id="staticBackdrop<?= $row['id_petugas'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -214,7 +214,7 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                 <!-- isi form  -->
-                                                                <form method="post" action="<?= base_url('admin/reset-password') ?>">
+                                                                <form method="post" action="<?= base_url('/petugas/reset-password-petugas/' . $row['id_petugas']); ?>">
                                                                     <div class="row g-3 align-items-center">
                                                                         <div class="mb-3">
                                                                             <label for="new_password" class="col-form-label">New Password:</label>

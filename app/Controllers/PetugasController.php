@@ -67,6 +67,52 @@ class PetugasController extends BaseController
     }
 
 
+    // reset password petugas sisi admin
+    public function showResetForm($id_petugas = null)
+    {
+        // Load necessary models and libraries if needed
+
+        // Pass the user ID to the view
+        $data['id_petugas'] = $id_petugas;
+
+        return view('/admin/petugas', $data);
+    }
+
+    public function updater($id_petugas = null)
+    {
+        // Get data from the form
+        $data = $this->request->getPost();
+
+        // Run validation
+        $validationRules = [
+            'new_password'      => 'required|min_length[8]',
+            'confirm_password'  => 'required|matches[new_password]',
+        ];
+
+        if (!$this->validate($validationRules)) {
+            // If validation fails, redirect back with errors
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        // Validation successful
+
+        // Get existing user data
+        $existingData = $this->PetugasModel->find($id_petugas);
+
+        $salt = uniqid('', true);
+
+        // Hash the new password
+        $hashedPassword = password_hash($data['new_password'] . $salt, PASSWORD_BCRYPT);
+        // Update the user data in the database
+        $this->PetugasModel->update($id_petugas, [
+            'password' => $hashedPassword,
+            'salt' => $salt,
+        ]);
+
+        // Redirect to a suitable page after updating
+        return redirect()->to('/admin/petugas')->with('success', 'Password reset successfully.');
+    }
+
     public function masyarakat()
     {
         $masyarakat = $this->MasyarakatModel->findAll();

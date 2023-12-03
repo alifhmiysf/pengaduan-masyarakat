@@ -135,12 +135,12 @@
                                                 <td><?= $row['telepon']; ?></td>
                                                 <td>
                                                     <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $row['id_masyarakat'] ?>">
                                                         Ubah Password
                                                     </button>
 
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="staticBackdrop<?= $row['id_masyarakat'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -149,7 +149,7 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <!-- isi form  -->
-                                                                    <form method="post" action="<?= base_url('masyarakat/resetpw'); ?>">
+                                                                    <form method="post" action="<?= base_url('/petugas/reset-password/' . $row['id_masyarakat']); ?>">
                                                                         <input type="hidden" name="id_masyarakat" value="<?= $id_masyarakat ?? ''; ?>">
                                                                         <!-- Formulir lainnya -->
 

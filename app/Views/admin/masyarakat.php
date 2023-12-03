@@ -162,9 +162,6 @@
                                                                 <div class="modal-body">
                                                                     <!-- isi form  -->
                                                                     <form method="post" action="<?= base_url('/masyarakat/reset-password/' . $row['id_masyarakat']); ?>">
-
-
-
                                                                             <div class="row g-3 align-items-center">
                                                                                 <div class="mb-3">
                                                                                     <label for="new_password" class="col-form-label">New Password:</label>
