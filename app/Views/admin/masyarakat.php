@@ -161,7 +161,7 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <!-- isi form  -->
-                                                                    <form method="post" action="masyarakat/reset-password/ <?= $row['id_masyarakat'] ?>">
+                                                                    <form method="post" action="<?= base_url('/masyarakat/reset-password/' . $row['id_masyarakat']); ?>">
 
                                                                         <div class="row g-3 align-items-center">
                                                                             <div class="mb-3">

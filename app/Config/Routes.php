@@ -46,13 +46,15 @@ $routes->post('pengaduan/update', 'PengaduanController::update');
 $routes->get('/pengaduan/delete/(:num)', 'PengaduanController::delete/$1');
 
 
-
+// reset password masyarakat sisi admin
 $routes->post('masyarakat/reset-password/(:num)', 'MasyarakatController::updater/$1');
 $routes->get('masyarakat/reset-password/(:num)', 'MasyarakatController::showResetForm/$1');
 
+// reset password petugas sisi admin
 $routes->post('petugas/reset-password-petugas/(:num)', 'PetugasController::updater/$1');
 $routes->get('petugas/reset-password-petugas/(:num)', 'PetugasController::showResetForm/$1');
 
+// reset password masyarakat sisi petugas
 $routes->post('petugas/reset-password/(:num)', 'MasyarakatController::updatepw/$1');
 $routes->get('petugas/reset-password/(:num)', 'MasyarakatController::showResetpw/$1');
 
