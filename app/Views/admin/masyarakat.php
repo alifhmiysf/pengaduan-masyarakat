@@ -62,6 +62,11 @@
                     <i class="fas fa-users"></i>
                     <span>Masyarakat</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-print"></i>
+                    <span>Laporan PDF</span></a>
+            </li>
 
         </ul>
         <!-- End of Sidebar -->
@@ -99,7 +104,7 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end col">
-                            <a class="btn btn-outline-dark" href="<?= base_url('/auth/login') ?>" role="button">Log Out</a>
+                            <a class="btn btn-outline-dark" href="<?= base_url('/auth/logout') ?>" role="button">Log Out</a>
                         </div>
                     </div>
 
@@ -146,7 +151,7 @@
                                                         Ubah Password
                                                     </button>
 
-                                                    <!-- Modal -->
+                                                    <!-- Modal Ubah Password -->
                                                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
@@ -181,6 +186,57 @@
                                                         </div>
                                                     </div>
 
+                                                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                    Edit
+                                                </button>
+
+                                                <!-- Modal Edit -->
+                                                <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="staticBackdropLabel1">Edit</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <!-- isi form  -->
+                                                                <form method="post" action="">
+                                                                    <div class="mb-3">
+                                                                        <label for="nama">Nama</label>
+                                                                        <input type="text" id="nama_petugas" name="nama_petugas" class="form-control" required>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="username">Username</label>
+                                                                        <input type="text" id="username" name="username" class="form-control" required>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="password">Password</label>
+                                                                        <input type="password" id="password" name="password" class="form-control" required>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="no_telepon">No Telepon</label>
+                                                                        <input type="text" id="telepon" name="telepon" class="form-control" required>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="level">Role</label>
+                                                                        <select class="form-select form-select-lg mb-3" name="level" aria-label=".form-select-lg example">
+                                                                            <option value="1">Administrator</option>
+                                                                            <option value="2">Petugas</option>
+                                                                        </select>
+                                                                    </div>
+
+
+                                                                    <button type="submit" class="btn btn-primary mt-4">Simpan</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -191,10 +247,7 @@
                     </div>
 
                 </div>
-                <!-- /.container-fluid -->
-
             </div>
-            <!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -207,37 +260,10 @@
                     </div>
                 </div>
             </footer>
-            <!-- End of Footer -->
 
         </div>
-        <!-- End of Content Wrapper -->
-
     </div>
-    <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url(' assets-dashboard-admin/vendor/jquery/jquery.min.js') ?>"></script>

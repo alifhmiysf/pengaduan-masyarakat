@@ -50,6 +50,11 @@
                     <i class="fas fa-users"></i>
                     <span>Masyarakat</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-print"></i>
+                    <span>Laporan PDF</span></a>
+            </li>
 
         </ul>
         <!-- End of Sidebar -->
@@ -87,7 +92,7 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end col">
-                            <a class="btn btn-outline-dark" href="<?= base_url('/auth/login') ?>" role="button">Log Out</a>
+                            <a class="btn btn-outline-dark" href="<?= base_url('/auth/logout') ?>" role="button">Log Out</a>
                         </div>
                     </div>
 

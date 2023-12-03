@@ -53,6 +53,11 @@
                     <i class="fas fa-users"></i>
                     <span>Masyarakat</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-print"></i>
+                    <span>Laporan PDF</span></a>
+            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -89,7 +94,7 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end col">
-                            <a class="btn btn-outline-dark" href="<?= base_url('/auth/login') ?>" role="button">Log Out</a>
+                            <a class="btn btn-outline-dark" href="<?= base_url('/auth/logout') ?>" role="button">Log Out</a>
                         </div>
                     </div>
 
@@ -194,11 +199,12 @@
                                                 <?php endif; ?>
 
                                             </td>
-                                            <td> <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <td>
+                                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                                     Ubah Password
                                                 </button>
 
-                                                <!-- Modal -->
+                                                <!-- Modal Ubah Password -->
                                                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
@@ -230,9 +236,58 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <button class="btn btn-outline-warning" type="button">Edit</button>
 
 
+                                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                    Edit
+                                                </button>
+
+                                                <!-- Modal Edit -->
+                                                <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="staticBackdropLabel1">Edit</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <!-- isi form  -->
+                                                                <form method="post" action="">
+                                                                    <div class="mb-3">
+                                                                        <label for="nama">Nama</label>
+                                                                        <input type="text" id="nama_petugas" name="nama_petugas" class="form-control" required>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="username">Username</label>
+                                                                        <input type="text" id="username" name="username" class="form-control" required>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="password">Password</label>
+                                                                        <input type="password" id="password" name="password" class="form-control" required>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="no_telepon">No Telepon</label>
+                                                                        <input type="text" id="telepon" name="telepon" class="form-control" required>
+                                                                    </div>
+
+                                                                    <div class="mb-3">
+                                                                        <label for="level">Role</label>
+                                                                        <select class="form-select form-select-lg mb-3" name="level" aria-label=".form-select-lg example">
+                                                                            <option value="1">Administrator</option>
+                                                                            <option value="2">Petugas</option>
+                                                                        </select>
+                                                                    </div>
+
+
+                                                                    <button type="submit" class="btn btn-primary mt-4">Simpan</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                             </td>
                                         </tr>
